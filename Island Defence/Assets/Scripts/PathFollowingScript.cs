@@ -11,6 +11,7 @@ public class PathFollowingScript : MonoBehaviour
     public float speed;
 
     public int pathProgress;
+    public int hp;
 
     bool onReturn;
 
@@ -42,6 +43,11 @@ public class PathFollowingScript : MonoBehaviour
         else if (onReturn &&pathProgress > 0)
         {
             pathProgress--;
+        }
+
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

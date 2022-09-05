@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d0d5a654e0bfb44fba808b79d283870, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.818462
+      value: 5.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d0d5a654e0bfb44fba808b79d283870, type: 3}
       propertyPath: m_LocalPosition.y
@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d0d5a654e0bfb44fba808b79d283870, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.671486
+      value: 10.97
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d0d5a654e0bfb44fba808b79d283870, type: 3}
       propertyPath: m_LocalRotation.w
@@ -395,6 +395,10 @@ MonoBehaviour:
   cam: {fileID: 1538515147}
   towers:
   - {fileID: 6284026288055937439, guid: 934c96c987608d744a08873c19188745, type: 3}
+  - {fileID: 4102623716984544423, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
+  towerOffsets:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0.31, z: 0}
   currentSlot: 0
   paused: 0
 --- !u!54 &303447482
@@ -797,7 +801,7 @@ GameObject:
   - component: {fileID: 2085638621}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -900,3 +904,4 @@ MonoBehaviour:
   - {fileID: 1599114345}
   speed: 1
   pathProgress: 0
+  hp: 10

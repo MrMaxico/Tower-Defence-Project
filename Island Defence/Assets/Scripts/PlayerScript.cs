@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject cam;
     public GameObject[] towers;
 
+    public Vector3[] towerOffsets;
     Vector3 rotation;
     Vector3 camrotation;
     Vector3 movement;
@@ -59,10 +60,20 @@ public class PlayerScript : MonoBehaviour
                 if (groundCheck.transform.gameObject.tag == "Floor")
                 {
                     Debug.Log("Ground found");
-                    GameObject placed = Instantiate(towers[currentSlot], groundCheck.point, transform.rotation);
+                    GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
                     placed.transform.Rotate(new Vector3(0, -90, 0));
                 }
             }
+        }
+
+        //select tower
+        if (Input.GetButtonDown("SlotOne"))
+        {
+            currentSlot = 1;
+        }
+        else if (Input.GetButtonDown("SlotZero"))
+        {
+            currentSlot = 0;
         }
 
         //pause game
