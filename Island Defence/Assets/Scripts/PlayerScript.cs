@@ -18,6 +18,8 @@ public class PlayerScript : MonoBehaviour
 
     public int currentSlot;
 
+    public bool paused;
+
     Rigidbody playerRB;
 
     RaycastHit groundCheck;
@@ -25,6 +27,8 @@ public class PlayerScript : MonoBehaviour
     private void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
+        paused = true;
     }
     private void Update()
     {
@@ -48,13 +52,30 @@ public class PlayerScript : MonoBehaviour
         cam.transform.eulerAngles = camrotation;
 
         //place towers
+        if (Input.GetButtonDown("Fire1") && !paused)
+        {
+            if (Physics.Raycast(transform.position, cam.GetComponent<Transform>().forward, out groundCheck, 7))
+            {
+                if (groundCheck.transform.gameObject.tag == "Floor")
+                {
+                    Debug.Log("Ground found");
+                    GameObject placed = Instantiate(towers[currentSlot], groundCheck.point, transform.rotation);
+                    placed.transform.Rotate(new Vector3(0, -90, 0));
+                }
+            }
+        }
+
+        //pause game
+        if (Input.GetButtonDown("Pause"))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            paused = true;
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
-            if (Physics.Raycast(transform.position, rotation, out groundCheck, 500f))
-            {
-                Debug.Log("Ground found");
-                Instantiate(towers[currentSlot], groundCheck.point, Quaternion.identity);
-            }
+            Cursor.lockState = CursorLockMode.Locked;
+            paused = false;
         }
     }
 

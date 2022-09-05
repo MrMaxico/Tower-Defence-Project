@@ -394,8 +394,9 @@ MonoBehaviour:
   maxXRotation: 90
   cam: {fileID: 1538515147}
   towers:
-  - {fileID: 3082410989922265010, guid: 934c96c987608d744a08873c19188745, type: 3}
+  - {fileID: 6284026288055937439, guid: 934c96c987608d744a08873c19188745, type: 3}
   currentSlot: 0
+  paused: 0
 --- !u!54 &303447482
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -520,7 +521,7 @@ GameObject:
   - component: {fileID: 1191439786}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
