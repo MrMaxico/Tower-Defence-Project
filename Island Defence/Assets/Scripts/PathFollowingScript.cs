@@ -16,7 +16,7 @@ public class PathFollowingScript : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < path.Length - 4; i++)
+        for (int i = 0; i < path.Length - 1; i++)
         {
             Debug.DrawLine(path[i].position, path[i + 1].position, Color.red, 6000f);
         }
