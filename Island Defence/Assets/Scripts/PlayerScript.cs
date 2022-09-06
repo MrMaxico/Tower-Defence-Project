@@ -21,6 +21,7 @@ public class PlayerScript : MonoBehaviour
     Vector3 movement;
 
     public int currentSlot;
+    public int money;
 
     public bool paused;
     bool previewSpawned;
@@ -109,6 +110,23 @@ public class PlayerScript : MonoBehaviour
             DestroyPreview();
         }
 
+        int lastFrameSlot = currentSlot;
+        currentSlot += Mathf.RoundToInt(Input.mouseScrollDelta.y);
+        if (currentSlot > towers.Length - 1)
+        {
+            currentSlot = 0;
+            DestroyPreview();
+        }
+        else if (currentSlot < 0)
+        {
+            currentSlot = towers.Length - 1;
+            DestroyPreview();
+        }
+        else if (lastFrameSlot != currentSlot)
+        {
+            DestroyPreview();
+        }
+
         //pause game
         if (Input.GetButtonDown("Pause"))
         {
@@ -139,7 +157,7 @@ public class PlayerScript : MonoBehaviour
 
     private void DestroyPreview()
     {
-        Debug.Log("Trying to kill previews");
+        // Debug.Log("Trying to kill previews"); // if you enable this the console will be spammed
         previewTags = GameObject.FindGameObjectsWithTag("Preview");
         if (previewTags.Length > 0)
         {
