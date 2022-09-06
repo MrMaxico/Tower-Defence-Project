@@ -10,7 +10,10 @@ public class PlayerScript : MonoBehaviour
     float mouseVertical;
 
     public GameObject cam;
+    public GameObject[] previewTowers;
     public GameObject[] towers;
+    GameObject[] previewTags;
+    GameObject previewTower;
 
     public Vector3[] towerOffsets;
     Vector3 rotation;
@@ -20,6 +23,7 @@ public class PlayerScript : MonoBehaviour
     public int currentSlot;
 
     public bool paused;
+    bool previewSpawned;
 
     Rigidbody playerRB;
 
@@ -53,27 +57,56 @@ public class PlayerScript : MonoBehaviour
         cam.transform.eulerAngles = camrotation;
 
         //place towers
-        if (Input.GetButtonDown("Fire1") && !paused)
+        if (Physics.Raycast(transform.position, cam.GetComponent<Transform>().forward, out groundCheck, 4))
         {
-            if (Physics.Raycast(transform.position, cam.GetComponent<Transform>().forward, out groundCheck, 7))
+            if (groundCheck.transform.gameObject.tag == "Floor")
             {
-                if (groundCheck.transform.gameObject.tag == "Floor")
+                if (Input.GetButtonDown("Fire1") && !paused)
                 {
-                    Debug.Log("Ground found");
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
                     placed.transform.Rotate(new Vector3(0, -90, 0));
                 }
+                else
+                {
+                    if (!previewSpawned)
+                    {
+                        previewTower = Instantiate(previewTowers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
+                        previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                        previewSpawned = true;
+                    }
+                    else
+                    {
+                        previewTower.transform.position = groundCheck.point + towerOffsets[currentSlot];
+                        previewTower.transform.rotation = transform.rotation;
+                        previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                    }
+                }
             }
+            else if (groundCheck.transform.gameObject.tag != "Preview")
+            {
+                DestroyPreview();
+            }
+        }
+        else
+        {
+            DestroyPreview();
         }
 
         //select tower
         if (Input.GetButtonDown("SlotOne"))
         {
             currentSlot = 1;
+            DestroyPreview();
+        }
+        else if (Input.GetButtonDown("SlotTwo"))
+        {
+            currentSlot = 2;
+            DestroyPreview();
         }
         else if (Input.GetButtonDown("SlotZero"))
         {
             currentSlot = 0;
+            DestroyPreview();
         }
 
         //pause game
@@ -102,5 +135,19 @@ public class PlayerScript : MonoBehaviour
     {
         Vector3 moveVector = transform.TransformDirection(movement) * speed * Time.deltaTime;
         playerRB.velocity = new Vector3(moveVector.x, playerRB.velocity.y, moveVector.z);
+    }
+
+    private void DestroyPreview()
+    {
+        Debug.Log("Trying to kill previews");
+        previewTags = GameObject.FindGameObjectsWithTag("Preview");
+        if (previewTags.Length > 0)
+        {
+            for (int i = 0; i < previewTags.Length; i++)
+            {
+                Destroy(previewTags[i]);
+            }
+        }
+        previewSpawned = false;
     }
 }
