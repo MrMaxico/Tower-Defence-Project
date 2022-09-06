@@ -33,22 +33,25 @@ public class BananaCannon : MonoBehaviour
                 target = enemies[i];
             }
         }
-        targetDirection = target.transform.position - transform.position;
-        direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
-        transform.rotation = Quaternion.LookRotation(direction);
-
-        hitTimer += Time.deltaTime;
-        if (hitTimer >= 1.008333333333333 && !shot)
+        if (target != null)
         {
-            shot = true;
-            GameObject shotBullet = Instantiate(bullet, transform.position + new Vector3(0, 0.4f, 0), Quaternion.LookRotation(direction));
-            shotBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
-        }
+            targetDirection = target.transform.position - transform.position;
+            direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(direction);
 
-        if (hitTimer >= 1.2)
-        {
-            hitTimer = 0;
-            shot = false;
+            hitTimer += Time.deltaTime;
+            if (hitTimer >= 1.008333333333333 && !shot)
+            {
+                shot = true;
+                GameObject shotBullet = Instantiate(bullet, transform.position + new Vector3(0, 0.4f, 0), Quaternion.LookRotation(direction));
+                shotBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+            }
+
+            if (hitTimer >= 1.2)
+            {
+                hitTimer = 0;
+                shot = false;
+            }
         }
     }
 }
