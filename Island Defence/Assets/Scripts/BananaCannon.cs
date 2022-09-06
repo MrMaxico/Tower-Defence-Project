@@ -37,7 +37,7 @@ public class BananaCannon : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(direction);
 
         hitTimer += Time.deltaTime;
-        if (hitTimer >= 1.008 && !shot)
+        if (hitTimer >= 1.008333333333333 && !shot)
         {
             shot = true;
             GameObject shotBullet = Instantiate(bullet, transform.position + new Vector3(0, 0.4f, 0), Quaternion.LookRotation(direction));
