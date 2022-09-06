@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6664914246758445861}
   - component: {fileID: 7769082799225912448}
   - component: {fileID: 5491476659878348874}
-  - component: {fileID: 2682817485440678362}
+  - component: {fileID: 292931757243767933}
   m_Layer: 0
   m_Name: testTower
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2682817485440678362
-MeshCollider:
+--- !u!65 &292931757243767933
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7273727959798574416, guid: 482eed53bb5f92c4cb1d6a8eb13404fd, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.14457697, y: 0.19495402, z: 0.0939765}
+  m_Center: {x: -0.027585367, y: 0.09716719, z: 0.0031834505}

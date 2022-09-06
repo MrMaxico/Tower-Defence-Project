@@ -393,10 +393,16 @@ MonoBehaviour:
   speed: 300
   maxXRotation: 90
   cam: {fileID: 1538515147}
+  previewTowers:
+  - {fileID: 5301223027251737293, guid: 4680d749a1f36274fa7461171ba12f13, type: 3}
+  - {fileID: 1651777674924340646, guid: 17da9bdde2435bf4d8c2d008fa314076, type: 3}
+  - {fileID: 165752393500276058, guid: 30e75ab8049eff34195d87c7c0168cbf, type: 3}
   towers:
   - {fileID: 6284026288055937439, guid: 934c96c987608d744a08873c19188745, type: 3}
+  - {fileID: 1651777674924340646, guid: 17da9bdde2435bf4d8c2d008fa314076, type: 3}
   - {fileID: 4102623716984544423, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
   towerOffsets:
+  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0.31, z: 0}
   currentSlot: 0
