@@ -9,6 +9,7 @@ public class PathFollowingScript : MonoBehaviour
     public Transform[] path;
 
     public float speed;
+    public float slowness;
 
     public int pathProgress;
     public int hp;
@@ -34,7 +35,7 @@ public class PathFollowingScript : MonoBehaviour
         //path of the enemy
         if (gameObject.transform.position != path[pathProgress].position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, path[pathProgress].position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, path[pathProgress].position, speed * Time.deltaTime - slowness * Time.deltaTime);
         }
         else if (!onReturn && pathProgress < path.Length - 1)
         {

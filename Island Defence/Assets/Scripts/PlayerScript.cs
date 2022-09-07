@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     float mouseVertical;
 
     public GameObject cam;
+    public GameObject tooPoorPopup;
     public GameObject[] previewTowers;
     public GameObject[] towers;
     GameObject[] previewTags;
@@ -20,11 +22,14 @@ public class PlayerScript : MonoBehaviour
     Vector3 camrotation;
     Vector3 movement;
 
+    public int[] towerPrices;
     public int currentSlot;
     public int money;
 
     public bool paused;
     bool previewSpawned;
+
+    public Text moneyDisplay;
 
     Rigidbody playerRB;
 
@@ -35,37 +40,48 @@ public class PlayerScript : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         paused = true;
+        AcceptPoorness(tooPoorPopup);
     }
     private void Update()
     {
         //camera
-        rotation.y += Input.GetAxis("Mouse X") * sensitivity;
-        transform.eulerAngles = rotation;
-        camrotation.y = rotation.y;
-        mouseVertical = Input.GetAxis("Mouse Y");
-        if (camrotation.x < maxXRotation && camrotation.x > -maxXRotation)
+        if (!paused && !tooPoorPopup.activeSelf)
         {
-            camrotation.x -= mouseVertical * sensitivity;
+            rotation.y += Input.GetAxis("Mouse X") * sensitivity;
+            transform.eulerAngles = rotation;
+            camrotation.y = rotation.y;
+            mouseVertical = Input.GetAxis("Mouse Y");
+            if (camrotation.x < maxXRotation && camrotation.x > -maxXRotation)
+            {
+                camrotation.x -= mouseVertical * sensitivity;
+            }
+            else if (camrotation.x >= maxXRotation && mouseVertical > 0)
+            {
+                camrotation.x -= mouseVertical * sensitivity;
+            }
+            else if (camrotation.x <= -maxXRotation && mouseVertical < 0)
+            {
+                camrotation.x -= mouseVertical * sensitivity;
+            }
+            cam.transform.eulerAngles = camrotation;
         }
-        else if (camrotation.x >= maxXRotation && mouseVertical > 0)
-        {
-            camrotation.x -= mouseVertical * sensitivity;
-        }
-        else if (camrotation.x <= -maxXRotation && mouseVertical < 0)
-        {
-            camrotation.x -= mouseVertical * sensitivity;
-        }
-        cam.transform.eulerAngles = camrotation;
 
         //place towers
         if (Physics.Raycast(transform.position, cam.GetComponent<Transform>().forward, out groundCheck, 4))
         {
             if (groundCheck.transform.gameObject.tag == "Floor")
             {
-                if (Input.GetButtonDown("Fire1") && !paused)
+                if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf)
                 {
+                    money -= towerPrices[currentSlot];
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
                     placed.transform.Rotate(new Vector3(0, -90, 0));
+                }
+                else if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] > money)
+                {
+                    Debug.Log("You poor");
+                    tooPoorPopup.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
                 }
                 else
                 {
@@ -134,11 +150,14 @@ public class PlayerScript : MonoBehaviour
             paused = true;
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !tooPoorPopup.activeSelf)
         {
             Cursor.lockState = CursorLockMode.Locked;
             paused = false;
         }
+
+        //display money
+        moneyDisplay.text = $"Gold: {money}";
     }
 
     private void FixedUpdate()
@@ -167,5 +186,11 @@ public class PlayerScript : MonoBehaviour
             }
         }
         previewSpawned = false;
+    }
+
+    public void AcceptPoorness(GameObject popup)
+    {
+        popup.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
