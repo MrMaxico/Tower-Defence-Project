@@ -8,13 +8,17 @@ public class PathFollowingScript : MonoBehaviour
 {
     public Transform[] path;
 
+    GameObject[] totems;
+    GameObject closestTotem;
+
     public float speed;
-    public float slowness;
+    float slowness;
 
     public int pathProgress;
     public int hp;
 
     bool onReturn;
+    public bool hasTotemEffect;
 
     private void Start()
     {
@@ -49,6 +53,38 @@ public class PathFollowingScript : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(gameObject);
+        }
+
+        //slowness totem
+        totems = GameObject.FindGameObjectsWithTag("Totem");
+        hasTotemEffect = false;
+        for (int i = 0; i < totems.Length; i++)
+        {
+            if (Vector3.Distance(transform.position, totems[i].transform.position) < totems[i].GetComponent<Totem>().range)
+            {
+                if (hasTotemEffect)
+                {
+                    if (Vector3.Distance(transform.position, totems[i].transform.position) < Vector3.Distance(transform.position, closestTotem.transform.position))
+                    {
+                        hasTotemEffect = true;
+                        closestTotem = totems[i];
+                    }
+                }
+                else
+                {
+                    hasTotemEffect = true;
+                    closestTotem = totems[i];
+                }
+            }
+        }
+        if (hasTotemEffect)
+        {
+            slowness = speed / closestTotem.GetComponent<Totem>().slownessLevel;
+        }
+        else
+        {
+            closestTotem = null;
+            slowness = 0;
         }
     }
 

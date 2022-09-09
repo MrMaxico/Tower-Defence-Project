@@ -7,6 +7,8 @@ TagManager:
   - Floor
   - Enemy
   - Preview
+  - Totem
+  - Tower
   layers:
   - Default
   - TransparentFX

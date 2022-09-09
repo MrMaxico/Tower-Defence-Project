@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7769082799225912448}
   - component: {fileID: 5491476659878348874}
   - component: {fileID: 292931757243767933}
+  - component: {fileID: 1351098880381426839}
   m_Layer: 0
   m_Name: testTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,3 +98,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14457697, y: 0.19495402, z: 0.0939765}
   m_Center: {x: -0.027585367, y: 0.09716719, z: 0.0031834505}
+--- !u!114 &1351098880381426839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6284026288055937439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd44a369a630bea4c94bcd80fcecad16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  upgradeCost: 5
+  inflation: 5

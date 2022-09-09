@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
 
     public GameObject cam;
     public GameObject tooPoorPopup;
+    public GameObject upgradePopup;
     public GameObject[] previewTowers;
     public GameObject[] towers;
     GameObject[] previewTags;
@@ -30,6 +31,7 @@ public class PlayerScript : MonoBehaviour
     bool previewSpawned;
 
     public Text moneyDisplay;
+    public Text upgradeCostDisplay;
 
     Rigidbody playerRB;
 
@@ -45,7 +47,7 @@ public class PlayerScript : MonoBehaviour
     private void Update()
     {
         //camera
-        if (!paused && !tooPoorPopup.activeSelf)
+        if (!paused && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
         {
             rotation.y += Input.GetAxis("Mouse X") * sensitivity;
             transform.eulerAngles = rotation;
@@ -66,12 +68,12 @@ public class PlayerScript : MonoBehaviour
             cam.transform.eulerAngles = camrotation;
         }
 
-        //place towers
+        //place and upgrade towers
         if (Physics.Raycast(transform.position, cam.GetComponent<Transform>().forward, out groundCheck, 4))
         {
             if (groundCheck.transform.gameObject.tag == "Floor")
             {
-                if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf)
+                if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
                 {
                     money -= towerPrices[currentSlot];
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
@@ -99,6 +101,25 @@ public class PlayerScript : MonoBehaviour
                     }
                 }
             }
+            else if (groundCheck.transform.gameObject.tag == "Totem")
+            {
+                if (Input.GetButtonDown("Fire2") && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+                {
+                    upgradePopup.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                DestroyPreview();
+            }
+            else if (groundCheck.transform.gameObject.tag == "Tower" && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+            {
+                if (Input.GetButtonDown("Fire2"))
+                {
+                    upgradePopup.SetActive(true);
+                    upgradeCostDisplay.text = $"Upgrade? Cost: {groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost}";
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                DestroyPreview();
+            }
             else if (groundCheck.transform.gameObject.tag != "Preview")
             {
                 DestroyPreview();
@@ -118,6 +139,11 @@ public class PlayerScript : MonoBehaviour
         else if (Input.GetButtonDown("SlotTwo"))
         {
             currentSlot = 2;
+            DestroyPreview();
+        }
+        else if (Input.GetButtonDown("SlotThree"))
+        {
+            currentSlot = 3;
             DestroyPreview();
         }
         else if (Input.GetButtonDown("SlotZero"))
@@ -150,7 +176,7 @@ public class PlayerScript : MonoBehaviour
             paused = true;
         }
 
-        if (Input.GetButtonDown("Fire1") && !tooPoorPopup.activeSelf)
+        if (Input.GetButtonDown("Fire1") && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
         {
             Cursor.lockState = CursorLockMode.Locked;
             paused = false;
@@ -189,6 +215,30 @@ public class PlayerScript : MonoBehaviour
     }
 
     public void AcceptPoorness(GameObject popup)
+    {
+        popup.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void Upgrade(GameObject popup)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject targetTower = player.GetComponent<PlayerScript>().groundCheck.transform.gameObject;
+        if (player.GetComponent<PlayerScript>().money >= targetTower.GetComponent<TowerValues>().upgradeCost)
+        {
+            player.GetComponent<PlayerScript>().money -= targetTower.GetComponent<TowerValues>().upgradeCost;
+            targetTower.GetComponent<TowerValues>().upgradeCost += targetTower.GetComponent<TowerValues>().inflation;
+            targetTower.GetComponent<TowerValues>().level += 1;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            player.GetComponent<PlayerScript>().tooPoorPopup.SetActive(true);
+        }
+        popup.SetActive(false);
+    }
+
+    public void Decline(GameObject popup)
     {
         popup.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
