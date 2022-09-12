@@ -13,6 +13,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject cam;
     public GameObject tooPoorPopup;
     public GameObject upgradePopup;
+    public GameObject rangeIndicator;
+    public GameObject rangePreview;
     public GameObject[] previewTowers;
     public GameObject[] towers;
     GameObject[] previewTags;
@@ -29,6 +31,7 @@ public class PlayerScript : MonoBehaviour
 
     public bool paused;
     bool previewSpawned;
+    bool previewIsRange;
 
     public Text moneyDisplay;
     public Text upgradeCostDisplay;
@@ -73,6 +76,12 @@ public class PlayerScript : MonoBehaviour
         {
             if (groundCheck.transform.gameObject.tag == "Floor")
             {
+                if (previewIsRange)
+                {
+                    DestroyPreview();
+                    previewIsRange = false;
+                }
+
                 if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
                 {
                     money -= towerPrices[currentSlot];
@@ -89,6 +98,7 @@ public class PlayerScript : MonoBehaviour
                 {
                     if (!previewSpawned)
                     {
+                        DestroyPreview();
                         previewTower = Instantiate(previewTowers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
                         previewTower.transform.Rotate(new Vector3(0, -90, 0));
                         previewSpawned = true;
@@ -103,22 +113,47 @@ public class PlayerScript : MonoBehaviour
             }
             else if (groundCheck.transform.gameObject.tag == "Totem")
             {
+                if (!previewIsRange)
+                {
+                    DestroyPreview();
+                }
+
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    previewIsRange = true;
+                    DestroyPreview();
+                    previewTower = Instantiate(rangePreview, groundCheck.transform.position, transform.rotation);
+                    rangePreview.transform.localScale = new Vector3(groundCheck.transform.gameObject.GetComponent<TowerValues>().range * 2, 0.05f, groundCheck.transform.gameObject.GetComponent<TowerValues>().range * 2);
+                }
+
                 if (Input.GetButtonDown("Fire2") && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
                 {
                     upgradePopup.SetActive(true);
                     Cursor.lockState = CursorLockMode.None;
                 }
-                DestroyPreview();
+                //DestroyPreview();
             }
             else if (groundCheck.transform.gameObject.tag == "Tower" && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
             {
-                if (Input.GetButtonDown("Fire2"))
+                if (!previewIsRange)
+                {
+                    DestroyPreview();
+                }
+
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    previewIsRange = true;
+                    DestroyPreview();
+                    previewTower = Instantiate(rangePreview, groundCheck.transform.position, transform.rotation);
+                    rangePreview.transform.localScale = new Vector3(groundCheck.transform.gameObject.GetComponent<TowerValues>().range * 2, 0.05f, groundCheck.transform.gameObject.GetComponent<TowerValues>().range * 2);
+                }
+                else if (Input.GetButtonDown("Fire2") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
                 {
                     upgradePopup.SetActive(true);
                     upgradeCostDisplay.text = $"Upgrade? Cost: {groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost}";
                     Cursor.lockState = CursorLockMode.None;
+                    DestroyPreview();
                 }
-                DestroyPreview();
             }
             else if (groundCheck.transform.gameObject.tag != "Preview")
             {

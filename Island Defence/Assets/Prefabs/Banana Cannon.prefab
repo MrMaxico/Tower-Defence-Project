@@ -194,9 +194,10 @@ GameObject:
   - component: {fileID: 1150999575681705341}
   - component: {fileID: 2234490249917982442}
   - component: {fileID: 7399686795696619401}
+  - component: {fileID: 4842390690664451194}
   m_Layer: 0
   m_Name: Banana Cannon
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,3 +282,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 1.2, z: 4}
   m_Center: {x: 0, y: 0.3, z: 0}
+--- !u!114 &4842390690664451194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193156307660798991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd44a369a630bea4c94bcd80fcecad16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  maxLevel: 0
+  upgradeCost: 0
+  inflation: 0
+  maxLevelMat: {fileID: 0}
+  range: 8

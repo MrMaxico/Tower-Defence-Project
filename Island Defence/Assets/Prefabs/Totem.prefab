@@ -42,9 +42,10 @@ GameObject:
   - component: {fileID: 1264727489336155119}
   - component: {fileID: 2114356688160063619}
   - component: {fileID: 2731299909387020733}
+  - component: {fileID: 6456093298771343118}
   m_Layer: 0
   m_Name: Totem
-  m_TagString: Untagged
+  m_TagString: Totem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +94,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 5
   slownessLevel: 1.5
+--- !u!114 &6456093298771343118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929482790252691797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd44a369a630bea4c94bcd80fcecad16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  maxLevel: 0
+  upgradeCost: 0
+  inflation: 0
+  maxLevelMat: {fileID: 0}
+  range: 5
 --- !u!1 &3785694758182558482
 GameObject:
   m_ObjectHideFlags: 0

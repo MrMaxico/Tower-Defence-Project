@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 292931757243767933}
   - component: {fileID: 1351098880381426839}
   m_Layer: 0
-  m_Name: testTower
+  m_Name: TestTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,5 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  maxLevel: 5
   upgradeCost: 5
   inflation: 5
+  maxLevelMat: {fileID: 2100000, guid: 73d8dcb4160063c4987b3f9e25d87a64, type: 2}
+  range: 2.5
