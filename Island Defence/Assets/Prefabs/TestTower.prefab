@@ -114,5 +114,6 @@ MonoBehaviour:
   maxLevel: 5
   upgradeCost: 5
   inflation: 5
+  meshHolder: {fileID: 6284026288055937439}
   maxLevelMat: {fileID: 2100000, guid: 73d8dcb4160063c4987b3f9e25d87a64, type: 2}
   range: 2.5
