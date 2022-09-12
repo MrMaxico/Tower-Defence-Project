@@ -8,6 +8,9 @@ public class PathFollowingScript : MonoBehaviour
 {
     public Transform[] path;
 
+    public GameObject chest;
+    public GameObject gem;
+    public GameObject redGem;
     GameObject[] totems;
     GameObject closestTotem;
 
@@ -22,18 +25,16 @@ public class PathFollowingScript : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < path.Length - 1; i++)
-        {
-            Debug.DrawLine(path[i].position, path[i + 1].position, Color.red, 6000f);
-        }
+        gem.SetActive(false);
+        redGem.SetActive(false);
     }
 
     private void Update()
     {
         //check if enemy is at his goal
-        if (transform.position == path[path.Length - 1].position)
+        if (transform.position == path[path.Length - 1].position && !onReturn)
         {
-            StartCoroutine(PickupGem());
+            PickupGem();
         }
 
         //path of the enemy
@@ -88,9 +89,18 @@ public class PathFollowingScript : MonoBehaviour
         }
     }
 
-    private IEnumerator PickupGem()
+    private void PickupGem()
     {
-        yield return new WaitForSeconds(1);
+        if (chest.GetComponent<Chest>().GemsLeft > 1)
+        {
+            gem.SetActive(true);
+            chest.GetComponent<Chest>().GemsLeft--;
+        }
+        else if (chest.GetComponent<Chest>().GemsLeft == 1)
+        {
+            redGem.SetActive(true);
+            chest.GetComponent<Chest>().GemsLeft--;
+        }
         onReturn = true;
     }
 }
