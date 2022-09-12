@@ -295,8 +295,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  maxLevel: 0
-  upgradeCost: 0
+  maxLevel: 1
+  upgradeCost: 1
   inflation: 0
-  maxLevelMat: {fileID: 0}
+  meshHolder: {fileID: 3800771468705768287}
+  maxLevelMat: {fileID: 2100000, guid: 67a437c18b610bd43bd791c22a00ec5b, type: 2}
   range: 8

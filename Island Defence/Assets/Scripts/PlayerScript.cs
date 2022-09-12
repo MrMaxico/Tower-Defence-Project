@@ -126,7 +126,7 @@ public class PlayerScript : MonoBehaviour
                     rangePreview.transform.localScale = new Vector3(groundCheck.transform.gameObject.GetComponent<TowerValues>().range * 2, 0.05f, groundCheck.transform.gameObject.GetComponent<TowerValues>().range * 2);
                 }
 
-                if (Input.GetButtonDown("Fire2") && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+                if (Input.GetButtonDown("Fire2") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
                 {
                     upgradePopup.SetActive(true);
                     Cursor.lockState = CursorLockMode.None;

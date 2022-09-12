@@ -107,10 +107,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  maxLevel: 0
-  upgradeCost: 0
-  inflation: 0
-  maxLevelMat: {fileID: 0}
+  maxLevel: 2
+  upgradeCost: 100
+  inflation: 100
+  meshHolder: {fileID: 3785694758182558482}
+  maxLevelMat: {fileID: 2100000, guid: 5fcf646d9f34302419fb80b6816dca32, type: 2}
   range: 5
 --- !u!1 &3785694758182558482
 GameObject:
