@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-guid: 62795ea52aaf67c4699be78d09e3d257
+guid: 7ea16959f45b17549882237c6d6bd1c1
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
-  - first:
-      74: 4699274299699868179
-    second: Armature.001|Idle
   - first:
       74: -75720048931631833
     second: Armature.001|Spawn
