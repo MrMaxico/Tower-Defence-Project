@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject chest;
+    public GameObject player;
     public GameObject[] waves;
 
     public Transform[] path;
@@ -36,6 +37,7 @@ public class Spawner : MonoBehaviour
             GameObject spawned = Instantiate(waves[currentWave].GetComponent<Wave>().spawn[waveProgress], transform.position, Quaternion.identity);
             spawned.GetComponent<PathFollowingScript>().chest = chest;
             spawned.GetComponent<PathFollowingScript>().path = path;
+            spawned.GetComponent<PathFollowingScript>().player = player;
             waveProgress++;
             yield return new WaitForSeconds(spawnDelay);
             StartCoroutine(SpawnCycle());

@@ -20,6 +20,8 @@ public class PlayerScript : MonoBehaviour
     GameObject[] previewTags;
     GameObject previewTower;
 
+    public Transform[] mineToChestRoute;
+
     public Vector3[] towerOffsets;
     Vector3 rotation;
     Vector3 camrotation;
@@ -86,6 +88,11 @@ public class PlayerScript : MonoBehaviour
                 {
                     money -= towerPrices[currentSlot];
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
+                    if (placed.tag == "MineMinion")
+                    {
+                        placed.GetComponent<MineMinion>().player = gameObject;
+                        placed.GetComponent<MineMinion>().mineToChestRoute = mineToChestRoute;
+                    }
                     placed.transform.Rotate(new Vector3(0, -90, 0));
                 }
                 else if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] > money)
@@ -129,6 +136,8 @@ public class PlayerScript : MonoBehaviour
                 if (Input.GetButtonDown("Fire2") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
                 {
                     upgradePopup.SetActive(true);
+                    DestroyPreview();
+                    upgradeCostDisplay.text = $"Upgrade? Cost: {groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost}";
                     Cursor.lockState = CursorLockMode.None;
                 }
                 //DestroyPreview();
@@ -179,6 +188,11 @@ public class PlayerScript : MonoBehaviour
         else if (Input.GetButtonDown("SlotThree"))
         {
             currentSlot = 3;
+            DestroyPreview();
+        }
+        else if (Input.GetButtonDown("SlotFour"))
+        {
+            currentSlot = 4;
             DestroyPreview();
         }
         else if (Input.GetButtonDown("SlotZero"))

@@ -8,9 +8,11 @@ public class PathFollowingScript : MonoBehaviour
 {
     public Transform[] path;
 
+    public GameObject player;
     public GameObject chest;
     public GameObject gem;
     public GameObject redGem;
+    public GameObject coin;
     GameObject[] totems;
     GameObject closestTotem;
 
@@ -27,6 +29,7 @@ public class PathFollowingScript : MonoBehaviour
     {
         gem.SetActive(false);
         redGem.SetActive(false);
+        coin.SetActive(false);
     }
 
     private void Update()
@@ -100,6 +103,11 @@ public class PathFollowingScript : MonoBehaviour
         {
             redGem.SetActive(true);
             chest.GetComponent<Chest>().GemsLeft--;
+        }
+        else
+        {
+            coin.SetActive(true);
+            player.GetComponent<PlayerScript>().money--;
         }
         onReturn = true;
     }
