@@ -789,6 +789,7 @@ MonoBehaviour:
   redGem: {fileID: 8719069112999904974}
   coin: {fileID: 7072900649093318990}
   speed: 1
+  rotationSpeed: 3
   pathProgress: 0
   hp: 10
   hasTotemEffect: 0

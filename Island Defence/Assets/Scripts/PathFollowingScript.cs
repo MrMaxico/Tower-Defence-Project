@@ -17,6 +17,7 @@ public class PathFollowingScript : MonoBehaviour
     GameObject closestTotem;
 
     public float speed;
+    public float rotationSpeed;
     float slowness;
 
     public int pathProgress;
@@ -24,6 +25,8 @@ public class PathFollowingScript : MonoBehaviour
 
     bool onReturn;
     public bool hasTotemEffect;
+
+    Vector3 direction;
 
     private void Start()
     {
@@ -44,6 +47,9 @@ public class PathFollowingScript : MonoBehaviour
         if (gameObject.transform.position != path[pathProgress].position)
         {
             transform.position = Vector3.MoveTowards(transform.position, path[pathProgress].position, speed * Time.deltaTime - slowness * Time.deltaTime);
+            //transform.LookAt(path[pathProgress]);
+            direction = Vector3.RotateTowards(transform.forward, path[pathProgress].position, rotationSpeed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(direction);
         }
         else if (!onReturn && pathProgress < path.Length - 1)
         {
@@ -94,15 +100,15 @@ public class PathFollowingScript : MonoBehaviour
 
     private void PickupGem()
     {
-        if (chest.GetComponent<Chest>().GemsLeft > 1)
+        if (chest.GetComponent<Chest>().gemsLeft > 1)
         {
             gem.SetActive(true);
-            chest.GetComponent<Chest>().GemsLeft--;
+            chest.GetComponent<Chest>().gemsLeft--;
         }
-        else if (chest.GetComponent<Chest>().GemsLeft == 1)
+        else if (chest.GetComponent<Chest>().gemsLeft == 1)
         {
             redGem.SetActive(true);
-            chest.GetComponent<Chest>().GemsLeft--;
+            chest.GetComponent<Chest>().gemsLeft--;
         }
         else
         {

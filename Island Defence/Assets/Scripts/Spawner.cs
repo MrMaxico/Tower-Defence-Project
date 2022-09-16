@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Spawner : MonoBehaviour
     public int currentWave;
     public int waveProgress;
 
+    public Text waveIndicator;
+
     private void Start()
     {
         StartCoroutine(SpawnCycle());
@@ -23,17 +26,21 @@ public class Spawner : MonoBehaviour
         {
             Debug.DrawLine(path[i].position, path[i + 1].position, Color.red, 6000f);
         }
+        waveIndicator.text = $"Preparing for wave {currentWave + 1}..";
     }
 
     private IEnumerator SpawnCycle()
     {
         if (waveProgress == 0)
         {
-            yield return new WaitForSeconds(waveDelay);
+            yield return new WaitForSeconds(waveDelay / 2);
+            waveIndicator.text = $"Preparing for wave {currentWave + 1}..";
+            yield return new WaitForSeconds(waveDelay /2);
         }
 
         if (waveProgress < waves[currentWave].GetComponent<Wave>().spawn.Length)
         {
+            waveIndicator.text = $"Current wave: {currentWave + 1}";
             GameObject spawned = Instantiate(waves[currentWave].GetComponent<Wave>().spawn[waveProgress], transform.position, Quaternion.identity);
             spawned.GetComponent<PathFollowingScript>().chest = chest;
             spawned.GetComponent<PathFollowingScript>().path = path;
@@ -51,6 +58,7 @@ public class Spawner : MonoBehaviour
         else
         {
             Debug.Log("All waves completed");
+            waveIndicator.text = $"All waves completed";
         }
     }
 }
