@@ -211,6 +211,7 @@ MonoBehaviour:
   coin: {fileID: 1296892616955535596}
   mineToChestRoute: []
   speed: 1
+  rotationSpeed: 10
   timeToMine: 2
   onReturn: 0
   pathProgress: 0

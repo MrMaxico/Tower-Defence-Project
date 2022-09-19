@@ -14,6 +14,8 @@ public class BananaCannon : MonoBehaviour
     float closest;
     float hitTimer;
 
+    public int damage;
+
     Vector3 targetDirection;
     Vector3 direction;
 
@@ -27,7 +29,7 @@ public class BananaCannon : MonoBehaviour
         target = null;
         for (int i = 0; i < enemies.Length; i++)
         {
-            if (Vector3.Distance(transform.position, enemies[i].transform.position) < closest)
+            if (Vector3.Distance(transform.position, enemies[i].transform.position) < closest && enemies[i].gameObject.GetComponent<PathFollowingScript>().hp > 0)
             {
                 closest = Vector3.Distance(transform.position, enemies[i].transform.position);
                 target = enemies[i];
@@ -44,7 +46,10 @@ public class BananaCannon : MonoBehaviour
             {
                 shot = true;
                 GameObject shotBullet = Instantiate(bullet, transform.position + new Vector3(0, 0.4f, 0), Quaternion.LookRotation(direction));
-                shotBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+                //shotBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+                shotBullet.GetComponent<BulletScript>().goal = target.transform;
+                shotBullet.GetComponent<BulletScript>().bulletSpeed = bulletSpeed;
+                shotBullet.GetComponent<BulletScript>().damage = damage;
             }
 
             if (hitTimer >= 1.2)

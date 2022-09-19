@@ -28,6 +28,8 @@ public class PathFollowingScript : MonoBehaviour
 
     Vector3 direction;
 
+    public Animator animations;
+
     private void Start()
     {
         gem.SetActive(false);
@@ -62,7 +64,9 @@ public class PathFollowingScript : MonoBehaviour
 
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            animations.SetBool("Dead", true);
+            speed = 0;
+            StartCoroutine(DespawnOnDeath());
         }
 
         //slowness totem
@@ -116,5 +120,11 @@ public class PathFollowingScript : MonoBehaviour
             player.GetComponent<PlayerScript>().money--;
         }
         onReturn = true;
+    }
+
+    IEnumerator DespawnOnDeath()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
     }
 }

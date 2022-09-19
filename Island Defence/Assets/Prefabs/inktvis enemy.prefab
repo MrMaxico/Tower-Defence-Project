@@ -742,6 +742,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8701498670661915890}
   - component: {fileID: 3595882401268008146}
+  - component: {fileID: -4153128579553139816}
+  - component: {fileID: 7190290565138922189}
   m_Layer: 0
   m_Name: inktvis enemy
   m_TagString: Enemy
@@ -793,6 +795,40 @@ MonoBehaviour:
   pathProgress: 0
   hp: 10
   hasTotemEffect: 0
+  animations: {fileID: -4153128579553139816}
+--- !u!95 &-4153128579553139816
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325535428772236872}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1df63e45f1dfe1546ba9e2c29d31b3dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &7190290565138922189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325535428772236872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.8, z: 1}
+  m_Center: {x: 0, y: 0.4, z: -0.3}
 --- !u!1 &8499383417876632529
 GameObject:
   m_ObjectHideFlags: 0
