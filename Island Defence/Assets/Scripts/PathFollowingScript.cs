@@ -22,6 +22,7 @@ public class PathFollowingScript : MonoBehaviour
 
     public int pathProgress;
     public int hp;
+    public int dropAmount;
 
     bool onReturn;
     public bool hasTotemEffect;
@@ -39,6 +40,7 @@ public class PathFollowingScript : MonoBehaviour
 
     private void Update()
     {
+
         //check if enemy is at his goal
         if (transform.position == path[path.Length - 1].position && !onReturn)
         {
@@ -49,17 +51,19 @@ public class PathFollowingScript : MonoBehaviour
         if (gameObject.transform.position != path[pathProgress].position)
         {
             transform.position = Vector3.MoveTowards(transform.position, path[pathProgress].position, speed * Time.deltaTime - slowness * Time.deltaTime);
-            //transform.LookAt(path[pathProgress]);
-            direction = Vector3.RotateTowards(transform.forward, path[pathProgress].position, rotationSpeed * Time.deltaTime, 0.0f);
-            transform.rotation = Quaternion.LookRotation(direction);
+            transform.LookAt(path[pathProgress]);
         }
         else if (!onReturn && pathProgress < path.Length - 1)
         {
             pathProgress++;
         }
-        else if (onReturn &&pathProgress > 0)
+        else if (onReturn && pathProgress > 0)
         {
             pathProgress--;
+        }
+        else if (onReturn && gameObject.transform.position == path[0].position)
+        {
+            Destroy(gameObject);
         }
 
         if (hp <= 0)
@@ -125,6 +129,15 @@ public class PathFollowingScript : MonoBehaviour
     IEnumerator DespawnOnDeath()
     {
         yield return new WaitForSeconds(1.5f);
+        player.GetComponent<PlayerScript>().money += dropAmount;
+        if (redGem.activeSelf || gem.activeSelf)
+        {
+            chest.GetComponent<Chest>().gemsLeft++;
+        }
+        else if (coin.activeSelf)
+        {
+            player.GetComponent<PlayerScript>().money++;
+        }
         Destroy(gameObject);
     }
 }

@@ -373,7 +373,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b1c6a0730b22fc940a42d8f0c09d14cb, type: 2}
+  - {fileID: 2100000, guid: b722591fa490b704eacf4594602a330d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -467,7 +467,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b1c6a0730b22fc940a42d8f0c09d14cb, type: 2}
+  - {fileID: 2100000, guid: b722591fa490b704eacf4594602a330d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -794,6 +794,7 @@ MonoBehaviour:
   rotationSpeed: 3
   pathProgress: 0
   hp: 10
+  dropAmount: 2
   hasTotemEffect: 0
   animations: {fileID: -4153128579553139816}
 --- !u!95 &-4153128579553139816
