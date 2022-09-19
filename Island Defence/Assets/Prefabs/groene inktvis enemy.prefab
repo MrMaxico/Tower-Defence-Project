@@ -794,7 +794,7 @@ MonoBehaviour:
   rotationSpeed: 3
   pathProgress: 0
   hp: 20
-  dropAmount: 2
+  dropAmount: 3
   hasTotemEffect: 0
   animations: {fileID: -4153128579553139816}
 --- !u!95 &-4153128579553139816

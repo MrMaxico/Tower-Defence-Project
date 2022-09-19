@@ -195,6 +195,11 @@ public class PlayerScript : MonoBehaviour
             currentSlot = 4;
             DestroyPreview();
         }
+        else if (Input.GetButtonDown("SlotFive"))
+        {
+            currentSlot = 5;
+            DestroyPreview();
+        }
         else if (Input.GetButtonDown("SlotZero"))
         {
             currentSlot = 0;
@@ -202,7 +207,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         int lastFrameSlot = currentSlot;
-        currentSlot += Mathf.RoundToInt(Input.mouseScrollDelta.y);
+        currentSlot -= Mathf.RoundToInt(Input.mouseScrollDelta.y);
         if (currentSlot > towers.Length - 1)
         {
             currentSlot = 0;
