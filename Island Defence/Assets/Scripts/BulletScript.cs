@@ -6,6 +6,8 @@ public class BulletScript : MonoBehaviour
 {
     public Transform goal;
 
+    public Vector3 offset;
+
     public float bulletSpeed;
 
     public int damage;
@@ -14,9 +16,9 @@ public class BulletScript : MonoBehaviour
     {
         if (goal != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, goal.position, bulletSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, goal.position + offset, bulletSpeed * Time.deltaTime);
 
-            if (transform.position == goal.position)
+            if (transform.position == goal.position + offset)
             {
                 Debug.Log("BananaSplit");
                 goal.gameObject.GetComponent<PathFollowingScript>().hp -= damage;

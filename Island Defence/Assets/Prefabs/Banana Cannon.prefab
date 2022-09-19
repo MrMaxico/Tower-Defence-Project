@@ -252,6 +252,7 @@ MonoBehaviour:
   rotationSpeed: 10
   bulletSpeed: 10
   damage: 1
+  offset: {x: 0, y: 0.5, z: 0}
 --- !u!95 &2234490249917982442
 Animator:
   serializedVersion: 4

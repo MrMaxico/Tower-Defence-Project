@@ -16,6 +16,7 @@ public class BananaCannon : MonoBehaviour
 
     public int damage;
 
+    public Vector3 offset;
     Vector3 targetDirection;
     Vector3 direction;
 
@@ -37,7 +38,7 @@ public class BananaCannon : MonoBehaviour
         }
         if (target != null)
         {
-            targetDirection = target.transform.position - transform.position;
+            targetDirection = (target.transform.position + offset) - transform.position;
             direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(direction);
 
@@ -50,6 +51,7 @@ public class BananaCannon : MonoBehaviour
                 shotBullet.GetComponent<BulletScript>().goal = target.transform;
                 shotBullet.GetComponent<BulletScript>().bulletSpeed = bulletSpeed;
                 shotBullet.GetComponent<BulletScript>().damage = damage;
+                shotBullet.GetComponent<BulletScript>().offset = offset;
             }
 
             if (hitTimer >= 1.2)

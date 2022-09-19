@@ -373,7 +373,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b722591fa490b704eacf4594602a330d, type: 2}
+  - {fileID: 2100000, guid: cfafd913d8ca49d43b0df15409ac1756, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -467,7 +467,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b722591fa490b704eacf4594602a330d, type: 2}
+  - {fileID: 2100000, guid: cfafd913d8ca49d43b0df15409ac1756, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: -4153128579553139816}
   - component: {fileID: 7190290565138922189}
   m_Layer: 0
-  m_Name: inktvis enemy
+  m_Name: groene inktvis enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -790,11 +790,11 @@ MonoBehaviour:
   gem: {fileID: 4516076649485372708}
   redGem: {fileID: 8719069112999904974}
   coin: {fileID: 7072900649093318990}
-  speed: 1
+  speed: 1.3
   rotationSpeed: 3
   pathProgress: 0
-  hp: 10
-  dropAmount: 1
+  hp: 20
+  dropAmount: 2
   hasTotemEffect: 0
   animations: {fileID: -4153128579553139816}
 --- !u!95 &-4153128579553139816
