@@ -4,26 +4,8 @@ ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: -6736847080589436340
-    second: Icosphere|CylinderAction
-  - first:
-      74: -7371124960320680431
-    second: Icosphere|Icosphere.003Action
-  - first:
-      74: 6639205238635089029
-    second: Icosphere|IcosphereAction
-  - first:
       74: 652370289695114041
     second: Icosphere|shoot
-  - first:
-      74: 271997525282036724
-    second: Armature|CylinderAction
-  - first:
-      74: -7895161183481485846
-    second: Armature|Icosphere.003Action
-  - first:
-      74: -4141349546125388587
-    second: Armature|IcosphereAction
   - first:
       74: 1300770197434942443
     second: Armature|shoot
