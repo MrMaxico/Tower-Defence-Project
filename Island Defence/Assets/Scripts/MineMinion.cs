@@ -18,6 +18,7 @@ public class MineMinion : MonoBehaviour
     public int pathProgress;
 
     Vector3 direction;
+    Vector3 targetDirection;
 
     private void Start()
     {
@@ -36,7 +37,8 @@ public class MineMinion : MonoBehaviour
         if (gameObject.transform.position != mineToChestRoute[pathProgress].position)
         {
             transform.position = Vector3.MoveTowards(transform.position, mineToChestRoute[pathProgress].position, speed * Time.deltaTime);
-            direction = Vector3.RotateTowards(transform.forward, mineToChestRoute[pathProgress].position, rotationSpeed * Time.deltaTime, 0.0f);
+            targetDirection = mineToChestRoute[pathProgress].position - transform.position;
+            direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(direction);
         }
         else if (!onReturn && pathProgress < mineToChestRoute.Length - 1)

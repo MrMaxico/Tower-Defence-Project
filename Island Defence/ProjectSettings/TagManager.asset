@@ -10,6 +10,7 @@ TagManager:
   - Totem
   - Tower
   - MineMinion
+  - Gem
   layers:
   - Default
   - TransparentFX

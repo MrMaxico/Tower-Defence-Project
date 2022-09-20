@@ -25,16 +25,22 @@ public class PathFollowingScript : MonoBehaviour
     public int dropAmount;
 
     bool onReturn;
+    bool hasDied;
     public bool hasTotemEffect;
 
     Vector3 direction;
+    Vector3 targetDirection;
 
     public Animator animations;
 
     private void Start()
     {
         gem.SetActive(false);
+        gem.GetComponent<Gem>().parent = gameObject;
+        gem.GetComponent<Gem>().chest = chest;
         redGem.SetActive(false);
+        redGem.GetComponent<Gem>().parent = gameObject;
+        redGem.GetComponent<Gem>().chest = chest;
         coin.SetActive(false);
     }
 
@@ -51,7 +57,10 @@ public class PathFollowingScript : MonoBehaviour
         if (gameObject.transform.position != path[pathProgress].position)
         {
             transform.position = Vector3.MoveTowards(transform.position, path[pathProgress].position, speed * Time.deltaTime - slowness * Time.deltaTime);
-            transform.LookAt(path[pathProgress]);
+            targetDirection = path[pathProgress].position - transform.position;
+            direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(direction);
+            //transform.LookAt(path[pathProgress]);
         }
         else if (!onReturn && pathProgress < path.Length - 1)
         {
@@ -66,8 +75,9 @@ public class PathFollowingScript : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (hp <= 0)
+        if (hp <= 0 && !hasDied)
         {
+            hasDied = true;
             animations.SetBool("Dead", true);
             speed = 0;
             StartCoroutine(DespawnOnDeath());
@@ -130,13 +140,21 @@ public class PathFollowingScript : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         player.GetComponent<PlayerScript>().money += dropAmount;
-        if (redGem.activeSelf || gem.activeSelf)
+        if (gem.activeSelf)
         {
-            chest.GetComponent<Chest>().gemsLeft++;
+            GameObject droppedGem = Instantiate(gem, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            droppedGem.GetComponent<Gem>().dropped = true;
+            droppedGem.GetComponent<Gem>().chest = chest;
+        }
+        else if (redGem.activeSelf)
+        {
+            GameObject droppedGem = Instantiate(redGem, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            droppedGem.GetComponent<Gem>().dropped = true;
+            droppedGem.GetComponent<Gem>().chest = chest;
         }
         else if (coin.activeSelf)
         {
-            player.GetComponent<PlayerScript>().money++;
+            Instantiate(coin, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }
         Destroy(gameObject);
     }

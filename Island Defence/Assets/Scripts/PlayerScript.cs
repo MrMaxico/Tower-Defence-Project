@@ -297,4 +297,19 @@ public class PlayerScript : MonoBehaviour
         popup.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        Debug.Log("Ive got a feeling!");
+        if (collision.gameObject.tag == "Gem")
+        {
+            Debug.Log("Ooh shiny!");
+            if (collision.gameObject.GetComponent<Gem>().dropped)
+            {
+                Debug.Log("Im rich now!");
+                collision.gameObject.GetComponent<Gem>().chest.GetComponent<Chest>().gemsLeft++;
+                Destroy(collision.gameObject);
+            }
+        }
+    }
 }

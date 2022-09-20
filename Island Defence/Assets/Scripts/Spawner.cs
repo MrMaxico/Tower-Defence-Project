@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     public GameObject chest;
     public GameObject player;
     public GameObject[] waves;
+    GameObject[] enemies;
 
     public Transform[] path;
 
@@ -29,13 +30,17 @@ public class Spawner : MonoBehaviour
         waveIndicator.text = $"Preparing for wave {currentWave + 1}..";
     }
 
+    private void Update()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
     private IEnumerator SpawnCycle()
     {
         if (waveProgress == 0)
         {
-            yield return new WaitForSeconds(waveDelay / 2);
             waveIndicator.text = $"Preparing for wave {currentWave + 1}..";
-            yield return new WaitForSeconds(waveDelay /2);
+            yield return new WaitForSeconds(waveDelay);
         }
 
         if (waveProgress < waves[currentWave].GetComponent<Wave>().spawn.Length)
@@ -49,13 +54,23 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(spawnDelay);
             StartCoroutine(SpawnCycle());
         }
-        else if (currentWave < waves.Length - 1)
+        else if (currentWave < waves.Length - 1 && enemies.Length == 0)
         {
             waveProgress = 0;
             currentWave++;
             StartCoroutine(SpawnCycle());
         }
-        else
+        //else if (currentWave < waves.Length - 1 && enemies.Length != 0)
+        //{
+        //    yield return new WaitForSeconds(0.1f);
+        //    StartCoroutine(SpawnCycle());
+        //}
+        else if (enemies.Length != 0)
+        {
+            yield return new WaitForSeconds(0.1f);
+            StartCoroutine(SpawnCycle());
+        }
+        else if (enemies.Length == 0)
         {
             Debug.Log("All waves completed");
             waveIndicator.text = $"All waves completed";

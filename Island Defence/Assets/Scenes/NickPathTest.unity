@@ -2823,7 +2823,7 @@ MonoBehaviour:
   - {fileID: 203668073}
   - {fileID: 800277092}
   spawnDelay: 1
-  waveDelay: 30
+  waveDelay: 10
   currentWave: 0
   waveProgress: 0
   waveIndicator: {fileID: 2142558712}
@@ -2972,7 +2972,7 @@ MonoBehaviour:
   - {fileID: 163883935}
   - {fileID: 1488094480}
   spawnDelay: 1
-  waveDelay: 30
+  waveDelay: 10
   currentWave: 0
   waveProgress: 0
   waveIndicator: {fileID: 2142558712}

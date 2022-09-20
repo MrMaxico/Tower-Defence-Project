@@ -119,7 +119,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 76
+=======
+  controlID: 58
+>>>>>>> Stashed changes
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +148,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 65
+=======
+  controlID: 59
+>>>>>>> Stashed changes
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +177,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 66
+=======
+  controlID: 60
+>>>>>>> Stashed changes
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,10 +199,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< Updated upstream
     width: 289.6
     height: 474.4
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+    width: 362
+    height: 610
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Stashed changes
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -310,15 +329,16 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: -5742929081362436974, guid: 1df63e45f1dfe1546ba9e2c29d31b3dd, type: 2}
     - {fileID: -8496546842997072697, guid: ca5f8cf1908f15745aaae65d8682f684, type: 2}
+    - {fileID: -305474674126078678, guid: 5d477954f0019a647815d2f7073ccc6b, type: 2}
     m_ValueSerializationHelper:
-    - e00: 3
+    - e00: 0.93576187
       e01: 0
       e02: 0
-      e03: -665.4821
+      e03: -197.57597
       e10: 0
-      e11: 3
+      e11: 0.93576187
       e12: 0
-      e13: 9.52948
+      e13: 173.18379
       e20: 0
       e21: 0
       e22: 1
@@ -343,10 +363,26 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 0.8999034
+      e01: 0
+      e02: 0
+      e03: 141.66205
+      e10: 0
+      e11: 0.8999034
+      e12: 0
+      e13: 195.0437
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: ca5f8cf1908f15745aaae65d8682f684, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 5d477954f0019a647815d2f7073ccc6b, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -8496546842997072697, guid: ca5f8cf1908f15745aaae65d8682f684, type: 2}
+  - m_Target: {fileID: -305474674126078678, guid: 5d477954f0019a647815d2f7073ccc6b, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -392,7 +428,11 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 2a780000
       m_LastClickedID: 0
+<<<<<<< Updated upstream
       m_ExpandedIDs: 70f7ffff
+=======
+      m_ExpandedIDs: 3876fbff3ca0ffff38faffffb473000026740000
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -674,9 +714,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: 26.728233, y: 0.1674262, z: -5.1547585}
     speed: 2
     m_Value: {x: 26.728233, y: 0.1674262, z: -5.1547585}
+=======
+    m_Target: {x: 21.13192, y: 3.7271056, z: -1.6253015}
+    speed: 2
+    m_Value: {x: 21.13192, y: 3.7271056, z: -1.6253015}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -723,6 +769,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< Updated upstream
     m_Target: {x: -0.044598322, y: -0.8987906, z: 0.094186805, w: -0.42585862}
     speed: 2
     m_Value: {x: -0.04331976, y: -0.8990511, z: 0.09148814, w: -0.42598194}
@@ -730,6 +777,15 @@ MonoBehaviour:
     m_Target: 0.4995845
     speed: 2
     m_Value: 0.5231251
+=======
+    m_Target: {x: 0.0550917, y: -0.6594005, z: 0.048553426, w: 0.7481966}
+    speed: 2
+    m_Value: {x: 0.05509171, y: -0.6594006, z: 0.048553433, w: 0.74819666}
+  m_Size:
+    m_Target: 0.5103901
+    speed: 2
+    m_Value: 0.5103901
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -887,23 +943,38 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< Updated upstream
     - Assets/Materials/dartgun guy
+=======
+    - Assets/Prefabs
+>>>>>>> Stashed changes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< Updated upstream
   - Assets/Materials/dartgun guy
+=======
+  - Assets/Prefabs
+>>>>>>> Stashed changes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\luukv\OneDrive\Documents\GitHub\Tower-Defence-Project\Island
     Defence
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< Updated upstream
     scrollPos: {x: 0, y: 19}
     m_SelectedIDs: 2a780000
     m_LastClickedID: 30762
     m_ExpandedIDs: 00000000967500009875000000ca9a3b
+=======
+    scrollPos: {x: 0, y: 360}
+    m_SelectedIDs: 3e790000
+    m_LastClickedID: 31038
+    m_ExpandedIDs: 000000007077000072770000387900003a790000867b000000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -931,7 +1002,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
     m_ExpandedIDs: 000000009675000098750000
+=======
+    m_ExpandedIDs: 000000007077000072770000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -959,7 +1034,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000084240000fe7000007e900000e872000000000000307a0000
+    m_ExpandedInstanceIDs: c623000084240000fe7000007e900000e872000000000000307a0000aab90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
