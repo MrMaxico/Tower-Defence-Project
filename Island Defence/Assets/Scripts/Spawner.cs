@@ -60,11 +60,6 @@ public class Spawner : MonoBehaviour
             currentWave++;
             StartCoroutine(SpawnCycle());
         }
-        //else if (currentWave < waves.Length - 1 && enemies.Length != 0)
-        //{
-        //    yield return new WaitForSeconds(0.1f);
-        //    StartCoroutine(SpawnCycle());
-        //}
         else if (enemies.Length != 0)
         {
             yield return new WaitForSeconds(0.1f);
