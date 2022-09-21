@@ -790,11 +790,11 @@ MonoBehaviour:
   gem: {fileID: 5816876423034960688}
   redGem: {fileID: 4472203851939264237}
   coin: {fileID: 2205119974366161371}
-  speed: 1.3
+  speed: 1
   rotationSpeed: 3
   pathProgress: 0
-  hp: 20
-  dropAmount: 3
+  hp: 18
+  dropAmount: 20
   hasTotemEffect: 0
   animations: {fileID: -4153128579553139816}
 --- !u!95 &-4153128579553139816

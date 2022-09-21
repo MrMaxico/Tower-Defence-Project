@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gem : MonoBehaviour
+public class PickUps : MonoBehaviour
 {
     public bool dropped;
     public bool redGem;
@@ -22,8 +22,8 @@ public class Gem : MonoBehaviour
         if (dropped && chest.GetComponent<Chest>().gemsLeft > 0 && redGem)
         {
             GameObject spawnedGem = Instantiate(gem, transform.position, Quaternion.identity);
-            spawnedGem.GetComponent<Gem>().chest = chest;
-            spawnedGem.GetComponent<Gem>().dropped = dropped;
+            spawnedGem.GetComponent<PickUps>().chest = chest;
+            spawnedGem.GetComponent<PickUps>().dropped = dropped;
             Destroy(gameObject);
         }
     }

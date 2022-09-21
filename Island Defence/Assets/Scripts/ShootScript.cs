@@ -13,6 +13,7 @@ public class ShootScript : MonoBehaviour
     public float range;
     public float rotationSpeed;
     public float bulletSpeed;
+    public float firerate;
     float closest;
     float hitTimer;
 
@@ -70,7 +71,7 @@ public class ShootScript : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(direction);
 
             hitTimer += Time.deltaTime;
-            if (hitTimer >= 1.008333333333333 && !shot)
+            if (hitTimer >= firerate && !shot)
             {
                 shot = true;
                 GameObject shotBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.LookRotation(direction));

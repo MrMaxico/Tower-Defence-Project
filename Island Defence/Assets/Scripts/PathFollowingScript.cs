@@ -36,11 +36,11 @@ public class PathFollowingScript : MonoBehaviour
     private void Start()
     {
         gem.SetActive(false);
-        gem.GetComponent<Gem>().parent = gameObject;
-        gem.GetComponent<Gem>().chest = chest;
+        gem.GetComponent<PickUps>().parent = gameObject;
+        gem.GetComponent<PickUps>().chest = chest;
         redGem.SetActive(false);
-        redGem.GetComponent<Gem>().parent = gameObject;
-        redGem.GetComponent<Gem>().chest = chest;
+        redGem.GetComponent<PickUps>().parent = gameObject;
+        redGem.GetComponent<PickUps>().chest = chest;
         coin.SetActive(false);
     }
 
@@ -143,18 +143,19 @@ public class PathFollowingScript : MonoBehaviour
         if (gem.activeSelf)
         {
             GameObject droppedGem = Instantiate(gem, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-            droppedGem.GetComponent<Gem>().dropped = true;
-            droppedGem.GetComponent<Gem>().chest = chest;
+            droppedGem.GetComponent<PickUps>().dropped = true;
+            droppedGem.GetComponent<PickUps>().chest = chest;
         }
         else if (redGem.activeSelf)
         {
             GameObject droppedGem = Instantiate(redGem, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-            droppedGem.GetComponent<Gem>().dropped = true;
-            droppedGem.GetComponent<Gem>().chest = chest;
+            droppedGem.GetComponent<PickUps>().dropped = true;
+            droppedGem.GetComponent<PickUps>().chest = chest;
         }
         else if (coin.activeSelf)
         {
-            Instantiate(coin, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            GameObject droppedCoin = Instantiate(coin, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            droppedCoin.GetComponent<PickUps>().dropped = true;
         }
         Destroy(gameObject);
     }

@@ -304,10 +304,19 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.tag == "Gem")
         {
             Debug.Log("Ooh shiny!");
-            if (collision.gameObject.GetComponent<Gem>().dropped)
+            if (collision.gameObject.GetComponent<PickUps>().dropped)
             {
                 Debug.Log("Im rich now!");
-                collision.gameObject.GetComponent<Gem>().chest.GetComponent<Chest>().gemsLeft++;
+                collision.gameObject.GetComponent<PickUps>().chest.GetComponent<Chest>().gemsLeft++;
+                Destroy(collision.gameObject);
+            }
+        }
+        else if (collision.gameObject.tag == "Coin")
+        {
+            if (collision.gameObject.GetComponent<PickUps>().dropped)
+            {
+                Debug.Log("Feeling like mario");
+                money++;
                 Destroy(collision.gameObject);
             }
         }
