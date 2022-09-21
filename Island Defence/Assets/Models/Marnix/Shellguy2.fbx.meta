@@ -7,6 +7,9 @@ ModelImporter:
       74: -982115091633673366
     second: Armature|Death
   - first:
+      74: 8469038361199828435
+    second: Armature|Moving
+  - first:
       74: 8349542763059015795
     second: Armature|Walk
   externalObjects: {}
