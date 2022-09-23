@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4212333887211191781}
   - component: {fileID: 4212333887211191782}
   - component: {fileID: 2722132373298245585}
+  - component: {fileID: 8489883736056557862}
   m_Layer: 0
   m_Name: ShellGuyEnemy
   m_TagString: Enemy
@@ -78,6 +79,19 @@ MonoBehaviour:
   closed: {fileID: 3941879529016663204}
   open: {fileID: 3941879528192880478}
   speedMultiplier: 4
+--- !u!65 &8489883736056557862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212333887211191780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1, z: 1.7}
+  m_Center: {x: -0.3, y: 0.3, z: 0.3}
 --- !u!1001 &4212333886537015797
 PrefabInstance:
   m_ObjectHideFlags: 0

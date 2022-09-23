@@ -34,6 +34,7 @@ public class PlayerScript : MonoBehaviour
     public bool paused;
     bool previewSpawned;
     bool previewIsRange;
+    bool rotating;
 
     public Text moneyDisplay;
     public Text upgradeCostDisplay;
@@ -163,6 +164,10 @@ public class PlayerScript : MonoBehaviour
                     Cursor.lockState = CursorLockMode.None;
                     DestroyPreview();
                 }
+                else if (Input.GetButtonDown("Fire3"))
+                {
+                    rotating = true;
+                }
             }
             else if (groundCheck.transform.gameObject.tag != "Preview")
             {
@@ -256,6 +261,8 @@ public class PlayerScript : MonoBehaviour
 
     private void DestroyPreview()
     {
+        rotating = false;
+
         // Debug.Log("Trying to kill previews"); // if you enable this the console will be spammed
         previewTags = GameObject.FindGameObjectsWithTag("Preview");
         if (previewTags.Length > 0)

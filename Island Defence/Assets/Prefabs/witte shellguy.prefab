@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 965276098145708178}
   - component: {fileID: 965276098145708177}
   - component: {fileID: 1357442614172727974}
+  - component: {fileID: 2289644714949028497}
   m_Layer: 0
   m_Name: witte shellguy
   m_TagString: Enemy
@@ -78,6 +79,19 @@ MonoBehaviour:
   closed: {fileID: 118273018141755859}
   open: {fileID: 118273017387448873}
   speedMultiplier: 4
+--- !u!65 &2289644714949028497
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965276098145708179}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1, z: 1.7}
+  m_Center: {x: -0.3, y: 0.3, z: 0.3}
 --- !u!1001 &965276097486222466
 PrefabInstance:
   m_ObjectHideFlags: 0

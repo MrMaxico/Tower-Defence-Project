@@ -36,9 +36,9 @@ public class SlingshotScript : MonoBehaviour
         {
             shot = true;
             GameObject shotBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.LookRotation(direction));
-            shotBullet.GetComponent<BulletScript>().goal = target.transform;
-            shotBullet.GetComponent<BulletScript>().bulletSpeed = bulletSpeed;
-            shotBullet.GetComponent<BulletScript>().damage = damage;
+            shotBullet.GetComponent<DurianScript>().goal = target.transform;
+            shotBullet.GetComponent<DurianScript>().bulletSpeed = bulletSpeed;
+            shotBullet.GetComponent<DurianScript>().damage = damage;
         }
 
         if (hitTimer >= firerate)

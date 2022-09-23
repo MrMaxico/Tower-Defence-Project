@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5485167233663429032}
   - component: {fileID: 5485167233663429035}
   - component: {fileID: 6029467965169515420}
+  - component: {fileID: 1669502436873250455}
   m_Layer: 0
   m_Name: grijze shellguy
   m_TagString: Enemy
@@ -78,6 +79,19 @@ MonoBehaviour:
   closed: {fileID: 4674265102237747433}
   open: {fileID: 4674265102556134163}
   speedMultiplier: 4
+--- !u!65 &1669502436873250455
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5485167233663429033}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1, z: 1.7}
+  m_Center: {x: -0.3, y: 0.3, z: 0.3}
 --- !u!1001 &2053874605062590461
 PrefabInstance:
   m_ObjectHideFlags: 0
