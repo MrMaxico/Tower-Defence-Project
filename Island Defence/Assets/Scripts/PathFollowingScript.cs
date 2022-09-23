@@ -42,6 +42,8 @@ public class PathFollowingScript : MonoBehaviour
         redGem.GetComponent<PickUps>().parent = gameObject;
         redGem.GetComponent<PickUps>().chest = chest;
         coin.SetActive(false);
+        coin.GetComponent<PickUps>().parent = gameObject;
+        coin.GetComponent<PickUps>().chest = chest;
     }
 
     private void Update()
@@ -72,6 +74,10 @@ public class PathFollowingScript : MonoBehaviour
         }
         else if (onReturn && gameObject.transform.position == path[0].position)
         {
+            if (redGem.activeSelf)
+            {
+                Debug.Log("Game over!");
+            }
             Destroy(gameObject);
         }
 

@@ -71,7 +71,7 @@ public class ShootScript : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(direction);
 
             hitTimer += Time.deltaTime;
-            if (hitTimer >= firerate && !shot)
+            if (hitTimer >= firerate - .5f && !shot)
             {
                 shot = true;
                 GameObject shotBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.LookRotation(direction));
@@ -82,7 +82,7 @@ public class ShootScript : MonoBehaviour
                 shotBullet.GetComponent<BulletScript>().offset = offset;
             }
 
-            if (hitTimer >= 1.2)
+            if (hitTimer >= firerate)
             {
                 hitTimer = 0;
                 shot = false;

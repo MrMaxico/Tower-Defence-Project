@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6703802545417014954}
   - component: {fileID: -237524545263007303}
   - component: {fileID: 1653184015951413772}
+  - component: {fileID: 3457293464358254484}
   m_Layer: 0
   m_Name: slingshot
   m_TagString: Tower
@@ -53,6 +54,7 @@ MonoBehaviour:
   range: 5
   rotationSpeed: 5
   bulletSpeed: 5
+  firerate: 0
   damage: 1
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &-237524545263007303
@@ -87,6 +89,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 2, z: 1.3}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &3457293464358254484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930783959383015838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9ff741313798b4685619c4ea302da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  target: {fileID: 0}
+  bulletSpawn: {fileID: 0}
+  range: 0
+  rotationSpeed: 0
+  bulletSpeed: 0
+  firerate: 0
+  damage: 0
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &2645790537221921727
 GameObject:
   m_ObjectHideFlags: 0

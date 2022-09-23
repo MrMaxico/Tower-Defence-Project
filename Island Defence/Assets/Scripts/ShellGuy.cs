@@ -19,7 +19,7 @@ public class ShellGuy : MonoBehaviour
 
     private void Update()
     {
-        if (!opened && GetComponent<PathFollowingScript>().hp == (startHp * 0.15f))
+        if (!opened && GetComponent<PathFollowingScript>().hp <= (startHp * 0.15f))
         {
             closed.SetActive(false);
             open.SetActive(true);
