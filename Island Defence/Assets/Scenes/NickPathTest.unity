@@ -983,7 +983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303447476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1779146, y: 0.79213905, z: -4.7327166}
+  m_LocalPosition: {x: 4.1779146, y: 1, z: -4.7327166}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1025,6 +1025,7 @@ MonoBehaviour:
   - {fileID: 8193156307660798991, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
   - {fileID: 1929482790252691797, guid: 9aa51cfea793e434d920951aa00b3012, type: 3}
   - {fileID: 5725283674976804988, guid: 974345440fd676b4caefe95074075a66, type: 3}
+  rotatingTower: {fileID: 0}
   mineToChestRoute:
   - {fileID: 1268261400}
   - {fileID: 1642470049}

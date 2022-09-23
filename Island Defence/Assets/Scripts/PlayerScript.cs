@@ -19,6 +19,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject[] towers;
     GameObject[] previewTags;
     GameObject previewTower;
+    public GameObject rotatingTower;
 
     public Transform[] mineToChestRoute;
 
@@ -74,7 +75,7 @@ public class PlayerScript : MonoBehaviour
             cam.transform.eulerAngles = camrotation;
         }
 
-        //place and upgrade towers
+        //place, upgrade and rotate towers
         if (Physics.Raycast(transform.position, cam.GetComponent<Transform>().forward, out groundCheck, 4))
         {
             if (groundCheck.transform.gameObject.tag == "Floor")
@@ -164,9 +165,10 @@ public class PlayerScript : MonoBehaviour
                     Cursor.lockState = CursorLockMode.None;
                     DestroyPreview();
                 }
-                else if (Input.GetButtonDown("Fire3"))
+                else if (Input.GetButtonDown("Rotate"))
                 {
-                    rotating = true;
+                    groundCheck.transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, transform.position - new Vector3(0, -1, 0) - groundCheck.transform.position, 10000 * Time.deltaTime, 0.0f));
+                    groundCheck.transform.rotation = Quaternion.Euler(0, groundCheck.transform.rotation.eulerAngles.y, 0);
                 }
             }
             else if (groundCheck.transform.gameObject.tag != "Preview")
