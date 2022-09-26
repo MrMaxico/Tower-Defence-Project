@@ -281,9 +281,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8620199731585518954, guid: cd59f249d67224742a445be2d8be59b7, type: 3}
   bulletSpawn: {fileID: 4797360025232178351}
-  range: 8
+  range: 6
   rotationSpeed: 10
   bulletSpeed: 10
+  firerate: 2
   damage: 3
   offset: {x: 0, y: 0.5, z: 0}
 --- !u!95 &2234490249917982442
@@ -314,7 +315,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8193156307660798991}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.4, y: 1.2, z: 4}

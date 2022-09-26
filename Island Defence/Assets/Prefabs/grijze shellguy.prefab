@@ -59,6 +59,7 @@ MonoBehaviour:
   coin: {fileID: 5159907150589140494}
   speed: 0.5
   rotationSpeed: 3
+  timeTillNextEnemySpawn: 4
   pathProgress: 0
   hp: 100
   dropAmount: 50

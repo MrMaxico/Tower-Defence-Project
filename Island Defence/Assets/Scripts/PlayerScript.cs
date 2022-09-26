@@ -207,6 +207,11 @@ public class PlayerScript : MonoBehaviour
             currentSlot = 5;
             DestroyPreview();
         }
+        else if (Input.GetButtonDown("SlotSix"))
+        {
+            currentSlot = 5;
+            DestroyPreview();
+        }
         else if (Input.GetButtonDown("SlotZero"))
         {
             currentSlot = 0;

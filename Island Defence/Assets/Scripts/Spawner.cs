@@ -51,6 +51,7 @@ public class Spawner : MonoBehaviour
             spawned.GetComponent<PathFollowingScript>().path = path;
             spawned.GetComponent<PathFollowingScript>().player = player;
             waveProgress++;
+            spawnDelay = spawned.GetComponent<PathFollowingScript>().timeTillNextEnemySpawn;
             yield return new WaitForSeconds(spawnDelay);
             StartCoroutine(SpawnCycle());
         }
