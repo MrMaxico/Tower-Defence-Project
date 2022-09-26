@@ -9,11 +9,10 @@ public class PlayerScript : MonoBehaviour
     public float speed;
     public float maxXRotation;
     float mouseVertical;
-
+    [Header("ga Deze toe voegen bitch", order = 0)]
     public GameObject cam;
     public GameObject tooPoorPopup;
     public GameObject upgradePopup;
-    public GameObject rangeIndicator;
     public GameObject rangePreview;
     public GameObject[] previewTowers;
     public GameObject[] towers;
