@@ -127,7 +127,7 @@ public class SettingsMenu : MonoBehaviour
     public void LoadLevel1()
     {
         buttonClick.Play();
-        SceneManager.LoadScene("Max");
+        SceneManager.LoadScene("franswildit");
     }
 
     public void LoadLevel2()
