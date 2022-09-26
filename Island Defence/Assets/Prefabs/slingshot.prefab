@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 549755507990616868}
-  - component: {fileID: 6703802545417014954}
   - component: {fileID: -237524545263007303}
   - component: {fileID: 1653184015951413772}
   - component: {fileID: 3457293464358254484}
@@ -38,26 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6703802545417014954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930783959383015838}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbce9df937b5def40aa9b3f3aeae50c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 249045077733848068, guid: dacca13d7fbc69e41bc417691374cb1a, type: 3}
-  bulletSpawn: {fileID: 1176150101125657802}
-  range: 5
-  rotationSpeed: 5
-  bulletSpeed: 5
-  firerate: 0
-  damage: 1
-  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &-237524545263007303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +64,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930783959383015838}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.3, y: 2, z: 1.3}
@@ -105,7 +84,7 @@ MonoBehaviour:
   bullet: {fileID: 249045077733848068, guid: dacca13d7fbc69e41bc417691374cb1a, type: 3}
   target: {fileID: 3558983138966462983}
   bulletSpawn: {fileID: 1176150101125657802}
-  range: 5
+  range: 7
   rotationSpeed: 0
   bulletSpeed: 5
   firerate: 3

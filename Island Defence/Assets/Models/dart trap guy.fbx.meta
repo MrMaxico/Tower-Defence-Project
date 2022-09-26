@@ -12,6 +12,9 @@ ModelImporter:
   - first:
       74: 1406896137663560467
     second: Armature|shooting
+  - first:
+      74: -3845511880922722653
+    second: Icosphere.003|getting ready
   externalObjects: {}
   materials:
     materialImportMode: 2

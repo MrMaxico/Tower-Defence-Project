@@ -1014,6 +1014,7 @@ MonoBehaviour:
   previewTowers:
   - {fileID: 5301223027251737293, guid: 4680d749a1f36274fa7461171ba12f13, type: 3}
   - {fileID: 1651777674924340646, guid: 17da9bdde2435bf4d8c2d008fa314076, type: 3}
+  - {fileID: 8537871233078896281, guid: 3c8737a588052eb4ba0c3e3673de94d4, type: 3}
   - {fileID: 6043484094029744068, guid: a529d96f10a347f42a7a5b9bf1cce9a6, type: 3}
   - {fileID: 165752393500276058, guid: 30e75ab8049eff34195d87c7c0168cbf, type: 3}
   - {fileID: 2845179494265806899, guid: 737b351234d09784da127319f96c791a, type: 3}
@@ -1021,6 +1022,7 @@ MonoBehaviour:
   towers:
   - {fileID: 6284026288055937439, guid: 934c96c987608d744a08873c19188745, type: 3}
   - {fileID: 1651777674924340646, guid: 17da9bdde2435bf4d8c2d008fa314076, type: 3}
+  - {fileID: 1868971854468921134, guid: 07d3fda03478eb34b906ffead83c3970, type: 3}
   - {fileID: 930783959383015838, guid: a28cd94c560d254499a87582cee06794, type: 3}
   - {fileID: 8193156307660798991, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
   - {fileID: 1929482790252691797, guid: 9aa51cfea793e434d920951aa00b3012, type: 3}
@@ -1034,12 +1036,13 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0.31, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  towerPrices: e7ffffff000000000a00000014000000190000000a000000
+  towerPrices: e7ffffff00000000280000004b000000780000000a0000000a000000
   currentSlot: 1
-  money: 50
+  money: 200
   paused: 0
   moneyDisplay: {fileID: 247899743}
   upgradeCostDisplay: {fileID: 1092312605}

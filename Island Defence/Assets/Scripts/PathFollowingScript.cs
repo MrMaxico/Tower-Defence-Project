@@ -18,6 +18,7 @@ public class PathFollowingScript : MonoBehaviour
 
     public float speed;
     public float rotationSpeed;
+    public float timeTillNextEnemySpawn;
     float slowness;
 
     public int pathProgress;
