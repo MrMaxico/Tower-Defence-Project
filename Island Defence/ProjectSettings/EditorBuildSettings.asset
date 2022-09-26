@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NickPathTest.unity
     guid: 189ec32b08efb5e4e8354e987a7786d8
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 4f969b8dde3cb9545941cafd2f52d34b
+  - enabled: 1
+    path: Assets/Scenes/Max.unity
+    guid: 755763793a9c32442bda69ac0a3c6241
   m_configObjects: {}

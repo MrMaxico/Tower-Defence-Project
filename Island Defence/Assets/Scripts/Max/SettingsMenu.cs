@@ -8,10 +8,96 @@ public class SettingsMenu : MonoBehaviour
 {
     public GameObject menuUI;
     public GameObject levelSelectUI;
+    public GameObject settingsUI;
 
     public AudioSource buttonClick;
 
     public AudioMixer audioMixer;
+
+    Resolution[] resolutions;
+    public TMPro.TMP_Dropdown resolutionsDropdown;
+
+    void Start()
+    {
+        resolutions = Screen.resolutions;
+
+        resolutionsDropdown.ClearOptions();
+
+        List<string> options = new List<string>();
+
+        int currentResolutionIndex = 0;
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;       //dit calculeerd alle unity resoluties, geen idee hoe en wat precies lmao
+            options.Add(option);
+
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+
+        resolutionsDropdown.AddOptions(options);
+        resolutionsDropdown.value = currentResolutionIndex;
+        resolutionsDropdown.RefreshShownValue();
+        QualitySettings.SetQualityLevel(5);
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void setFullScreen(bool isFullScreen)
+    {
+        Screen.fullScreen = isFullScreen;
+    }
+
+    //Graphics Quality//
+
+    public void low(bool quality)
+    {
+        if (quality)
+        {
+            QualitySettings.SetQualityLevel(0);
+        }
+    }
+
+    public void medium(bool quality)
+    {
+        if (quality)
+        {
+            QualitySettings.SetQualityLevel(2);
+        }
+    }
+
+    public void high(bool quality)
+    {
+        if (quality)
+        {
+            QualitySettings.SetQualityLevel(3);
+        }
+    }
+
+    public void ultra(bool quality)
+    {
+        if (quality)
+        {
+            QualitySettings.SetQualityLevel(5);
+        }
+    }
+
+    //VOLUME SLIDERS//
+    public void SetSoundVolume(float volume)
+    {
+        audioMixer.SetFloat("SoundVolume", Mathf.Log10(volume) * 20);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+    }
 
     //BUTTONS//
     public void GoToLevelSelect()
@@ -19,6 +105,15 @@ public class SettingsMenu : MonoBehaviour
         buttonClick.Play();
         menuUI.SetActive(false);
         levelSelectUI.SetActive(true);
+        settingsUI.SetActive(false);
+    }
+
+    public void GoToSettings()
+    {
+        buttonClick.Play();
+        menuUI.SetActive(false);
+        levelSelectUI.SetActive(false);
+        settingsUI.SetActive(true);
     }
 
     public void ReturnToMenu()
@@ -26,6 +121,7 @@ public class SettingsMenu : MonoBehaviour
         buttonClick.Play();
         menuUI.SetActive(true);
         levelSelectUI.SetActive(false);
+        settingsUI.SetActive(false);
     }
 
     public void LoadLevel1()
@@ -47,12 +143,6 @@ public class SettingsMenu : MonoBehaviour
     }
 
     //SETTINGS//
-
-    public void SetVolume(float volume)     //master volume
-    {
-        buttonClick.Play();
-        audioMixer.SetFloat("MainVolume", volume);
-    }
 
     public void SetQuality(int qualityIndex)
     {
