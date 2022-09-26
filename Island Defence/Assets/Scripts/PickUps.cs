@@ -11,6 +11,9 @@ public class PickUps : MonoBehaviour
     public GameObject chest;
     public GameObject gem;
 
+    public float despawnRate;
+    float despawnTimer;
+
     private void Update()
     {
         if (!dropped && chest.GetComponent<Chest>().gemsLeft > 0 && redGem)
@@ -24,6 +27,14 @@ public class PickUps : MonoBehaviour
             GameObject spawnedGem = Instantiate(gem, transform.position, Quaternion.identity);
             spawnedGem.GetComponent<PickUps>().chest = chest;
             spawnedGem.GetComponent<PickUps>().dropped = dropped;
+            Destroy(gameObject);
+        }
+
+        //despawning
+        despawnTimer += Time.deltaTime;
+
+        if (despawnTimer >= despawnRate)
+        {
             Destroy(gameObject);
         }
     }

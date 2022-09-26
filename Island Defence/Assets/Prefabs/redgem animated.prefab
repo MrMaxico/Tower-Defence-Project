@@ -52,6 +52,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   chest: {fileID: 0}
   gem: {fileID: 6764599958530091419, guid: 9bf489096f2f47a46aa90776581d4564, type: 3}
+  despawnRate: 10
 --- !u!65 &8951951603681142816
 BoxCollider:
   m_ObjectHideFlags: 0
