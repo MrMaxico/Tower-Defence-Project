@@ -1,20 +1,14 @@
 fileFormatVersion: 2
-guid: 235b17ad347a92148b7be7bb539e307a
+guid: 9a4a76c7e23a9094697df71cb9e1bac9
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: -6382850307761366433
-    second: Icosphere|getting ready
+      74: -1143520433865986080
+    second: Armature|Spell
   - first:
-      74: -6900248905202611277
-    second: Armature|getting ready
-  - first:
-      74: 1406896137663560467
-    second: Armature|shooting
-  - first:
-      74: -3845511880922722653
-    second: Icosphere.003|getting ready
+      74: 8349542763059015795
+    second: Armature|Walk
   externalObjects: {}
   materials:
     materialImportMode: 2
