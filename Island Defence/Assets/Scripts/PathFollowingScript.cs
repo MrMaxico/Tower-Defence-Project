@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class PathFollowingScript : MonoBehaviour
 {
@@ -78,6 +79,7 @@ public class PathFollowingScript : MonoBehaviour
             if (redGem.activeSelf)
             {
                 Debug.Log("Game over!");
+                SceneManager.LoadScene("MainMenu");
             }
             Destroy(gameObject);
         }

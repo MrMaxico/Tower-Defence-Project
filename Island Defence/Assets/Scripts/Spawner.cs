@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
@@ -70,6 +71,13 @@ public class Spawner : MonoBehaviour
         {
             Debug.Log("All waves completed");
             waveIndicator.text = $"All waves completed";
+            StartCoroutine(GreatSucces());
         }
+    }
+
+    IEnumerator GreatSucces()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("MainMenu");
     }
 }

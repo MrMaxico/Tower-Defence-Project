@@ -813,6 +813,18 @@ PrefabInstance:
       propertyPath: upgradeCostDisplay
       value: 
       objectReference: {fileID: 1045465990}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: mineToChestRoute.Array.data[0]
+      value: 
+      objectReference: {fileID: 1898579827}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: mineToChestRoute.Array.data[1]
+      value: 
+      objectReference: {fileID: 688179578}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: mineToChestRoute.Array.data[2]
+      value: 
+      objectReference: {fileID: 934364219}
     - target: {fileID: 4860732453201422503, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -863,6 +875,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+--- !u!114 &462215488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+  m_PrefabInstance: {fileID: 462215487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398582217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233d5cc31e82a3147a6695691a9870ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &495391039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,6 +1401,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &688179577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 688179578}
+  m_Layer: 0
+  m_Name: PathCheckpoint-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &688179578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688179577}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7, y: -0.96, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1898579827}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &712897870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1821,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &934364218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934364219}
+  m_Layer: 0
+  m_Name: PathCheckpoint-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &934364219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934364218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.67, y: -0.96, z: -0.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1898579827}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &972534434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1831,6 +1916,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7927511123782605262, guid: 307f8d3b9b94ea440bdbb1c9eca5d51d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 462215488}
+    - target: {fileID: 7927511123782605262, guid: 307f8d3b9b94ea440bdbb1c9eca5d51d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Upgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 7927511123835134841, guid: 307f8d3b9b94ea440bdbb1c9eca5d51d, type: 3}
       propertyPath: m_Name
       value: TestCanvas
@@ -1918,6 +2011,22 @@ PrefabInstance:
     - target: {fileID: 7927511123835134845, guid: 307f8d3b9b94ea440bdbb1c9eca5d51d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927511124705089112, guid: 307f8d3b9b94ea440bdbb1c9eca5d51d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 462215488}
+    - target: {fileID: 7927511124705089112, guid: 307f8d3b9b94ea440bdbb1c9eca5d51d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Decline
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927511125802055415, guid: 307f8d3b9b94ea440bdbb1c9eca5d51d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 462215488}
+    - target: {fileID: 7927511125802055415, guid: 307f8d3b9b94ea440bdbb1c9eca5d51d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AcceptPoorness
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 307f8d3b9b94ea440bdbb1c9eca5d51d, type: 3}
@@ -8986,6 +9095,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c44b5228cb94a41b2e1ddf18cabc66, type: 3}
+--- !u!4 &1898579827 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47c44b5228cb94a41b2e1ddf18cabc66, type: 3}
+  m_PrefabInstance: {fileID: 1898579826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1922700143
 GameObject:
   m_ObjectHideFlags: 0
