@@ -51,6 +51,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void setFullScreen(bool isFullScreen)
     {
+        buttonClick.Play();
         Screen.fullScreen = isFullScreen;
     }
 
@@ -60,6 +61,7 @@ public class SettingsMenu : MonoBehaviour
     {
         if (quality)
         {
+            buttonClick.Play();
             QualitySettings.SetQualityLevel(0);
         }
     }
@@ -68,6 +70,7 @@ public class SettingsMenu : MonoBehaviour
     {
         if (quality)
         {
+            buttonClick.Play();
             QualitySettings.SetQualityLevel(2);
         }
     }
@@ -76,6 +79,7 @@ public class SettingsMenu : MonoBehaviour
     {
         if (quality)
         {
+            buttonClick.Play();
             QualitySettings.SetQualityLevel(3);
         }
     }
@@ -84,6 +88,7 @@ public class SettingsMenu : MonoBehaviour
     {
         if (quality)
         {
+            buttonClick.Play();
             QualitySettings.SetQualityLevel(5);
         }
     }
