@@ -50,12 +50,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  maxLevel: 5
-  upgradeCost: 3
-  inflation: 3
-  meshHolder: {fileID: 4094299973713656237}
-  maxLevelMat: {fileID: 2100000, guid: ab783366735d0504c90f4088a86f23da, type: 2}
-  range: 5
+  maxLevel: 3
+  upgradeCost: 64000000fa000000f4010000
+  sellFor: 35
+  damage: 050000000c000000140000001e000000
+  meshHolder:
+  - {fileID: 4094299973713656237}
+  levelMat:
+  - {fileID: 2100000, guid: ab783366735d0504c90f4088a86f23da, type: 2}
+  - {fileID: 2100000, guid: 9fb71c1ec97ea2a4f97506f689c5e3db, type: 2}
+  - {fileID: 2100000, guid: ac65ffa23505bb848973db715f049348, type: 2}
+  - {fileID: 2100000, guid: 4a6e14a5fe232af4eae34b0ef3ba9225, type: 2}
+  range:
+  - 7
+  - 7
+  - 7
+  - 10
 --- !u!65 &1653184015951413772
 BoxCollider:
   m_ObjectHideFlags: 0

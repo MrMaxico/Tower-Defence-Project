@@ -13,7 +13,6 @@ public class SlingshotScript : MonoBehaviour
     public float rotationSpeed;
     public float bulletSpeed;
     public float firerate;
-    float closest;
     float hitTimer;
 
     public int damage;
@@ -23,10 +22,12 @@ public class SlingshotScript : MonoBehaviour
     Vector3 direction;
 
     bool shot;
-    bool foundGemThief;
 
     private void Update()
     {
+        damage = GetComponent<TowerValues>().damage[GetComponent<TowerValues>().level];
+        //range = GetComponent<TowerValues>().range[GetComponent<TowerValues>().level];
+
         targetDirection = (target.transform.position + offset) - transform.position;
         direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
         transform.rotation = Quaternion.LookRotation(direction);

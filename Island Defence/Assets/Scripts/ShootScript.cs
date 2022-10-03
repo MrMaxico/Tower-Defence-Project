@@ -30,6 +30,9 @@ public class ShootScript : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
+        damage = GetComponent<TowerValues>().damage[GetComponent<TowerValues>().level];
+        range = GetComponent<TowerValues>().range[GetComponent<TowerValues>().level];
+
         closest = range;
         target = null;
         foundGemThief = false;

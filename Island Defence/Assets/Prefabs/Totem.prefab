@@ -75,11 +75,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  maxLevel: 2
-  upgradeCost: 100
-  inflation: 100
-  meshHolder: {fileID: 4200224086112146638}
-  maxLevelMat: {fileID: 2100000, guid: 5fcf646d9f34302419fb80b6816dca32, type: 2}
+  maxLevel: 0
+  upgradeCost: 
+  sellFor: 0
+  meshHolder:
+  - {fileID: 0}
+  levelMat: []
   range: 5
 --- !u!1001 &1784766102077076440
 PrefabInstance:
@@ -175,18 +176,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   maxLevel: 3
-  upgradeCost: 100
-  inflation: 100
-  meshHolder: {fileID: 4200224086112146638}
-  maxLevelMat: {fileID: 2100000, guid: 5fcf646d9f34302419fb80b6816dca32, type: 2}
+  upgradeCost: 
+  sellFor: 0
+  meshHolder:
+  - {fileID: 0}
+  levelMat: []
   range: 5
 --- !u!4 &2255874797853152307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ea16959f45b17549882237c6d6bd1c1, type: 3}
-  m_PrefabInstance: {fileID: 1784766102077076440}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4200224086112146638 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -6733177361254619370, guid: 7ea16959f45b17549882237c6d6bd1c1, type: 3}
   m_PrefabInstance: {fileID: 1784766102077076440}
   m_PrefabAsset: {fileID: 0}

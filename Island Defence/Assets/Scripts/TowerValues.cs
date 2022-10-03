@@ -6,26 +6,27 @@ public class TowerValues : MonoBehaviour
 {
     public int level;
     public int maxLevel;
-    public int upgradeCost;
-    public int inflation;
+    public int[] upgradeCost;
+    public int sellFor;
+    public int[] damage;
 
-    public GameObject meshHolder;
+    public GameObject[] meshHolder;
 
-    public Material maxLevelMat;
+    public Material[] levelMat;
 
-    public float range;
+    public float[] range;
 
-    private void Update()
+    public void UpdateMaterial()
     {
-        if (level == maxLevel)
+        for (int i = 0; i < meshHolder.Length; i++)
         {
-            if (meshHolder.TryGetComponent<MeshRenderer>(out MeshRenderer meshRenderer))
+            if (meshHolder[i].TryGetComponent<MeshRenderer>(out MeshRenderer meshRenderer))
             {
-                meshRenderer.material = maxLevelMat;
+                meshRenderer.material = levelMat[level];
             }
-            else if (meshHolder.TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinnedMeshRenderer))
+            else if (meshHolder[i].TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinnedMeshRenderer))
             {
-                skinnedMeshRenderer.material = maxLevelMat;
+                skinnedMeshRenderer.material = levelMat[level];
             }
         }
     }

@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 1343263817645354388}
   - component: {fileID: 7375752935230443247}
   - component: {fileID: 4740636073669186334}
+  - component: {fileID: -177813283086877981}
   m_Layer: 0
   m_Name: dart trap guy
   m_TagString: Untagged
@@ -248,6 +249,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.6, z: 0.7}
   m_Center: {x: 0, y: 0.3, z: 0}
+--- !u!114 &-177813283086877981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868971854468921134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd44a369a630bea4c94bcd80fcecad16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  maxLevel: 3
+  upgradeCost: 1e0000005000000090010000
+  sellFor: 20
+  damage: 01000000020000000400000005000000
+  meshHolder:
+  - {fileID: 1706549509425132609}
+  - {fileID: 2852935493729158271}
+  - {fileID: 7076541115764798467}
+  - {fileID: 7604959125450462360}
+  levelMat:
+  - {fileID: 2100000, guid: fe2d5d176ebd3c34ca6f2a25215234c4, type: 2}
+  - {fileID: 2100000, guid: 47a9a91f41b015c4094a7482ac793ff3, type: 2}
+  - {fileID: 2100000, guid: b56e3857a8441734cbf333a2351c442c, type: 2}
+  - {fileID: 2100000, guid: 653f3cd455515b040ba1954ac5733f08, type: 2}
+  range:
+  - 5
+  - 7
+  - 7
+  - 10
 --- !u!1 &2435764809207747730
 GameObject:
   m_ObjectHideFlags: 0
