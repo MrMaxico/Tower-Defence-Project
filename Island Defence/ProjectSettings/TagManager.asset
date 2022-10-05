@@ -12,6 +12,7 @@ TagManager:
   - MineMinion
   - Gem
   - Coin
+  - Path
   layers:
   - Default
   - TransparentFX
