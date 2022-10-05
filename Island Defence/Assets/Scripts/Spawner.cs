@@ -78,6 +78,6 @@ public class Spawner : MonoBehaviour
     IEnumerator GreatSucces()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
     }
 }
