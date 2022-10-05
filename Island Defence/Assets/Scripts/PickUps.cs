@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickUps : MonoBehaviour
 {
@@ -37,6 +38,12 @@ public class PickUps : MonoBehaviour
 
             if (despawnTimer >= despawnRate)
             {
+                if (redGem)
+                {
+                    Destroy(gameObject);
+                    SceneManager.LoadScene("Main Menu");
+                    return;
+                }
                 Destroy(gameObject);
             }
         }

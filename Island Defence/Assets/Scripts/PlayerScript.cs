@@ -18,6 +18,7 @@ public class PlayerScript : MonoBehaviour
     GameObject[] previewTags;
     GameObject previewTower;
     public GameObject rotatingTower;
+    public GameObject upradeParticles;
 
     public Transform[] mineToChestRoute;
 
@@ -298,12 +299,15 @@ public class PlayerScript : MonoBehaviour
     public void Upgrade(GameObject popup)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject _upradeParticles = player.GetComponent<PlayerScript>().upradeParticles;
         GameObject targetTower = player.GetComponent<PlayerScript>().groundCheck.transform.gameObject;
         if (player.GetComponent<PlayerScript>().money >= targetTower.GetComponent<TowerValues>().upgradeCost[targetTower.GetComponent<TowerValues>().level])
         {
             player.GetComponent<PlayerScript>().money -= targetTower.GetComponent<TowerValues>().upgradeCost[targetTower.GetComponent<TowerValues>().level];
             targetTower.GetComponent<TowerValues>().sellFor += targetTower.GetComponent<TowerValues>().upgradeCost[targetTower.GetComponent<TowerValues>().level] - 25;
             targetTower.GetComponent<TowerValues>().level += 1;
+            GameObject spawnedParticles = Instantiate(_upradeParticles, targetTower.transform.position, Quaternion.identity);
+            spawnedParticles.transform.rotation = Quaternion.Euler(-90, 0, 0);
             Cursor.lockState = CursorLockMode.Locked;
         }
         else
