@@ -79,7 +79,7 @@ public class PathFollowingScript : MonoBehaviour
             if (redGem.activeSelf)
             {
                 Debug.Log("Game over!");
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("Main Menu");
             }
             Destroy(gameObject);
         }
@@ -166,6 +166,7 @@ public class PathFollowingScript : MonoBehaviour
             GameObject droppedCoin = Instantiate(coin, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
             droppedCoin.GetComponent<PickUps>().dropped = true;
         }
+        Debug.Log(gameObject);
         Destroy(gameObject);
     }
 }

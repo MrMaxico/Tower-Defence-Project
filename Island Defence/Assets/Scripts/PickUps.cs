@@ -30,12 +30,15 @@ public class PickUps : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //despawning
-        despawnTimer += Time.deltaTime;
-
-        if (despawnTimer >= despawnRate)
+        if (dropped)
         {
-            Destroy(gameObject);
+            //despawning
+            despawnTimer += Time.deltaTime;
+
+            if (despawnTimer >= despawnRate)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
