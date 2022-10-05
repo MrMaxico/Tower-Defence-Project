@@ -1508,6 +1508,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6984832048858012890, guid: 470c8fd7dbcd86f43810f0fd80190b70, type: 3}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: upradeParticles
+      value: 
+      objectReference: {fileID: 3757047834056461129, guid: 8c48de64fd5828d4b976ea65d80fa635, type: 3}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: upgradeCostDisplay
       value: 
       objectReference: {fileID: 1045465990}
