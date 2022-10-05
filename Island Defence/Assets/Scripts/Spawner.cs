@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
         StartCoroutine(SpawnCycle());
         for (int i = 0; i < path.Length - 1; i++)
         {
-            Debug.DrawLine(path[i].position, path[i + 1].position, Color.red, 6000f);
+            Debug.DrawLine(path[i].position, path[i + 1].position, Color.white, 6000f);
         }
         waveIndicator.text = $"Preparing for wave {currentWave + 1}..";
     }
