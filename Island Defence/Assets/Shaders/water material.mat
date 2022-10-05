@@ -40,13 +40,13 @@ Material:
     - _FoamCutoff: 1
     - _Metallic: 4.94
     - _NormalSpeed: 0.1
-    - _NormalStrength: 29.75
+    - _NormalStrength: 12.9
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RippleDissolve: 4
     - _RippleSize: 200
     - _RippleSpeed: 2
-    - _Smoothness: 1.05
+    - _Smoothness: 1.06
     m_Colors:
     - _BaseColor: {r: 0.055322148, g: 0.32460067, b: 0.7924528, a: 1}
     - _RippleColor: {r: 0.1366595, g: 0.3153681, b: 0.5019609, a: 1}
