@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1264727489336155119}
-  - component: {fileID: 2114356688160063619}
   - component: {fileID: 2731299909387020733}
   - component: {fileID: 6456093298771343118}
+  - component: {fileID: 1248588145364757901}
   m_Layer: 0
   m_Name: Totem
   m_TagString: Totem
@@ -35,19 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2114356688160063619
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929482790252691797}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 6, z: 2}
-  m_Center: {x: 0, y: 3, z: 0}
 --- !u!114 &2731299909387020733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,10 +65,25 @@ MonoBehaviour:
   maxLevel: 0
   upgradeCost: 
   sellFor: 0
+  damage: 
   meshHolder:
   - {fileID: 0}
   levelMat: []
-  range: 5
+  range: []
+--- !u!136 &1248588145364757901
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929482790252691797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 2.85
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.81, z: 0}
 --- !u!1001 &1784766102077076440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178,10 +180,11 @@ MonoBehaviour:
   maxLevel: 3
   upgradeCost: 
   sellFor: 0
+  damage: 
   meshHolder:
   - {fileID: 0}
   levelMat: []
-  range: 5
+  range: []
 --- !u!4 &2255874797853152307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ea16959f45b17549882237c6d6bd1c1, type: 3}
