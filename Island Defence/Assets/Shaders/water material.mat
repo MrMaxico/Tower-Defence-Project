@@ -35,9 +35,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _BubbleStrength: 0
-    - _Distance: 0
-    - _FoamAmount: 1
-    - _FoamCutoff: 1
+    - _Distance: 38.73
+    - _FoamAmount: 11.16
+    - _FoamCutoff: 10.54
+    - _FoamSize: 13.05
+    - _Foamspeed: 18.84
     - _Metallic: 4.94
     - _NormalSpeed: 0.1
     - _NormalStrength: 12.9
@@ -49,6 +51,7 @@ Material:
     - _Smoothness: 1.06
     m_Colors:
     - _BaseColor: {r: 0.055322148, g: 0.32460067, b: 0.7924528, a: 1}
+    - _FoamColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
     - _RippleColor: {r: 0.1366595, g: 0.3153681, b: 0.5019609, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2034169970226115885
