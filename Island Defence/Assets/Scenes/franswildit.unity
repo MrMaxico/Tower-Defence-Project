@@ -1634,8 +1634,48 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1045465990}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towers.Array.data[4]
+      value: 
+      objectReference: {fileID: 790618046498472727, guid: 2fe50bac152fc9f42adfffdab8dc415f, type: 3}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towers.Array.data[5]
+      value: 
+      objectReference: {fileID: 8193156307660798991, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towers.Array.data[6]
+      value: 
+      objectReference: {fileID: 1929482790252691797, guid: 9aa51cfea793e434d920951aa00b3012, type: 3}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towerPrices.Array.data[4]
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: towerPrices.Array.data[5]
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towerPrices.Array.data[6]
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: previewTowers.Array.data[4]
+      value: 
+      objectReference: {fileID: 5838917505688167006, guid: 01563a4db47846845a95e03c56308970, type: 3}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: previewTowers.Array.data[5]
+      value: 
+      objectReference: {fileID: 165752393500276058, guid: 30e75ab8049eff34195d87c7c0168cbf, type: 3}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: previewTowers.Array.data[6]
+      value: 
+      objectReference: {fileID: 2845179494265806899, guid: 737b351234d09784da127319f96c791a, type: 3}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towerOffsets.Array.data[4].y
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towerOffsets.Array.data[5].y
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: mineToChestRoute.Array.data[0]
