@@ -1023,6 +1023,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6325515979835510455, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325515979835510455, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
       propertyPath: m_CookingOptions
       value: 0
       objectReference: {fileID: 0}
