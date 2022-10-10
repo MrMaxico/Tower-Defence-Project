@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 549755507990616868}
   - component: {fileID: -237524545263007303}
-  - component: {fileID: 1653184015951413772}
   - component: {fileID: 3457293464358254484}
+  - component: {fileID: 5002955651901997221}
   m_Layer: 0
   m_Name: slingshot
   m_TagString: Tower
@@ -66,19 +66,6 @@ MonoBehaviour:
   - 7
   - 7
   - 10
---- !u!65 &1653184015951413772
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930783959383015838}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.3, y: 2, z: 1.3}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3457293464358254484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +87,20 @@ MonoBehaviour:
   firerate: 3
   damage: 5
   offset: {x: 0, y: 0, z: 0}
+--- !u!136 &5002955651901997221
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930783959383015838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.17
+  m_Height: 2.15
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.74, z: 0}
 --- !u!1 &2645790537221921727
 GameObject:
   m_ObjectHideFlags: 0
