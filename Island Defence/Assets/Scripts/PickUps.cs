@@ -47,12 +47,6 @@ public class PickUps : MonoBehaviour
 
             if (despawnTimer >= despawnRate)
             {
-                if (redGem)
-                {
-                    Destroy(gameObject);
-                    SceneManager.LoadScene("Main Menu");
-                    return;
-                }
                 Destroy(gameObject);
             }
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     public float speed;
     public float maxXRotation;
     float mouseVertical;
+    public GameObject chest;
     public GameObject cam;
     public GameObject tooPoorPopup;
     public GameObject upgradePopup;
@@ -52,6 +54,15 @@ public class PlayerScript : MonoBehaviour
     }
     private void Update()
     {
+        //check the gems
+        GameObject[] gems = GameObject.FindGameObjectsWithTag("Gem");
+
+        if (chest.GetComponent<Chest>().gemsLeft <= 0 && gems.Length == 0)
+        {
+            Debug.Log("Game over!");
+            SceneManager.LoadScene("Main Menu");
+        }
+
         //insta-ultra-kill
         if (Input.GetKeyDown(KeyCode.K))
         {

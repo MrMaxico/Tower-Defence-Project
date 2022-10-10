@@ -76,11 +76,6 @@ public class PathFollowingScript : MonoBehaviour
         }
         else if (onReturn && gameObject.transform.position == path[0].position)
         {
-            if (redGem.activeSelf)
-            {
-                Debug.Log("Game over!");
-                SceneManager.LoadScene("Main Menu");
-            }
             Destroy(gameObject);
         }
 
