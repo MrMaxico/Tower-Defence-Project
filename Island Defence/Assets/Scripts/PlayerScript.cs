@@ -230,7 +230,7 @@ public class PlayerScript : MonoBehaviour
         currentSlot -= Mathf.RoundToInt(Input.mouseScrollDelta.y);
         if (currentSlot > towers.Length - 1)
         {
-            currentSlot = 0;
+            currentSlot = 1;
             DestroyPreview();
         }
         else if (currentSlot < 0)

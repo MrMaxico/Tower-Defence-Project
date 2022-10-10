@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PickUps : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PickUps : MonoBehaviour
     public GameObject parent;
     public GameObject chest;
     public GameObject gem;
+    public GameObject gemDespawnTimer;
+
+    public Image gemDespawnFill;
 
     public float despawnRate;
     float despawnTimer;
@@ -36,6 +40,11 @@ public class PickUps : MonoBehaviour
             //despawning
             despawnTimer += Time.deltaTime;
 
+            gemDespawnTimer.SetActive(true);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            gemDespawnTimer.transform.LookAt(player.transform.position);
+            gemDespawnFill.fillAmount -= Time.deltaTime / 30;
+
             if (despawnTimer >= despawnRate)
             {
                 if (redGem)
@@ -46,6 +55,10 @@ public class PickUps : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
+        }
+        else
+        {
+            gemDespawnTimer.SetActive(false);
         }
     }
 }
