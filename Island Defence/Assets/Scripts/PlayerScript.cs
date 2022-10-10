@@ -86,7 +86,7 @@ public class PlayerScript : MonoBehaviour
         //place, upgrade and rotate towers
         if (Physics.Raycast(transform.position, cam.GetComponent<Transform>().forward, out groundCheck, 4))
         {
-            if (groundCheck.transform.gameObject.tag == "Floor")
+            if (groundCheck.transform.gameObject.tag == "Floor" && currentSlot != 4)
             {
                 if (previewIsRange)
                 {
@@ -125,6 +125,42 @@ public class PlayerScript : MonoBehaviour
                         previewTower.transform.position = groundCheck.point + towerOffsets[currentSlot];
                         previewTower.transform.rotation = transform.rotation;
                         previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                    }
+                }
+            }
+            else if (groundCheck.transform.gameObject.tag == "Path" && currentSlot == 4)
+            {
+                if (previewIsRange)
+                {
+                    DestroyPreview();
+                    previewIsRange = false;
+                }
+
+                if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+                {
+                    money -= towerPrices[currentSlot];
+                    GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
+                    placed.transform.rotation = groundCheck.transform.rotation;
+                }
+                else if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] > money)
+                {
+                    Debug.Log("You poor");
+                    tooPoorPopup.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                else
+                {
+                    if (!previewSpawned)
+                    {
+                        DestroyPreview();
+                        previewTower = Instantiate(previewTowers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
+                        previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                        previewSpawned = true;
+                    }
+                    else
+                    {
+                        previewTower.transform.position = groundCheck.point + towerOffsets[currentSlot];
+                        previewTower.transform.rotation = groundCheck.transform.rotation;
                     }
                 }
             }
