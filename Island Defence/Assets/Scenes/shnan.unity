@@ -49717,6 +49717,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3464865003698437609, guid: f03267bed40ad494c9d1d1a27c9c48d9, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3464865003698437611, guid: f03267bed40ad494c9d1d1a27c9c48d9, type: 3}
       propertyPath: m_Name
       value: Gem Sparkle
@@ -50128,6 +50132,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8765010439750670424, guid: 6a447bbb45536c5489955618f92aae8c, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8765010439750670425, guid: 6a447bbb45536c5489955618f92aae8c, type: 3}
       propertyPath: m_RootOrder
       value: 15
