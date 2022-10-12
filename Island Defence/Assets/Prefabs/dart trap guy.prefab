@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 7375752935230443247}
   - component: {fileID: 4740636073669186334}
   - component: {fileID: -177813283086877981}
+  - component: {fileID: 8537312327643041796}
   m_Layer: 0
   m_Name: dart trap guy
   m_TagString: Untagged
@@ -281,6 +282,26 @@ MonoBehaviour:
   - 7
   - 7
   - 10
+--- !u!95 &8537312327643041796
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868971854468921134}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4948c5b02b02a04990b770850494de2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2435764809207747730
 GameObject:
   m_ObjectHideFlags: 0
