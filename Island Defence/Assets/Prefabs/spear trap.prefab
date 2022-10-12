@@ -10,9 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 122448487827528109}
   - component: {fileID: 1349881200094273151}
+  - component: {fileID: 8179786822191145997}
+  - component: {fileID: 4504635721205253145}
+  - component: {fileID: -4866705175542603006}
   m_Layer: 0
   m_Name: spear trap
-  m_TagString: Tower
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,6 +57,67 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &8179786822191145997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790618046498472727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8, y: 1, z: 1.8}
+  m_Center: {x: 0, y: -0.4, z: 0}
+--- !u!114 &4504635721205253145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790618046498472727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd44a369a630bea4c94bcd80fcecad16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  maxLevel: 3
+  upgradeCost: 32000000c8000000ee020000
+  sellFor: 40
+  damage: 0200000003000000050000000a000000
+  meshHolder:
+  - {fileID: 987938347236264994}
+  - {fileID: 7228511020086257168}
+  levelMat:
+  - {fileID: 2100000, guid: 3ef1b0948ef708b45820058b15566bac, type: 2}
+  - {fileID: 2100000, guid: 870ac0f939f3d5d47b217fadbd933afb, type: 2}
+  - {fileID: 2100000, guid: 23a46e1100c412244a8a91aef42fb57d, type: 2}
+  - {fileID: 2100000, guid: ac09184a0315a2d4ebbcb0654ebb8218, type: 2}
+  range:
+  - 0
+  - 0
+  - 0
+  - 0
+  fireRate:
+  - 1.6
+  - 1.6
+  - 1.6
+  - 1.6
+--- !u!114 &-4866705175542603006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790618046498472727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ab722ce7a82c848aee881b40bcced0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1349881200094273151}
 --- !u!1 &987938347236264994
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class TowerValues : MonoBehaviour
     public Material[] levelMat;
 
     public float[] range;
+    public float[] fireRate;
 
     public void UpdateMaterial()
     {

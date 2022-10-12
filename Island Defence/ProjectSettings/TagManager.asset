@@ -13,6 +13,7 @@ TagManager:
   - Gem
   - Coin
   - Path
+  - Trap
   layers:
   - Default
   - TransparentFX
