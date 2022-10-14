@@ -11,6 +11,7 @@ public class SpearTrap : MonoBehaviour
     private void Start()
     {
         StartCoroutine(DamageEnemies());
+        Debug.DrawLine(transform.position, transform.position - transform.forward * .8f, Color.cyan, 1000f, false);
     }
 
     private IEnumerator DamageEnemies()
@@ -23,7 +24,7 @@ public class SpearTrap : MonoBehaviour
         foreach (GameObject enemie in enemies)
         {
             float distance = Vector3.Distance(transform.position, enemie.transform.position);
-            if (distance <= 0.4f)
+            if (distance <= 0.8f)
             {
                 enemie.GetComponent<PathFollowingScript>().hp -= towerValuesScript.damage[towerValuesScript.level];
                 Debug.Log(enemie.GetComponent<PathFollowingScript>().hp);

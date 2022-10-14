@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -38,8 +39,8 @@ public class PlayerScript : MonoBehaviour
     bool previewIsRange;
     bool rotating;
 
-    public Text moneyDisplay;
-    public Text upgradeCostDisplay;
+    public TextMeshProUGUI moneyDisplay;
+    public TextMeshProUGUI upgradeCostDisplay;
 
     Rigidbody playerRB;
 
@@ -114,7 +115,10 @@ public class PlayerScript : MonoBehaviour
                         placed.GetComponent<MineMinion>().player = gameObject;
                         placed.GetComponent<MineMinion>().mineToChestRoute = mineToChestRoute;
                     }
-                    placed.transform.Rotate(new Vector3(0, -90, 0));
+                    if (currentSlot != 3)
+                    {
+                        placed.transform.Rotate(new Vector3(0, -90, 0));
+                    }
                 }
                 else if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] > money)
                 {
@@ -128,14 +132,20 @@ public class PlayerScript : MonoBehaviour
                     {
                         DestroyPreview();
                         previewTower = Instantiate(previewTowers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
-                        previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                        if (currentSlot != 3)
+                        {
+                            previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                        }
                         previewSpawned = true;
                     }
                     else
                     {
                         previewTower.transform.position = groundCheck.point + towerOffsets[currentSlot];
                         previewTower.transform.rotation = transform.rotation;
-                        previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                        if (currentSlot != 3)
+                        {
+                            previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                        }
                     }
                 }
             }
@@ -304,7 +314,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         //display money
-        moneyDisplay.text = $"Gold: {money}";
+        moneyDisplay.text = $"{money} G";
     }
 
     private void FixedUpdate()

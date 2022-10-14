@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Spawner : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Spawner : MonoBehaviour
     public int currentWave;
     public int waveProgress;
 
-    public Text waveIndicator;
+    public TextMeshProUGUI waveIndicator;
 
     public Slider mamaHpBar;
 
@@ -29,7 +30,7 @@ public class Spawner : MonoBehaviour
         StartCoroutine(SpawnCycle());
         for (int i = 0; i < path.Length - 1; i++)
         {
-            Debug.DrawLine(path[i].position, path[i + 1].position, Color.white, 6000f);
+            Debug.DrawLine(path[i].position, path[i + 1].position, Color.white, 6000f, false);
         }
         waveIndicator.text = $"Preparing for wave {currentWave + 1}..";
     }
@@ -49,7 +50,7 @@ public class Spawner : MonoBehaviour
 
         if (waveProgress < waves[currentWave].GetComponent<Wave>().spawn.Length)
         {
-            waveIndicator.text = $"Current wave: {currentWave + 1}";
+            waveIndicator.text = $"WAVE: {currentWave + 1}";
             GameObject spawned = Instantiate(waves[currentWave].GetComponent<Wave>().spawn[waveProgress], transform.position, Quaternion.identity);
             spawned.GetComponent<PathFollowingScript>().chest = chest;
             spawned.GetComponent<PathFollowingScript>().path = path;
