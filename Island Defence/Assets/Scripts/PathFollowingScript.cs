@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PathFollowingScript : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PathFollowingScript : MonoBehaviour
     public float rotationSpeed;
     public float timeTillNextEnemySpawn;
     float slowness;
+    float fullHealth;
 
     public int pathProgress;
     public int hp;
@@ -28,12 +30,15 @@ public class PathFollowingScript : MonoBehaviour
 
     bool onReturn;
     bool hasDied;
+    public bool isMama;
     public bool hasTotemEffect;
 
     Vector3 direction;
     Vector3 targetDirection;
 
     public Animator animations;
+
+    public Slider hpBar;
 
     private void Start()
     {
@@ -46,10 +51,15 @@ public class PathFollowingScript : MonoBehaviour
         coin.SetActive(false);
         coin.GetComponent<PickUps>().parent = gameObject;
         coin.GetComponent<PickUps>().chest = chest;
+        fullHealth = hp;
     }
 
     private void Update()
     {
+        //display hp
+        float f_hp = hp;
+        hpBar.value = f_hp / fullHealth;
+        Debug.Log(f_hp / fullHealth);
 
         //check if enemy is at his goal
         if (transform.position == path[path.Length - 1].position && !onReturn)

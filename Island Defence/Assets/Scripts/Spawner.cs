@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject chest;
     public GameObject player;
+    public GameObject mamaHpBarGameObject;
     public GameObject[] waves;
     GameObject[] enemies;
 
@@ -20,6 +21,8 @@ public class Spawner : MonoBehaviour
     public int waveProgress;
 
     public Text waveIndicator;
+
+    public Slider mamaHpBar;
 
     private void Start()
     {
@@ -51,6 +54,12 @@ public class Spawner : MonoBehaviour
             spawned.GetComponent<PathFollowingScript>().chest = chest;
             spawned.GetComponent<PathFollowingScript>().path = path;
             spawned.GetComponent<PathFollowingScript>().player = player;
+            if (spawned.GetComponent<PathFollowingScript>().isMama)
+            {
+                spawned.GetComponent<MamaScript>().babySpawnPos = transform;
+                spawned.GetComponent<PathFollowingScript>().hpBar = mamaHpBar;
+                spawned.GetComponent<MamaScript>().mamaHpBarGameObject = mamaHpBarGameObject;
+            }
             waveProgress++;
             spawnDelay = spawned.GetComponent<PathFollowingScript>().timeTillNextEnemySpawn;
             yield return new WaitForSeconds(spawnDelay);
