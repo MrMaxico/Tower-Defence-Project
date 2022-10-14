@@ -22,6 +22,7 @@ public class PlayerScript : MonoBehaviour
     GameObject previewTower;
     public GameObject rotatingTower;
     public GameObject upradeParticles;
+    public GameObject towerTips;
 
     public Transform[] mineToChestRoute;
 
@@ -100,6 +101,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (groundCheck.transform.gameObject.tag == "Floor" && currentSlot != 4)
             {
+                towerTips.SetActive(false);
                 if (previewIsRange)
                 {
                     DestroyPreview();
@@ -151,6 +153,7 @@ public class PlayerScript : MonoBehaviour
             }
             else if (groundCheck.transform.gameObject.tag == "Path" && currentSlot == 4)
             {
+                towerTips.SetActive(false);
                 if (previewIsRange)
                 {
                     DestroyPreview();
@@ -187,6 +190,7 @@ public class PlayerScript : MonoBehaviour
             }
             else if (groundCheck.transform.gameObject.tag == "Totem")
             {
+                towerTips.SetActive(true);
                 if (!previewIsRange)
                 {
                     DestroyPreview();
@@ -211,6 +215,7 @@ public class PlayerScript : MonoBehaviour
             }
             else if (groundCheck.transform.gameObject.tag == "Tower" && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
             {
+                towerTips.SetActive(true);
                 if (!previewIsRange)
                 {
                     DestroyPreview();
@@ -236,13 +241,44 @@ public class PlayerScript : MonoBehaviour
                     groundCheck.transform.rotation = Quaternion.Euler(0, groundCheck.transform.rotation.eulerAngles.y, 0);
                 }
             }
+            else if (groundCheck.transform.gameObject.tag == "Trap")
+            {
+                towerTips.SetActive(true);
+                if (!previewIsRange)
+                {
+                    DestroyPreview();
+                }
+
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    previewIsRange = true;
+                    DestroyPreview();
+                    previewTower = Instantiate(rangePreview, groundCheck.transform.position, transform.rotation);
+                    rangePreview.transform.localScale = new Vector3(groundCheck.transform.gameObject.GetComponent<TowerValues>().range[groundCheck.transform.gameObject.GetComponent<TowerValues>().level] * 2, 0.05f, groundCheck.transform.gameObject.GetComponent<TowerValues>().range[groundCheck.transform.gameObject.GetComponent<TowerValues>().level] * 2);
+                }
+                else if (Input.GetButtonDown("Fire2") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
+                {
+                    upgradePopup.SetActive(true);
+                    upgradeCostDisplay.text = $"Upgrade? Cost: {groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}";
+                    Cursor.lockState = CursorLockMode.None;
+                    DestroyPreview();
+                }
+                else if (Input.GetButtonDown("Rotate"))
+                {
+                    groundCheck.transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, transform.position - new Vector3(0, -1, 0) - groundCheck.transform.position, 10000 * Time.deltaTime, 0.0f));
+                    groundCheck.transform.rotation = Quaternion.Euler(0, groundCheck.transform.rotation.eulerAngles.y, 0);
+                }
+
+            }
             else if (groundCheck.transform.gameObject.tag != "Preview")
             {
+                towerTips.SetActive(false);
                 DestroyPreview();
             }
         }
         else
         {
+            towerTips.SetActive(false);
             DestroyPreview();
         }
 
