@@ -1507,6 +1507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Banana Cannon
       objectReference: {fileID: 0}
+    - target: {fileID: 4128459619922812197, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4842390690664451194, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1747,6 +1751,10 @@ PrefabInstance:
     - target: {fileID: 930783959383015838, guid: a28cd94c560d254499a87582cee06794, type: 3}
       propertyPath: m_Name
       value: slingshot
+      objectReference: {fileID: 0}
+    - target: {fileID: 9026719388270578184, guid: a28cd94c560d254499a87582cee06794, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a28cd94c560d254499a87582cee06794, type: 3}
