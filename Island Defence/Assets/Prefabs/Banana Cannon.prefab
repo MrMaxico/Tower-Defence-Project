@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3031457738655197755}
+  - component: {fileID: 4128459619922812197}
   m_Layer: 0
   m_Name: Banana Cannon (1)
   m_TagString: Untagged
@@ -33,6 +34,26 @@ Transform:
   m_Father: {fileID: 3690537318199294407}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4128459619922812197
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2403293189086032001}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c77af37fe14d1543ae1b9ef1f56a9c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3082518360024524184
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +316,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8193156307660798991}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8c77af37fe14d1543ae1b9ef1f56a9c8, type: 2}
   m_CullingMode: 0
@@ -349,6 +370,7 @@ MonoBehaviour:
   - 8
   - 10
   - 12
+  fireRate: []
 --- !u!1 &8224265078846987615
 GameObject:
   m_ObjectHideFlags: 0
