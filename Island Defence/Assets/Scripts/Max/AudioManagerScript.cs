@@ -48,6 +48,6 @@ public class AudioManagerScript : MonoBehaviour
 
 
 
-    //deze line code hieronder moet je gcopy pasten als je een geluidje wilt afspelen
+    //deze line code hieronder moet je copy pasten als je een geluidje wilt afspelen
     //FindObjectOfType<AudioManagerScript>().Play("naamvangeluidhier");
 }
