@@ -18,6 +18,10 @@ public class MamaScript : MonoBehaviour
     private void Start()
     {
         mamaHpBarGameObject.SetActive(true);
+        FindObjectOfType<AudioManagerScript>().StopPlaying("DefenceSetupMusic");
+        FindObjectOfType<AudioManagerScript>().StopPlaying("WavemMusic1");
+        FindObjectOfType<AudioManagerScript>().StopPlaying("WavemMusic2");
+        FindObjectOfType<AudioManagerScript>().play("MamaSquidMusic");
     }
 
     void Update()
@@ -28,6 +32,7 @@ public class MamaScript : MonoBehaviour
         {
             babiesSpawned = 0;
             StartCoroutine(MakeBabies());
+            FindObjectOfType<AudioManagerScript>().play("MamaSquidRoar");
             timer = 0;
         }
     }

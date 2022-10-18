@@ -29,6 +29,7 @@ public class AudioManagerScript : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+
         }
         
     }
@@ -46,8 +47,22 @@ public class AudioManagerScript : MonoBehaviour
         s.source.Play();
     }
 
+    public void StopPlaying(string sound)
+    {
+        Sound s = Array.Find(sounds, item => item.name == sound);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+
+        s.source.Stop();
+    }
 
 
     //deze line code hieronder moet je copy pasten als je een geluidje wilt afspelen
     //FindObjectOfType<AudioManagerScript>().Play("naamvangeluidhier");
+
+    //en deze voor als je geluid of muziek wilt laten stoppen
+    //FindObjectOfType<AudioManager>().StopPlaying("GameplayMusic");
 }

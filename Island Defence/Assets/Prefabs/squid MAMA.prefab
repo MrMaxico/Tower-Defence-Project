@@ -806,6 +806,9 @@ MonoBehaviour:
   gem: {fileID: 5487485686426783453}
   redGem: {fileID: 7974193177806164563}
   coin: {fileID: 2116154029546190068}
+  deathSound: {fileID: 0}
+  onDeathFX: {fileID: 0}
+  emitter: {fileID: 0}
   speed: 0.4
   rotationSpeed: 2
   timeTillNextEnemySpawn: 0
@@ -879,7 +882,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 17d2d8838222d4d4699d56708536261f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.77
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -887,7 +890,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 4
+  MaxDistance: 8
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

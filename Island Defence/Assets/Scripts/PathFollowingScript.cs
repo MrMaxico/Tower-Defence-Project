@@ -18,6 +18,11 @@ public class PathFollowingScript : MonoBehaviour
     GameObject[] totems;
     GameObject closestTotem;
 
+    //UI-UX
+    public GameObject deathSound;
+    public GameObject onDeathFX;
+    [SerializeField] private Transform emitter;
+
     public float speed;
     public float rotationSpeed;
     public float timeTillNextEnemySpawn;
