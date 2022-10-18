@@ -7,6 +7,7 @@ public class SpearTrap : MonoBehaviour
     GameObject[] enemies;
 
     public Animator anim;
+    public AudioSource attackSound;
 
     private void Start()
     {
@@ -17,6 +18,8 @@ public class SpearTrap : MonoBehaviour
     private IEnumerator DamageEnemies()
     {
         anim.ResetTrigger("Restart");
+        attackSound.Play();
+        attackSound.pitch = Random.Range(0.8f, 1.2f);
         TowerValues towerValuesScript = GetComponent<TowerValues>();
         yield return new WaitForSeconds(towerValuesScript.fireRate[towerValuesScript.level] / 6);
         enemies = GameObject.FindGameObjectsWithTag("Enemy");

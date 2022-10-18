@@ -19,9 +19,9 @@ public class PathFollowingScript : MonoBehaviour
     GameObject closestTotem;
 
     //UI-UX
-    public GameObject deathSound;
+    public AudioSource deathSound;
     public GameObject onDeathFX;
-    [SerializeField] private Transform emitter;
+    [SerializeField] private Transform deathEffectEmitter;
 
     public float speed;
     public float rotationSpeed;
@@ -98,6 +98,8 @@ public class PathFollowingScript : MonoBehaviour
         {
             hasDied = true;
             animations.SetBool("Dead", true);
+            deathSound.Play();
+            deathSound.pitch = Random.Range(0.8f, 1.2f);
             speed = 0;
             StartCoroutine(DespawnOnDeath());
         }
@@ -158,6 +160,7 @@ public class PathFollowingScript : MonoBehaviour
     IEnumerator DespawnOnDeath()
     {
         yield return new WaitForSeconds(1.5f);
+
         player.GetComponent<PlayerScript>().money += dropAmount;
         if (gem.activeSelf)
         {
