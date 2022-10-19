@@ -19,8 +19,8 @@ public class MamaScript : MonoBehaviour
     {
         mamaHpBarGameObject.SetActive(true);
         FindObjectOfType<AudioManagerScript>().StopPlaying("DefenceSetupMusic");
-        FindObjectOfType<AudioManagerScript>().StopPlaying("WavemMusic1");
-        FindObjectOfType<AudioManagerScript>().StopPlaying("WavemMusic2");
+        FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic1");
+        FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic2");
         FindObjectOfType<AudioManagerScript>().play("MamaSquidMusic");
     }
 

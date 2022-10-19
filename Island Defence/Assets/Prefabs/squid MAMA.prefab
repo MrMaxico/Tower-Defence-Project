@@ -808,12 +808,12 @@ MonoBehaviour:
   coin: {fileID: 2116154029546190068}
   deathSound: {fileID: 0}
   onDeathFX: {fileID: 0}
-  emitter: {fileID: 0}
+  deathEffectEmitter: {fileID: 0}
   speed: 0.4
-  rotationSpeed: 2
+  rotationSpeed: 1
   timeTillNextEnemySpawn: 0
   pathProgress: 0
-  hp: 100
+  hp: 2000
   dropAmount: 100000
   isMama: 1
   hasTotemEffect: 0

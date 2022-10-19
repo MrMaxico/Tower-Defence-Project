@@ -53,7 +53,7 @@ public class PlayerScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         paused = true;
         AcceptPoorness(tooPoorPopup);
-        FindObjectOfType<AudioManagerScript>().play("DefenceSetupMusic");
+        FindObjectOfType<AudioManagerScript>().play("WaveMusic1");
     }
     private void Update()
     {
