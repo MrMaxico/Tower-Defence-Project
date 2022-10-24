@@ -360,7 +360,7 @@ MonoBehaviour:
   sellFor: 60
   damage: 03000000050000000c0000001e000000
   meshHolder:
-  - {fileID: 0}
+  - {fileID: 6610178622438763747}
   levelMat:
   - {fileID: 2100000, guid: 437e4bed419f2f443a0e6d4ee0cc762a, type: 2}
   - {fileID: 2100000, guid: 9198896e7ea53d141a823bb5c17591ea, type: 2}
@@ -371,7 +371,11 @@ MonoBehaviour:
   - 8
   - 10
   - 12
-  fireRate: []
+  fireRate:
+  - 2
+  - 2
+  - 2
+  - 2
 --- !u!1 &8224265078846987615
 GameObject:
   m_ObjectHideFlags: 0

@@ -192,6 +192,7 @@ public class PlayerScript : MonoBehaviour
             else if (groundCheck.transform.gameObject.tag == "Totem")
             {
                 towerTips.SetActive(true);
+                upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
                 if (!previewIsRange)
                 {
                     DestroyPreview();
@@ -205,11 +206,9 @@ public class PlayerScript : MonoBehaviour
                     rangePreview.transform.localScale = new Vector3(groundCheck.transform.gameObject.GetComponent<TowerValues>().range[groundCheck.transform.gameObject.GetComponent<TowerValues>().level] * 2, 0.05f, groundCheck.transform.gameObject.GetComponent<TowerValues>().range[groundCheck.transform.gameObject.GetComponent<TowerValues>().level] * 2);
                 }
 
-                if (Input.GetButtonDown("Fire2") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
+                if (Input.GetButtonDown("Use") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
                 {
-                    upgradePopup.SetActive(true);
-                    DestroyPreview();
-                    upgradeCostDisplay.text = $"Upgrade? Cost: {groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost}";
+                    Upgrade(groundCheck.transform.gameObject);
                     Cursor.lockState = CursorLockMode.None;
                 }
                 //DestroyPreview();
@@ -217,6 +216,7 @@ public class PlayerScript : MonoBehaviour
             else if (groundCheck.transform.gameObject.tag == "Tower" && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
             {
                 towerTips.SetActive(true);
+                upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
                 if (!previewIsRange)
                 {
                     DestroyPreview();
@@ -229,11 +229,9 @@ public class PlayerScript : MonoBehaviour
                     previewTower = Instantiate(rangePreview, groundCheck.transform.position, transform.rotation);
                     rangePreview.transform.localScale = new Vector3(groundCheck.transform.gameObject.GetComponent<TowerValues>().range[groundCheck.transform.gameObject.GetComponent<TowerValues>().level] * 2, 0.05f, groundCheck.transform.gameObject.GetComponent<TowerValues>().range[groundCheck.transform.gameObject.GetComponent<TowerValues>().level] * 2);
                 }
-                else if (Input.GetButtonDown("Fire2") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
+                else if (Input.GetButtonDown("Use") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
                 {
-                    upgradePopup.SetActive(true);
-                    upgradeCostDisplay.text = $"Upgrade? Cost: {groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}";
-                    Cursor.lockState = CursorLockMode.None;
+                    Upgrade(groundCheck.transform.gameObject);
                     DestroyPreview();
                 }
                 else if (Input.GetButtonDown("Rotate"))
@@ -245,6 +243,7 @@ public class PlayerScript : MonoBehaviour
             else if (groundCheck.transform.gameObject.tag == "Trap")
             {
                 towerTips.SetActive(true);
+                upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
                 if (!previewIsRange)
                 {
                     DestroyPreview();
@@ -257,11 +256,9 @@ public class PlayerScript : MonoBehaviour
                     previewTower = Instantiate(rangePreview, groundCheck.transform.position, transform.rotation);
                     rangePreview.transform.localScale = new Vector3(groundCheck.transform.gameObject.GetComponent<TowerValues>().range[groundCheck.transform.gameObject.GetComponent<TowerValues>().level] * 2, 0.05f, groundCheck.transform.gameObject.GetComponent<TowerValues>().range[groundCheck.transform.gameObject.GetComponent<TowerValues>().level] * 2);
                 }
-                else if (Input.GetButtonDown("Fire2") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
+                else if (Input.GetButtonDown("Use") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
                 {
-                    upgradePopup.SetActive(true);
-                    upgradeCostDisplay.text = $"Upgrade? Cost: {groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}";
-                    Cursor.lockState = CursorLockMode.None;
+                    Upgrade(groundCheck.transform.gameObject);
                     DestroyPreview();
                 }
                 else if (Input.GetButtonDown("Rotate"))
@@ -390,26 +387,19 @@ public class PlayerScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void Upgrade(GameObject popup)
+    public void Upgrade(GameObject _targetTower)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        GameObject _upradeParticles = player.GetComponent<PlayerScript>().upradeParticles;
-        GameObject targetTower = player.GetComponent<PlayerScript>().groundCheck.transform.gameObject;
-        if (player.GetComponent<PlayerScript>().money >= targetTower.GetComponent<TowerValues>().upgradeCost[targetTower.GetComponent<TowerValues>().level])
+        GameObject targetTower = _targetTower;
+        if (money >= targetTower.GetComponent<TowerValues>().upgradeCost[targetTower.GetComponent<TowerValues>().level])
         {
-            player.GetComponent<PlayerScript>().money -= targetTower.GetComponent<TowerValues>().upgradeCost[targetTower.GetComponent<TowerValues>().level];
+            money -= targetTower.GetComponent<TowerValues>().upgradeCost[targetTower.GetComponent<TowerValues>().level];
             targetTower.GetComponent<TowerValues>().sellFor += targetTower.GetComponent<TowerValues>().upgradeCost[targetTower.GetComponent<TowerValues>().level] - 25;
             targetTower.GetComponent<TowerValues>().level += 1;
-            GameObject spawnedParticles = Instantiate(_upradeParticles, targetTower.transform.position, Quaternion.identity);
+            GameObject spawnedParticles = Instantiate(upradeParticles, targetTower.transform.position, Quaternion.identity);
             spawnedParticles.transform.rotation = Quaternion.Euler(-90, 0, 0);
             Cursor.lockState = CursorLockMode.Locked;
         }
-        else
-        {
-            player.GetComponent<PlayerScript>().tooPoorPopup.SetActive(true);
-        }
         targetTower.GetComponent<TowerValues>().UpdateMaterial();
-        popup.SetActive(false);
     }
 
     public void Sell(GameObject popup)
