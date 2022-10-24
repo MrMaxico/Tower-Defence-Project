@@ -542,6 +542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8963180909452521793}
   - component: {fileID: 2017143482584956682}
+  - component: {fileID: 7212581018020333898}
   m_Layer: 0
   m_Name: Icosphere.001
   m_TagString: Untagged
@@ -622,6 +623,26 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.04704079, y: -0.1834751, z: 0.0022390187}
     m_Extent: {x: 0.4078758, y: 0.416023, z: 0.32517377}
   m_DirtyAABB: 0
+--- !u!95 &7212581018020333898
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6634973459426966726}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 98d070b733da1fd499576fbc002ea007, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6909578846332656379
 GameObject:
   m_ObjectHideFlags: 0
