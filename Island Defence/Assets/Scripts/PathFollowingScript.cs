@@ -26,6 +26,7 @@ public class PathFollowingScript : MonoBehaviour
     public float speed;
     public float rotationSpeed;
     public float timeTillNextEnemySpawn;
+    public float hpBarVisTime;
     float slowness;
     float fullHealth;
 
@@ -62,9 +63,18 @@ public class PathFollowingScript : MonoBehaviour
     private void Update()
     {
         //display hp
-        float f_hp = hp;
-        hpBar.value = f_hp / fullHealth;
-        Debug.Log(f_hp / fullHealth);
+        if (hpBarVisTime > 0)
+        {
+            hpBarVisTime -= Time.deltaTime;
+            hpBar.gameObject.SetActive(true);
+            float f_hp = hp;
+            hpBar.value = f_hp / fullHealth;
+            Debug.Log(f_hp / fullHealth);
+        }
+        else
+        {
+            hpBar.gameObject.SetActive(false);
+        }
 
         //check if enemy is at his goal
         if (transform.position == path[path.Length - 1].position && !onReturn)

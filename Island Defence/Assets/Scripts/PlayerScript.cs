@@ -192,7 +192,14 @@ public class PlayerScript : MonoBehaviour
             else if (groundCheck.transform.gameObject.tag == "Totem")
             {
                 towerTips.SetActive(true);
-                upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
+                if (groundCheck.transform.gameObject.GetComponent<TowerValues>().level < groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel) 
+                {
+                    upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
+                }
+                else
+                {
+                    upgradeCostDisplay.text = "";
+                }
                 if (!previewIsRange)
                 {
                     DestroyPreview();
@@ -216,7 +223,14 @@ public class PlayerScript : MonoBehaviour
             else if (groundCheck.transform.gameObject.tag == "Tower" && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
             {
                 towerTips.SetActive(true);
-                upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
+                if (groundCheck.transform.gameObject.GetComponent<TowerValues>().level < groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel)
+                {
+                    upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
+                }
+                else
+                {
+                    upgradeCostDisplay.text = "";
+                }
                 if (!previewIsRange)
                 {
                     DestroyPreview();
@@ -243,7 +257,14 @@ public class PlayerScript : MonoBehaviour
             else if (groundCheck.transform.gameObject.tag == "Trap")
             {
                 towerTips.SetActive(true);
-                upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
+                if (groundCheck.transform.gameObject.GetComponent<TowerValues>().level < groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel)
+                {
+                    upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
+                }
+                else
+                {
+                    upgradeCostDisplay.text = "-";
+                }
                 if (!previewIsRange)
                 {
                     DestroyPreview();
@@ -267,6 +288,13 @@ public class PlayerScript : MonoBehaviour
                     groundCheck.transform.rotation = Quaternion.Euler(0, groundCheck.transform.rotation.eulerAngles.y, 0);
                 }
 
+            }
+            else if (groundCheck.transform.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Target in sight!");
+                groundCheck.transform.gameObject.GetComponent<PathFollowingScript>().hpBarVisTime = 2f;
+                towerTips.SetActive(false);
+                DestroyPreview();
             }
             else if (groundCheck.transform.gameObject.tag != "Preview")
             {

@@ -1762,7 +1762,7 @@ MonoBehaviour:
   - {fileID: 2048179578}
   - {fileID: 2061679942}
   spawnDelay: 1
-  waveDelay: 10
+  waveDelay: 20
   currentWave: 0
   waveProgress: 0
   waveIndicator: {fileID: 848193530}
@@ -1930,7 +1930,7 @@ PrefabInstance:
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: upgradeCostDisplay
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 561006906}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: towers.Array.data[4]
       value: 
@@ -2618,6 +2618,17 @@ Transform:
   m_Father: {fileID: 1354935468}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &561006906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2210926289633977116, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+  m_PrefabInstance: {fileID: 1579757282}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &568432955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11246,7 +11257,7 @@ MonoBehaviour:
   - {fileID: 863099319}
   - {fileID: 1510256034}
   spawnDelay: 1
-  waveDelay: 10
+  waveDelay: 20
   currentWave: 0
   waveProgress: 0
   waveIndicator: {fileID: 848193530}
@@ -12877,6 +12888,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3132220243845053615, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
   m_PrefabInstance: {fileID: 3132220242315139285}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1708172413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7268413704321647338, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
+  m_PrefabInstance: {fileID: 3132220242315139285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfb9e178b75dad4d8002590285a265e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1712088513
 GameObject:
   m_ObjectHideFlags: 0
@@ -14226,8 +14248,8 @@ MonoBehaviour:
   player: {fileID: 398582217}
   mamaHpBarGameObject: {fileID: 1656513022}
   waves:
-  - {fileID: 841543834}
-  - {fileID: 347602271}
+  - {fileID: 1922700143}
+  - {fileID: 1606178469}
   - {fileID: 841543834}
   - {fileID: 21034613}
   - {fileID: 228853240}
@@ -14252,7 +14274,7 @@ MonoBehaviour:
   - {fileID: 1698904996}
   - {fileID: 498280889}
   spawnDelay: 1
-  waveDelay: 10
+  waveDelay: 20
   currentWave: 0
   waveProgress: 0
   waveIndicator: {fileID: 848193530}
@@ -15154,9 +15176,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1712088517}
     m_Modifications:
+    - target: {fileID: 3132220243702489856, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1708172413}
+    - target: {fileID: 3132220243702489856, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132220243702489856, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenuScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3132220243845053612, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
       propertyPath: m_Name
       value: Pause Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132220243845053612, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3132220243845053615, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
       propertyPath: m_Pivot.x
