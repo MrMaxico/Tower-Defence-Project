@@ -13,6 +13,7 @@ public class SlingshotScript : MonoBehaviour
     public float rotationSpeed;
     public float bulletSpeed;
     public float firerate;
+    public float recoilTime;
     float hitTimer;
 
     public int damage;
@@ -22,6 +23,9 @@ public class SlingshotScript : MonoBehaviour
     Vector3 direction;
 
     bool shot;
+    bool animationTriggered;
+
+    public Animator anim;
 
     private void Update()
     {
@@ -33,19 +37,29 @@ public class SlingshotScript : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(direction);
 
         hitTimer += Time.deltaTime;
-        if (hitTimer >= firerate - .5f && !shot)
+        if (hitTimer >= firerate && !shot)
         {
             shot = true;
             GameObject shotBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.LookRotation(direction));
             shotBullet.GetComponent<DurianScript>().goal = target.transform;
             shotBullet.GetComponent<DurianScript>().bulletSpeed = bulletSpeed;
             shotBullet.GetComponent<DurianScript>().damage = damage;
-        }
-
-        if (hitTimer >= firerate)
-        {
             hitTimer = 0;
             shot = false;
+            animationTriggered = false;
         }
+
+        if (hitTimer >= firerate - recoilTime && !animationTriggered)
+        {
+            StartCoroutine(ShootAnimationTrigger());
+        }
+    }
+
+    IEnumerator ShootAnimationTrigger()
+    {
+        anim.SetTrigger("Shot");
+        animationTriggered = true;
+        yield return new WaitForEndOfFrame();
+        anim.ResetTrigger("Shot");
     }
 }
