@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 5443936041996769531}
   - component: {fileID: 5443936041996769529}
   - component: {fileID: 5443936041996769530}
+  - component: {fileID: 4582787625944921362}
   m_Layer: 5
   m_Name: Gem renderer
   m_TagString: Untagged
@@ -495,6 +496,21 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &4582787625944921362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443936041996769532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5443936042613341930
 GameObject:
   m_ObjectHideFlags: 0

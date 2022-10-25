@@ -957,6 +957,7 @@ GameObject:
   - component: {fileID: 1582614439730254611}
   - component: {fileID: 1582614439730254609}
   - component: {fileID: 1582614439730254608}
+  - component: {fileID: 6094956880235068221}
   m_Layer: 5
   m_Name: BlowgunnerRenderer
   m_TagString: Untagged
@@ -1020,6 +1021,21 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &6094956880235068221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582614439730254610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.6320754, g: 0.29512513, b: 0.05008895, a: 0.53333336}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1582614439746976639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,6 +1374,7 @@ GameObject:
   - component: {fileID: 1582614440061742110}
   - component: {fileID: 1582614440061742108}
   - component: {fileID: 1582614440061742111}
+  - component: {fileID: 3889075287788703727}
   m_Layer: 5
   m_Name: Slingshotrender
   m_TagString: Untagged
@@ -1421,6 +1438,21 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &3889075287788703727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582614440061742081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.6320754, g: 0.29512513, b: 0.05008895, a: 0.53333336}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1582614440145756783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1617,7 @@ GameObject:
   - component: {fileID: 1582614440210818615}
   - component: {fileID: 1582614440210818613}
   - component: {fileID: 1582614440210818612}
+  - component: {fileID: 5813947840040088934}
   m_Layer: 5
   m_Name: spiketrap render
   m_TagString: Untagged
@@ -1648,6 +1681,21 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &5813947840040088934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582614440210818614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.6320754, g: 0.29512513, b: 0.05008895, a: 0.53333336}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1582614440229627782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,6 +1707,7 @@ GameObject:
   - component: {fileID: 1582614440229627783}
   - component: {fileID: 1582614440229627781}
   - component: {fileID: 1582614440229627780}
+  - component: {fileID: 9196907337378364491}
   m_Layer: 5
   m_Name: CannonRender
   m_TagString: Untagged
@@ -1722,6 +1771,21 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &9196907337378364491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582614440229627782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.6320754, g: 0.29512513, b: 0.05008895, a: 0.53333336}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1582614440311040079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,6 +1797,7 @@ GameObject:
   - component: {fileID: 1582614440311040076}
   - component: {fileID: 1582614440311040074}
   - component: {fileID: 1582614440311040077}
+  - component: {fileID: 2694745115246256128}
   m_Layer: 5
   m_Name: TotemRender
   m_TagString: Untagged
@@ -1796,6 +1861,21 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &2694745115246256128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582614440311040079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.6320754, g: 0.29512513, b: 0.05008895, a: 0.53333336}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1582614440354056354
 GameObject:
   m_ObjectHideFlags: 0
