@@ -21,7 +21,7 @@ public class PathFollowingScript : MonoBehaviour
     //UI-UX
     public AudioSource deathSound;
     public GameObject onDeathFX;
-    [SerializeField] private Transform deathEffectEmitter;
+    public GameObject slownessFX;
 
     public float speed;
     public float rotationSpeed;
@@ -139,11 +139,13 @@ public class PathFollowingScript : MonoBehaviour
         if (hasTotemEffect)
         {
             slowness = speed / closestTotem.GetComponent<Totem>().slownessLevel;
+            slownessFX.SetActive(true);
         }
         else
         {
             closestTotem = null;
             slowness = 0;
+            slownessFX.SetActive(false);
         }
     }
 

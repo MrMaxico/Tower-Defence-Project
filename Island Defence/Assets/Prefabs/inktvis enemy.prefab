@@ -893,7 +893,7 @@ MonoBehaviour:
   coin: {fileID: 3251382239599521040}
   deathSound: {fileID: 1282466942282398407}
   onDeathFX: {fileID: 2305287984885383402, guid: 7e9701a2e1dffbc4b8566c2f4ec6cd72, type: 3}
-  deathEffectEmitter: {fileID: 0}
+  slownessFX: {fileID: 680014386657086104}
   speed: 1
   rotationSpeed: 3
   timeTillNextEnemySpawn: 1
@@ -1248,21 +1248,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3214983734405310213, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3214983734405310213, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3214983734405310214, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3214983734405310214, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5227
+      value: 0.41644034
       objectReference: {fileID: 0}
     - target: {fileID: 3214983734405310214, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5227
+      value: 0.41644034
       objectReference: {fileID: 0}
     - target: {fileID: 3214983734405310214, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5227
+      value: 0.41644034
       objectReference: {fileID: 0}
     - target: {fileID: 3214983734405310214, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1270,7 +1278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214983734405310214, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.188
+      value: 0.101
       objectReference: {fileID: 0}
     - target: {fileID: 3214983734405310214, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1306,6 +1314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
+--- !u!1 &680014386657086104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3214983734405310211, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
+  m_PrefabInstance: {fileID: 2734265341490949531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &680014386657086109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3214983734405310214, guid: c3cb3f3fa854806438813eeebff7548c, type: 3}
