@@ -303,10 +303,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8620199731585518954, guid: cd59f249d67224742a445be2d8be59b7, type: 3}
   bulletSpawn: {fileID: 4797360025232178351}
+  anim: {fileID: 4128459619922812197}
   range: 6
   rotationSpeed: 10
   bulletSpeed: 10
   firerate: 2
+  recoilTime: 1
   damage: 3
   offset: {x: 0, y: 0.5, z: 0}
 --- !u!95 &2234490249917982442

@@ -10,10 +10,13 @@ public class ShootScript : MonoBehaviour
 
     public Transform bulletSpawn;
 
+    public Animator anim;
+
     public float range;
     public float rotationSpeed;
     public float bulletSpeed;
     public float firerate;
+    public float recoilTime;
     float closest;
     float hitTimer;
 
@@ -24,6 +27,7 @@ public class ShootScript : MonoBehaviour
     Vector3 direction;
 
     bool shot;
+    bool animationTriggered;
     bool foundGemThief;
 
     private void Update()
@@ -74,7 +78,7 @@ public class ShootScript : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(direction);
 
             hitTimer += Time.deltaTime;
-            if (hitTimer >= firerate - .5f && !shot)
+            if (hitTimer >= firerate && !shot)
             {
                 shot = true;
                 GameObject shotBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.LookRotation(direction));
@@ -83,13 +87,23 @@ public class ShootScript : MonoBehaviour
                 shotBullet.GetComponent<BulletScript>().bulletSpeed = bulletSpeed;
                 shotBullet.GetComponent<BulletScript>().damage = damage;
                 shotBullet.GetComponent<BulletScript>().offset = offset;
-            }
-
-            if (hitTimer >= firerate)
-            {
                 hitTimer = 0;
                 shot = false;
+                animationTriggered = false;
+            }
+
+            if (hitTimer >= firerate - recoilTime && !animationTriggered)
+            {
+                StartCoroutine(ShootAnimationTrigger());
             }
         }
+    }
+
+    IEnumerator ShootAnimationTrigger()
+    {
+        anim.SetTrigger("Shot");
+        animationTriggered = true;
+        yield return new WaitForEndOfFrame();
+        anim.ResetTrigger("Shot");
     }
 }
