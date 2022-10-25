@@ -30,21 +30,21 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Resume()
     {
+        Time.timeScale = 1f;
         buttonClick.Play();
         pauseMenuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Time.timeScale = 1f;
         gameIsPaused = false;
     }
 
     void Pause()
     {
+        Time.timeScale = 0f;
         buttonClick.Play();
         pauseMenuUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Time.timeScale = 0f;
         gameIsPaused = true;
     }
     public void ReturnToMenu()
@@ -52,6 +52,6 @@ public class PauseMenuScript : MonoBehaviour
         buttonClick.Play();
         Time.timeScale = 1f;
         gameIsPaused = false;
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main Menu");
     }
 }
