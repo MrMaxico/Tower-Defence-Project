@@ -1,23 +1,11 @@
 fileFormatVersion: 2
-guid: 66c2873e992920547abbc34e10ef37f9
+guid: b5bd5a9629931a8498dd48f8b6cd3f3c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: -3183081233324338353
-    second: Cylinder.001|a
-  - first:
-      74: -2968226768543046261
-    second: Cylinder.001|ArmatureAction
-  - first:
-      74: -9032957531926350848
-    second: Cylinder.001|Shoot
-  - first:
       74: -3901190485717362917
     second: Armature|a
-  - first:
-      74: 4781951162920444690
-    second: Armature|ArmatureAction
   - first:
       74: -7453387558714718212
     second: Armature|Shoot
