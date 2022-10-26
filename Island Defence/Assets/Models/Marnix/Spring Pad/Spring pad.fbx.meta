@@ -4,6 +4,9 @@ ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
+      74: -6634342459217988360
+    second: Cylinder.001|Idle
+  - first:
       74: -8945691123924629249
     second: Armature|Idle
   - first:
