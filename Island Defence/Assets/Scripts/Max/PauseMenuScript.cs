@@ -53,4 +53,9 @@ public class PauseMenuScript : MonoBehaviour
         gameIsPaused = false;
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
