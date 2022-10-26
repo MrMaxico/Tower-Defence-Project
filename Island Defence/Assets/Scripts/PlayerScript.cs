@@ -35,7 +35,6 @@ public class PlayerScript : MonoBehaviour
     public int currentSlot;
     public int money;
 
-    public bool paused;
     bool previewSpawned;
     bool previewIsRange;
     bool rotating;
@@ -51,7 +50,6 @@ public class PlayerScript : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
-        paused = true;
         AcceptPoorness(tooPoorPopup);
         FindObjectOfType<AudioManagerScript>().play("WaveMusic1");
     }
@@ -76,7 +74,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
         //camera
-        if (!paused && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+        if (!PauseMenuScript.gameIsPaused && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
         {
             rotation.y += Input.GetAxis("Mouse X") * sensitivity;
             transform.eulerAngles = rotation;
@@ -109,7 +107,7 @@ public class PlayerScript : MonoBehaviour
                     previewIsRange = false;
                 }
 
-                if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+                if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
                 {
                     money -= towerPrices[currentSlot];
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
@@ -123,7 +121,7 @@ public class PlayerScript : MonoBehaviour
                         placed.transform.Rotate(new Vector3(0, -90, 0));
                     }
                 }
-                else if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] > money)
+                else if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] > money)
                 {
                     Debug.Log("You poor");
                     tooPoorPopup.SetActive(true);
@@ -161,13 +159,13 @@ public class PlayerScript : MonoBehaviour
                     previewIsRange = false;
                 }
 
-                if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+                if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
                 {
                     money -= towerPrices[currentSlot];
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
                     placed.transform.rotation = groundCheck.transform.rotation;
                 }
-                else if (Input.GetButtonDown("Fire1") && !paused && towerPrices[currentSlot] > money)
+                else if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] > money)
                 {
                     Debug.Log("You poor");
                     tooPoorPopup.SetActive(true);
@@ -360,19 +358,6 @@ public class PlayerScript : MonoBehaviour
         else if (lastFrameSlot != currentSlot)
         {
             DestroyPreview();
-        }
-
-        //pause game
-        if (Input.GetButtonDown("Pause"))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            paused = true;
-        }
-
-        if (Input.GetButtonDown("Fire1") && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            paused = false;
         }
 
         //display money

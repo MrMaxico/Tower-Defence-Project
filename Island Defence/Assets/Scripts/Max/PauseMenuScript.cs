@@ -14,13 +14,12 @@ public class PauseMenuScript : MonoBehaviour
     public KeyCode pauseKey;
     void Update()
     {
-        if (Input.GetKeyDown(pauseKey))
+        if (Input.GetButtonDown("Pause"))
         {
             if (gameIsPaused)
             {
                 Resume();
             }
-
             else
             {
                 Pause();
@@ -38,7 +37,7 @@ public class PauseMenuScript : MonoBehaviour
         gameIsPaused = false;
     }
 
-    void Pause()
+    public void Pause()
     {
         Time.timeScale = 0f;
         buttonClick.Play();
