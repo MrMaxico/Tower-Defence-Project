@@ -27,10 +27,15 @@ public class MamaScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        if (GetComponent<PathFollowingScript>().hp > 0)
+        {
+            GetComponent<PathFollowingScript>().hpBarVisTime = .3f;
+        }
 
         if (timer >= babyDelay)
         {
             babiesSpawned = 0;
+            GetComponent<PathFollowingScript>().animations.SetTrigger("Spit");
             StartCoroutine(MakeBabies());
             FindObjectOfType<AudioManagerScript>().play("MamaSquidRoar");
             timer = 0;
@@ -40,6 +45,8 @@ public class MamaScript : MonoBehaviour
 
     IEnumerator MakeBabies()
     {
+        yield return new WaitForEndOfFrame();
+        GetComponent<PathFollowingScript>().animations.ResetTrigger("Spit");
         GameObject baby = Instantiate(babyPrefab, babySpawnPos.position, Quaternion.identity);
         baby.GetComponent<PathFollowingScript>().chest = GetComponent<PathFollowingScript>().chest;
         baby.GetComponent<PathFollowingScript>().path = GetComponent<PathFollowingScript>().path;
@@ -50,5 +57,6 @@ public class MamaScript : MonoBehaviour
             yield return new WaitForSeconds(baby.GetComponent<PathFollowingScript>().timeTillNextEnemySpawn);
             StartCoroutine(MakeBabies());
         }
+
     }
 }

@@ -79,7 +79,14 @@ public class PathFollowingScript : MonoBehaviour
         //check if enemy is at his goal
         if (transform.position == path[path.Length - 1].position && !onReturn)
         {
-            PickupGem();
+            if (!isMama)
+            {
+                PickupGem();
+            }
+            else
+            {
+                StartCoroutine(MamaDoom());
+            }
         }
 
         //path of the enemy
@@ -89,7 +96,6 @@ public class PathFollowingScript : MonoBehaviour
             targetDirection = path[pathProgress].position - transform.position;
             direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(direction);
-            //transform.LookAt(path[pathProgress]);
         }
         else if (!onReturn && pathProgress < path.Length - 1)
         {
@@ -167,6 +173,16 @@ public class PathFollowingScript : MonoBehaviour
             player.GetComponent<PlayerScript>().money--;
         }
         onReturn = true;
+    }
+
+    IEnumerator MamaDoom()
+    {
+        onReturn = true;
+        speed = 0;
+        rotationSpeed = 0;
+        chest.GetComponent<Chest>().gemsLeft--;
+        yield return new WaitForSeconds(1);
+        StartCoroutine(MamaDoom());
     }
 
     IEnumerator DespawnOnDeath()
