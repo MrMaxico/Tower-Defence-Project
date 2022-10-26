@@ -38,6 +38,10 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            Debug.Log(enemy.name);
+        }
     }
 
     private IEnumerator SpawnCycle()

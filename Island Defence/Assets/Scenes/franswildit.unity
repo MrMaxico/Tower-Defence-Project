@@ -2164,6 +2164,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2860128756443927624, guid: 533eaec79249319498970f3078692548, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3183836488700661292, guid: 533eaec79249319498970f3078692548, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2231,6 +2235,10 @@ PrefabInstance:
     - target: {fileID: 5254881930583624030, guid: 533eaec79249319498970f3078692548, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815083465832826320, guid: 533eaec79249319498970f3078692548, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7913211846156629955, guid: 533eaec79249319498970f3078692548, type: 3}
       propertyPath: m_Layer
@@ -14316,13 +14324,13 @@ MonoBehaviour:
   player: {fileID: 398582217}
   mamaHpBarGameObject: {fileID: 1656513022}
   waves:
-  - {fileID: 347602271}
+  - {fileID: 1922700143}
   - {fileID: 1606178469}
   - {fileID: 841543834}
   - {fileID: 21034613}
   - {fileID: 228853240}
   - {fileID: 1878016291}
-  - {fileID: 791911690}
+  - {fileID: 347602271}
   path:
   - {fileID: 712897871}
   - {fileID: 528788678}
