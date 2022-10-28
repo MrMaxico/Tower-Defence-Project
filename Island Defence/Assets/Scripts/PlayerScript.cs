@@ -24,6 +24,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject rotatingTower;
     public GameObject upradeParticles;
     public GameObject towerTips;
+    public GameObject spyglass;
+    public GameObject[] canvases;
 
     public Transform[] mineToChestRoute;
     public Transform[] springpadJump;
@@ -41,9 +43,12 @@ public class PlayerScript : MonoBehaviour
     bool previewSpawned;
     bool previewIsRange;
     bool canWalk;
+    bool gameOver;
 
     public TextMeshProUGUI moneyDisplay;
     public TextMeshProUGUI upgradeCostDisplay;
+
+    public Animator deathScreen;
 
     Rigidbody playerRB;
 
@@ -54,7 +59,7 @@ public class PlayerScript : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         AcceptPoorness(tooPoorPopup);
-        FindObjectOfType<AudioManagerScript>().play("WaveMusic1");
+        FindObjectOfType<AudioManagerScript>().Play("WaveMusic");
         canWalk = true;
     }
     private void Update()
@@ -65,7 +70,18 @@ public class PlayerScript : MonoBehaviour
         if (chest.GetComponent<Chest>().gemsLeft <= 0 && gems.Length == 0)
         {
             Debug.Log("Game over!");
-            SceneManager.LoadScene("Main Menu");
+            gameOver = true;
+            deathScreen.SetBool("IsGameOver", true);
+        }
+
+        if (gameOver)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            chest.GetComponent<Chest>().gemsLeft = 0;
         }
 
         //insta-ultra-kill
@@ -97,6 +113,26 @@ public class PlayerScript : MonoBehaviour
                 camrotation.x -= mouseVertical * sensitivity;
             }
             cam.transform.eulerAngles = camrotation;
+        }
+
+        //spyglass
+        if (currentSlot == 1 && Input.GetButton("Fire2") && !gameOver)
+        {
+            spyglass.SetActive(true);
+            foreach (GameObject canvas in canvases)
+            {
+                canvas.SetActive(false);
+            }
+            cam.GetComponent<Camera>().fieldOfView = 10;
+        }
+        else
+        {
+            spyglass.SetActive(false);
+            foreach (GameObject canvas in canvases)
+            {
+                canvas.SetActive(true);
+            }
+            cam.GetComponent<Camera>().fieldOfView = 60;
         }
 
         //place, upgrade and rotate towers

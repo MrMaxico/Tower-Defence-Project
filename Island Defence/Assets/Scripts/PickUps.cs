@@ -42,7 +42,7 @@ public class PickUps : MonoBehaviour
 
             gemDespawnTimer.SetActive(true);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            FindObjectOfType<AudioManagerScript>().play("GemReturn");
+            FindObjectOfType<AudioManagerScript>().Play("GemReturn");
             gemDespawnTimer.transform.LookAt(player.transform.position);
             gemDespawnFill.fillAmount -= Time.deltaTime / 30;
 
