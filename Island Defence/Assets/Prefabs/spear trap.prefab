@@ -94,6 +94,11 @@ MonoBehaviour:
   meshHolder:
   - {fileID: 987938347236264994}
   - {fileID: 7228511020086257168}
+  stars:
+  - {fileID: 3314850409557237914}
+  - {fileID: 2412808136079575115}
+  - {fileID: 6163929154932050341}
+  - {fileID: 6845001897634165923}
   levelMat:
   - {fileID: 2100000, guid: 3ef1b0948ef708b45820058b15566bac, type: 2}
   - {fileID: 2100000, guid: 870ac0f939f3d5d47b217fadbd933afb, type: 2}
@@ -109,6 +114,7 @@ MonoBehaviour:
   - 1.6
   - 1.6
   - 1.6
+  starVisTime: 0
 --- !u!114 &-4866705175542603006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,5 +779,25 @@ PrefabInstance:
 --- !u!224 &581464690239375648 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2865808486451528079, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+  m_PrefabInstance: {fileID: 3446558476243355823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2412808136079575115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1056277298277957860, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+  m_PrefabInstance: {fileID: 3446558476243355823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3314850409557237914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 131752614662465589, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+  m_PrefabInstance: {fileID: 3446558476243355823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6163929154932050341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8817500809928294666, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+  m_PrefabInstance: {fileID: 3446558476243355823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6845001897634165923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8154600940796853260, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
   m_PrefabInstance: {fileID: 3446558476243355823}
   m_PrefabAsset: {fileID: 0}

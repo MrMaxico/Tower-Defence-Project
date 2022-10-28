@@ -2170,6 +2170,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: sellDisplay
+      value: 
+      objectReference: {fileID: 1579757283}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: moneyDisplay
       value: 
       objectReference: {fileID: 1343294341}
@@ -12931,6 +12935,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+--- !u!114 &1579757283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2210926289996333330, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+  m_PrefabInstance: {fileID: 1579757282}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1582684681 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4444336748276995060, guid: 9236a529b1481524fa779873fd09999c, type: 3}

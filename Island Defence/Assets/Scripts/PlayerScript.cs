@@ -47,6 +47,7 @@ public class PlayerScript : MonoBehaviour
 
     public TextMeshProUGUI moneyDisplay;
     public TextMeshProUGUI upgradeCostDisplay;
+    public TextMeshProUGUI sellDisplay;
 
     public Animator deathScreen;
 
@@ -230,8 +231,10 @@ public class PlayerScript : MonoBehaviour
             else if (groundCheck.transform.gameObject.tag == "Totem")
             {
                 towerTips.SetActive(true);
+                groundCheck.transform.gameObject.GetComponent<TowerValues>().starVisTime = 1f;
                 if (groundCheck.transform.gameObject.GetComponent<TowerValues>().level < groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel) 
                 {
+                    sellDisplay.text = $"Sell tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().sellFor}G)";
                     upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
                 }
                 else
@@ -256,13 +259,20 @@ public class PlayerScript : MonoBehaviour
                     Upgrade(groundCheck.transform.gameObject);
                     Cursor.lockState = CursorLockMode.None;
                 }
+                else if (Input.GetButtonDown("Sell"))
+                {
+                    Sell(groundCheck.transform.gameObject);
+                    DestroyPreview();
+                }
                 //DestroyPreview();
             }
             else if (groundCheck.transform.gameObject.tag == "Tower" && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
             {
                 towerTips.SetActive(true);
+                groundCheck.transform.gameObject.GetComponent<TowerValues>().starVisTime = 1f;
                 if (groundCheck.transform.gameObject.GetComponent<TowerValues>().level < groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel)
                 {
+                    sellDisplay.text = $"Sell tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().sellFor}G)";
                     upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
                 }
                 else
@@ -286,6 +296,11 @@ public class PlayerScript : MonoBehaviour
                     Upgrade(groundCheck.transform.gameObject);
                     DestroyPreview();
                 }
+                else if (Input.GetButtonDown("Sell"))
+                {
+                    Sell(groundCheck.transform.gameObject);
+                    DestroyPreview();
+                }
                 else if (Input.GetButtonDown("Rotate"))
                 {
                     groundCheck.transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, transform.position - new Vector3(0, -1, 0) - groundCheck.transform.position, 10000 * Time.deltaTime, 0.0f));
@@ -295,8 +310,10 @@ public class PlayerScript : MonoBehaviour
             else if (groundCheck.transform.gameObject.tag == "Trap")
             {
                 towerTips.SetActive(true);
+                groundCheck.transform.gameObject.GetComponent<TowerValues>().starVisTime = 1f;
                 if (groundCheck.transform.gameObject.GetComponent<TowerValues>().level < groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel)
                 {
+                    sellDisplay.text = $"Sell tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().sellFor}G)";
                     upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
                 }
                 else
@@ -318,6 +335,11 @@ public class PlayerScript : MonoBehaviour
                 else if (Input.GetButtonDown("Use") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
                 {
                     Upgrade(groundCheck.transform.gameObject);
+                    DestroyPreview();
+                }
+                else if (Input.GetButtonDown("Sell"))
+                {
+                    Sell(groundCheck.transform.gameObject);
                     DestroyPreview();
                 }
                 else if (Input.GetButtonDown("Rotate"))

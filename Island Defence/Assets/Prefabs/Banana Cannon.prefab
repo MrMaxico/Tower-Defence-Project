@@ -365,6 +365,11 @@ MonoBehaviour:
   damage: 03000000050000000c0000001e000000
   meshHolder:
   - {fileID: 6610178622438763747}
+  stars:
+  - {fileID: 3053765242716686297}
+  - {fileID: 2674458243066343176}
+  - {fileID: 5902879107099766502}
+  - {fileID: 6530154970182603744}
   levelMat:
   - {fileID: 2100000, guid: 437e4bed419f2f443a0e6d4ee0cc762a, type: 2}
   - {fileID: 2100000, guid: 9198896e7ea53d141a823bb5c17591ea, type: 2}
@@ -380,6 +385,7 @@ MonoBehaviour:
   - 2
   - 2
   - 2
+  starVisTime: 0
 --- !u!1 &8224265078846987615
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +601,26 @@ PrefabInstance:
 --- !u!224 &896311585696460387 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2865808486451528079, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+  m_PrefabInstance: {fileID: 3149479594151604204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2674458243066343176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1056277298277957860, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+  m_PrefabInstance: {fileID: 3149479594151604204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3053765242716686297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 131752614662465589, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+  m_PrefabInstance: {fileID: 3149479594151604204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5902879107099766502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8817500809928294666, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+  m_PrefabInstance: {fileID: 3149479594151604204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6530154970182603744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8154600940796853260, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
   m_PrefabInstance: {fileID: 3149479594151604204}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3640467208126001259

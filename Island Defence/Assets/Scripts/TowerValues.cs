@@ -11,11 +11,13 @@ public class TowerValues : MonoBehaviour
     public int[] damage;
 
     public GameObject[] meshHolder;
+    public GameObject[] stars;
 
     public Material[] levelMat;
 
     public float[] range;
     public float[] fireRate;
+    public float starVisTime;
 
     public void UpdateMaterial()
     {
@@ -28,6 +30,29 @@ public class TowerValues : MonoBehaviour
             else if (meshHolder[i].TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinnedMeshRenderer))
             {
                 skinnedMeshRenderer.material = levelMat[level];
+            }
+        }
+
+        for (int i = 0; i < stars.Length; i++)
+        {
+            stars[i].SetActive(false);
+            stars[level].SetActive(true);
+        }
+    }
+
+    private void Update()
+    {
+        if (starVisTime > 0)
+        {
+            starVisTime -= Time.deltaTime;
+            stars[level].SetActive(true);
+        }
+        else
+        {
+            for (int i = 0; i < stars.Length; i++)
+            {
+                stars[i].SetActive(false);
+                stars[level].SetActive(false);
             }
         }
     }
