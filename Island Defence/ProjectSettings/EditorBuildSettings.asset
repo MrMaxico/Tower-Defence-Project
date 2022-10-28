@@ -17,4 +17,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/franswildit.unity
     guid: 6f08b933b2db19c4eaaf114da41cbcd0
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 92992691e4a07e94998260fa78cd7e12, type: 2}
