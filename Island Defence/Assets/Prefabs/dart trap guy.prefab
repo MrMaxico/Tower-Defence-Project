@@ -318,6 +318,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1343263817645354388}
     m_Modifications:
+    - target: {fileID: 131752614662465589, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056277298277957860, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2586580666045118559, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -441,6 +449,10 @@ PrefabInstance:
     - target: {fileID: 6964834839234148072, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
       propertyPath: m_Name
       value: TowerLevelCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817500809928294666, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
