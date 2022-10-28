@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
 {
     public float sensitivity;
     public float speed;
+    public float launchSpeed;
     public float maxXRotation;
     float mouseVertical;
     public GameObject chest;
@@ -25,6 +26,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject towerTips;
 
     public Transform[] mineToChestRoute;
+    public Transform[] springpadJump;
 
     public Vector3[] towerOffsets;
     Vector3 rotation;
@@ -34,10 +36,11 @@ public class PlayerScript : MonoBehaviour
     public int[] towerPrices;
     public int currentSlot;
     public int money;
+    int jumpProgress;
 
     bool previewSpawned;
     bool previewIsRange;
-    bool rotating;
+    bool canWalk;
 
     public TextMeshProUGUI moneyDisplay;
     public TextMeshProUGUI upgradeCostDisplay;
@@ -52,6 +55,7 @@ public class PlayerScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         AcceptPoorness(tooPoorPopup);
         FindObjectOfType<AudioManagerScript>().play("WaveMusic1");
+        canWalk = true;
     }
     private void Update()
     {
@@ -367,8 +371,16 @@ public class PlayerScript : MonoBehaviour
     private void FixedUpdate()
     {
         //movement
-        movement.x = Input.GetAxis("Horizontal");
-        movement.z = Input.GetAxis("Vertical");
+        if (canWalk)
+        {
+            movement.x = Input.GetAxis("Horizontal");
+            movement.z = Input.GetAxis("Vertical");
+        }
+        else
+        {
+            movement.x = 0;
+            movement.z = 0;
+        }
         MovePlayer();
     }
 
@@ -380,8 +392,6 @@ public class PlayerScript : MonoBehaviour
 
     private void DestroyPreview()
     {
-        rotating = false;
-
         // Debug.Log("Trying to kill previews"); // if you enable this the console will be spammed
         previewTags = GameObject.FindGameObjectsWithTag("Preview");
         if (previewTags.Length > 0)
@@ -425,12 +435,6 @@ public class PlayerScript : MonoBehaviour
         popup.SetActive(false);
     }
 
-    public void Decline(GameObject popup)
-    {
-        popup.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
     private void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Ive got a feeling!");
@@ -452,6 +456,37 @@ public class PlayerScript : MonoBehaviour
                 money++;
                 Destroy(collision.gameObject);
             }
+        }
+        else if (collision.gameObject.tag == "Springpad")
+        {
+            StartCoroutine(SpringpadLaunch());
+        }
+    }
+
+    IEnumerator SpringpadLaunch()
+    {
+        if (gameObject.transform.position != springpadJump[jumpProgress].position)
+        {
+            canWalk = false;
+            playerRB.velocity = new Vector3(0, 0, 0);
+            playerRB.useGravity = false;
+            transform.position = Vector3.MoveTowards(transform.position, springpadJump[jumpProgress].position, launchSpeed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(SpringpadLaunch());
+        }
+        else if (jumpProgress < springpadJump.Length - 1)
+        {
+            canWalk = false;
+            playerRB.velocity = new Vector3(0, 0, 0);
+            jumpProgress++;
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(SpringpadLaunch());
+        }
+        else if (gameObject.transform.position == springpadJump[springpadJump.Length - 1].position)
+        {
+            canWalk = true;
+            jumpProgress = 0;
+            playerRB.useGravity = true;
         }
     }
 }

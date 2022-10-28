@@ -35,7 +35,15 @@ public class DurianScript : MonoBehaviour
             if (hit.transform.gameObject.CompareTag("Enemy") && hit.transform.gameObject != lastHit)
             {
                 lastHit = hit.transform.gameObject;
-                hit.transform.gameObject.GetComponent<PathFollowingScript>().hp -= damage;
+                if (hit.transform.gameObject.GetComponent<PathFollowingScript>().shield)
+                {
+                    hit.transform.gameObject.GetComponent<PathFollowingScript>().shield = false;
+                    return;
+                }
+                else
+                {
+                    hit.transform.gameObject.GetComponent<PathFollowingScript>().hp -= damage;
+                }
             }
         }
     }

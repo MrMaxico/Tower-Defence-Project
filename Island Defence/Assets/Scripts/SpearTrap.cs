@@ -24,13 +24,19 @@ public class SpearTrap : MonoBehaviour
         yield return new WaitForSeconds(towerValuesScript.fireRate[towerValuesScript.level] / 6);
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        foreach (GameObject enemie in enemies)
+        foreach (GameObject enemy in enemies)
         {
-            float distance = Vector3.Distance(transform.position, enemie.transform.position);
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (distance <= 0.8f)
             {
-                enemie.GetComponent<PathFollowingScript>().hp -= towerValuesScript.damage[towerValuesScript.level];
-                Debug.Log(enemie.GetComponent<PathFollowingScript>().hp);
+                if (enemy.GetComponent<PathFollowingScript>().shield)
+                {
+                    enemy.GetComponent<PathFollowingScript>().shield = false;
+                }
+                else
+                {
+                    enemy.GetComponent<PathFollowingScript>().hp -= towerValuesScript.damage[towerValuesScript.level];
+                }
             }
         }
 
