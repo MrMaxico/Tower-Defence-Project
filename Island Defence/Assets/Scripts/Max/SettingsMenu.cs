@@ -138,7 +138,7 @@ public class SettingsMenu : MonoBehaviour
     public void LoadLevel2()
     {
         buttonClick.Play();
-        SceneManager.LoadScene("Island");
+        SceneManager.LoadScene("SunsetLevel");
     }
 
     public void LoadLevel3()
