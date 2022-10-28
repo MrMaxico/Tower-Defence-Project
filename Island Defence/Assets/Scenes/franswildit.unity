@@ -12675,6 +12675,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4997508780511571280, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7606769702798633732, guid: 9236a529b1481524fa779873fd09999c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -14514,7 +14518,7 @@ MonoBehaviour:
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
-  - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
+  - {fileID: 5783866209347875933, guid: 97ade8022dcc0e6468fab97648b7df66, type: 3}
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}

@@ -20,8 +20,16 @@ public class BulletScript : MonoBehaviour
 
             if (transform.position == goal.position + offset)
             {
-                Debug.Log("BananaSplit");
-                goal.gameObject.GetComponent<PathFollowingScript>().hp -= damage;
+                if (goal.GetComponent<PathFollowingScript>().shield)
+                {
+                    goal.GetComponent<PathFollowingScript>().shield = false;
+                    Destroy(gameObject);
+                    return;
+                }
+                else
+                {
+                    goal.GetComponent<PathFollowingScript>().hp -= damage;
+                }
                 Destroy(gameObject);
             }
         }

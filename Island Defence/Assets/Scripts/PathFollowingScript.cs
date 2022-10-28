@@ -15,6 +15,7 @@ public class PathFollowingScript : MonoBehaviour
     public GameObject gem;
     public GameObject redGem;
     public GameObject coin;
+    public GameObject shieldBlub;
     GameObject[] totems;
     GameObject closestTotem;
 
@@ -37,6 +38,7 @@ public class PathFollowingScript : MonoBehaviour
     bool onReturn;
     bool hasDied;
     public bool isMama;
+    public bool shield;
     public bool hasTotemEffect;
 
     Vector3 direction;
@@ -75,6 +77,9 @@ public class PathFollowingScript : MonoBehaviour
         {
             hpBar.gameObject.SetActive(false);
         }
+
+        //shield
+        shieldBlub.SetActive(shield);
 
         //check if enemy is at his goal
         if (transform.position == path[path.Length - 1].position && !onReturn)
