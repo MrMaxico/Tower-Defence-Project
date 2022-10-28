@@ -59,7 +59,7 @@ public class PlayerScript : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         AcceptPoorness(tooPoorPopup);
-        FindObjectOfType<AudioManagerScript>().play("WaveMusic1");
+        FindObjectOfType<AudioManagerScript>().Play("WaveMusic");
         canWalk = true;
     }
     private void Update()

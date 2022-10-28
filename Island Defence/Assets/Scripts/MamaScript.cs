@@ -21,7 +21,7 @@ public class MamaScript : MonoBehaviour
         FindObjectOfType<AudioManagerScript>().StopPlaying("DefenceSetupMusic");
         FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic1");
         FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic2");
-        FindObjectOfType<AudioManagerScript>().play("MamaSquidMusic");
+        FindObjectOfType<AudioManagerScript>().Play("MamaSquidMusic");
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class MamaScript : MonoBehaviour
             babiesSpawned = 0;
             GetComponent<PathFollowingScript>().animations.SetTrigger("Spit");
             StartCoroutine(MakeBabies());
-            FindObjectOfType<AudioManagerScript>().play("MamaSquidRoar");
+            FindObjectOfType<AudioManagerScript>().Play("MamaSquidRoar");
             timer = 0;
         }
     }

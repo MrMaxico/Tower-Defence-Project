@@ -35,7 +35,7 @@ public class AudioManagerScript : MonoBehaviour
     }
 
 
-    public void play (string name)
+    public void Play (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
