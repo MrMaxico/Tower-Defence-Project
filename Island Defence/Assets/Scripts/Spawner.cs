@@ -26,9 +26,14 @@ public class Spawner : MonoBehaviour
     public Slider mamaHpBar;
 
     public bool firstWave;
+    public bool firstScene;
 
     private void Start()
     {
+        if (!firstScene)
+        {
+            StartCoroutine(SpawnCycle());
+        }
         firstWave = true;
         for (int i = 0; i < path.Length - 1; i++)
         {
