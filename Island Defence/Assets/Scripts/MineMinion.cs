@@ -51,7 +51,7 @@ public class MineMinion : MonoBehaviour
         }
         else if (!onReturn && gameObject.transform.position == mineToChestRoute[mineToChestRoute.Length - 1].position)
         {
-            player.GetComponent<PlayerScript>().money++;
+            player.GetComponent<PlayerScript>().money += 5;
             onReturn = true;
         }
 

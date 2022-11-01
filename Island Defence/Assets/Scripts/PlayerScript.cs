@@ -14,7 +14,6 @@ public class PlayerScript : MonoBehaviour
     float mouseVertical;
     public GameObject chest;
     public GameObject cam;
-    public GameObject tooPoorPopup;
     public GameObject upgradePopup;
     public GameObject rangePreview;
     public GameObject[] previewTowers;
@@ -60,7 +59,6 @@ public class PlayerScript : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
-        AcceptPoorness(tooPoorPopup);
         FindObjectOfType<AudioManagerScript>().Play("WaveMusic");
         canWalk = true;
     }
@@ -96,7 +94,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
         //camera
-        if (!PauseMenuScript.gameIsPaused && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+        if (!PauseMenuScript.gameIsPaused && !upgradePopup.activeSelf)
         {
             rotation.y += Input.GetAxis("Mouse X") * sensitivity;
             transform.eulerAngles = rotation;
@@ -149,7 +147,7 @@ public class PlayerScript : MonoBehaviour
                     previewIsRange = false;
                 }
 
-                if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+                if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] <= money && !upgradePopup.activeSelf)
                 {
                     money -= towerPrices[currentSlot];
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
@@ -166,8 +164,6 @@ public class PlayerScript : MonoBehaviour
                 else if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] > money)
                 {
                     Debug.Log("You poor");
-                    tooPoorPopup.SetActive(true);
-                    Cursor.lockState = CursorLockMode.None;
                 }
                 else
                 {
@@ -201,7 +197,7 @@ public class PlayerScript : MonoBehaviour
                     previewIsRange = false;
                 }
 
-                if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] <= money && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+                if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] <= money && !upgradePopup.activeSelf)
                 {
                     money -= towerPrices[currentSlot];
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
@@ -210,8 +206,6 @@ public class PlayerScript : MonoBehaviour
                 else if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] > money)
                 {
                     Debug.Log("You poor");
-                    tooPoorPopup.SetActive(true);
-                    Cursor.lockState = CursorLockMode.None;
                 }
                 else
                 {
@@ -267,7 +261,7 @@ public class PlayerScript : MonoBehaviour
                 }
                 //DestroyPreview();
             }
-            else if (groundCheck.transform.gameObject.tag == "Tower" && !tooPoorPopup.activeSelf && !upgradePopup.activeSelf)
+            else if (groundCheck.transform.gameObject.tag == "Tower" && !upgradePopup.activeSelf)
             {
                 towerTips.SetActive(true);
                 groundCheck.transform.gameObject.GetComponent<TowerValues>().starVisTime = 1f;
@@ -369,7 +363,7 @@ public class PlayerScript : MonoBehaviour
             }
             else if (groundCheck.transform.gameObject.tag == "Mine")
             {
-                if (Input.GetButtonDown("Use"))
+                if (Input.GetButtonDown("Use") && money > 25)
                 {
                     GameObject spawnedMiner = Instantiate(towers[7], mineToChestRoute[0].position, Quaternion.identity);
                     spawnedMiner.GetComponent<MineMinion>().player = gameObject;
@@ -480,12 +474,6 @@ public class PlayerScript : MonoBehaviour
             }
         }
         previewSpawned = false;
-    }
-
-    public void AcceptPoorness(GameObject popup)
-    {
-        popup.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Upgrade(GameObject _targetTower)
