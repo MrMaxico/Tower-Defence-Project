@@ -349,7 +349,7 @@ MonoBehaviour:
   deathSound: {fileID: 7840824026049193551}
   onDeathFX: {fileID: 2305287984885383402, guid: 7e9701a2e1dffbc4b8566c2f4ec6cd72, type: 3}
   slownessFX: {fileID: 6468530516564172817}
-  speed: 0.8
+  speed: 1
   rotationSpeed: 2
   timeTillNextEnemySpawn: 1
   hpBarVisTime: 0
