@@ -1981,8 +1981,8 @@ MonoBehaviour:
   player: {fileID: 398582217}
   mamaHpBarGameObject: {fileID: 0}
   waves:
-  - {fileID: 1632640858}
-  - {fileID: 1731941006}
+  - {fileID: 1922700143}
+  - {fileID: 1606178469}
   - {fileID: 850997926}
   - {fileID: 1031353453}
   - {fileID: 1279874207}
@@ -2004,7 +2004,7 @@ MonoBehaviour:
   - {fileID: 2048179578}
   - {fileID: 2061679942}
   spawnDelay: 1
-  waveDelay: 20
+  waveDelay: 2
   currentWave: 0
   waveProgress: 0
   waveIndicator: {fileID: 848193530}
@@ -2459,6 +2459,10 @@ PrefabInstance:
     - target: {fileID: 1109983228249261868, guid: 533eaec79249319498970f3078692548, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410105862708738076, guid: 533eaec79249319498970f3078692548, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.74
       objectReference: {fileID: 0}
     - target: {fileID: 1862881959145028554, guid: 533eaec79249319498970f3078692548, type: 3}
       propertyPath: m_Layer
@@ -11836,8 +11840,8 @@ MonoBehaviour:
   player: {fileID: 398582217}
   mamaHpBarGameObject: {fileID: 0}
   waves:
-  - {fileID: 669937319}
-  - {fileID: 346220867}
+  - {fileID: 1922700143}
+  - {fileID: 1606178469}
   - {fileID: 117918080}
   - {fileID: 218063810}
   - {fileID: 1311750682}
@@ -11862,7 +11866,7 @@ MonoBehaviour:
   - {fileID: 863099319}
   - {fileID: 1510256034}
   spawnDelay: 1
-  waveDelay: 20
+  waveDelay: 2
   currentWave: 0
   waveProgress: 0
   waveIndicator: {fileID: 848193530}
@@ -13192,14 +13196,14 @@ MonoBehaviour:
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
-  - {fileID: 8325535428772236872, guid: 3a7934836e17d1747b2856cd81bc8a43, type: 3}
-  - {fileID: 8325535428772236872, guid: 3a7934836e17d1747b2856cd81bc8a43, type: 3}
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
   - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
-  - {fileID: 8325535428772236872, guid: 3a7934836e17d1747b2856cd81bc8a43, type: 3}
-  - {fileID: 8325535428772236872, guid: 3a7934836e17d1747b2856cd81bc8a43, type: 3}
-  - {fileID: 8325535428772236872, guid: 3a7934836e17d1747b2856cd81bc8a43, type: 3}
+  - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
+  - {fileID: 8325535428772236872, guid: 140124a2b9bd012489a8817cfec9b6e3, type: 3}
+  - {fileID: 2412078676493359459, guid: ebc66e133fa0b2b49913a0bff8b4907c, type: 3}
+  - {fileID: 2412078676493359459, guid: ebc66e133fa0b2b49913a0bff8b4907c, type: 3}
+  - {fileID: 2412078676493359459, guid: ebc66e133fa0b2b49913a0bff8b4907c, type: 3}
 --- !u!4 &1606178471
 Transform:
   m_ObjectHideFlags: 0

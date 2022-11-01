@@ -133,12 +133,14 @@ public class SettingsMenu : MonoBehaviour
     {
         buttonClick.Play();
         SceneManager.LoadScene("franswildit");
+        FindObjectOfType<AudioManagerScript>().Play("DefenceSetupMusic");
     }
 
     public void LoadLevel2()
     {
         buttonClick.Play();
         SceneManager.LoadScene("SunsetLevel");
+        FindObjectOfType<AudioManagerScript>().Play("DefenceSetupMusic");
     }
 
     public void LoadLevel3()

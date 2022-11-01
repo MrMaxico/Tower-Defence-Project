@@ -9,6 +9,10 @@ public class Chest : MonoBehaviour
     public int gemsLeft;
 
     public TextMeshProUGUI gemCount;
+    public void Start()
+    {
+
+    }
 
     private void Update()
     {

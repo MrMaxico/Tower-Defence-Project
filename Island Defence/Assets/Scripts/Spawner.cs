@@ -35,6 +35,8 @@ public class Spawner : MonoBehaviour
             StartCoroutine(SpawnCycle());
         }
         firstWave = true;
+        FindObjectOfType<AudioManagerScript>().StopPlaying("DefenceSetupMusic");
+        FindObjectOfType<AudioManagerScript>().Play("WaveMusic1");
         for (int i = 0; i < path.Length - 1; i++)
         {
             Debug.DrawLine(path[i].position, path[i + 1].position, Color.white, 6000f, false);
@@ -53,13 +55,13 @@ public class Spawner : MonoBehaviour
         {
             Debug.Log("SpawnCycle triggered");
             waveIndicator.text = $"Preparing for wave {currentWave + 1}..";
+            FindObjectOfType<AudioManagerScript>().Play("NextWaveHorn");
             yield return new WaitForSeconds(waveDelay);
         }
 
         if (waveProgress < waves[currentWave].GetComponent<Wave>().spawn.Length)
         {
             waveIndicator.text = $"WAVE: {currentWave + 1}";
-            FindObjectOfType<AudioManagerScript>().Play("NextWaveHorn");
             GameObject spawned = Instantiate(waves[currentWave].GetComponent<Wave>().spawn[waveProgress], transform.position, Quaternion.identity);
             spawned.GetComponent<PathFollowingScript>().chest = chest;
             spawned.GetComponent<PathFollowingScript>().path = path;
