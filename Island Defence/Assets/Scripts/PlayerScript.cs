@@ -517,6 +517,7 @@ public class PlayerScript : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Springpad")
         {
+            FindObjectOfType<AudioManagerScript>().Play("JumpPadBoing");
             StartCoroutine(SpringpadLaunch());
         }
     }
