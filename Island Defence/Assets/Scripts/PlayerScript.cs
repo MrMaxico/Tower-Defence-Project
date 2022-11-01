@@ -361,6 +361,7 @@ public class PlayerScript : MonoBehaviour
             {
                 if (Input.GetButtonDown("Use"))
                 {
+                    Debug.Log("HEIL");
                     foreach (GameObject spawner in spawners)
                     {
                         StartCoroutine(spawner.GetComponent<Spawner>().SpawnCycle());

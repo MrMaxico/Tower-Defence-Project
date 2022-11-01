@@ -49,13 +49,9 @@ public class Spawner : MonoBehaviour
 
     public IEnumerator SpawnCycle()
     {
-        if (firstWave)
-        {
-            yield return new WaitForSeconds(60 - waveDelay);
-        }
-
         if (waveProgress == 0)
         {
+            Debug.Log("SpawnCycle triggered");
             waveIndicator.text = $"Preparing for wave {currentWave + 1}..";
             yield return new WaitForSeconds(waveDelay);
         }
