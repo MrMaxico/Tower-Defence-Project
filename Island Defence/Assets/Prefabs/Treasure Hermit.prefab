@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2720968094435627444}
   - component: {fileID: 4128002895965215737}
   - component: {fileID: 1440345373278172307}
+  - component: {fileID: 8938390776107844860}
   m_Layer: 0
   m_Name: Treasure Hermit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +61,7 @@ MonoBehaviour:
   deathSound: {fileID: 2464133802144913890}
   onDeathFX: {fileID: 2305287984885383402, guid: 7e9701a2e1dffbc4b8566c2f4ec6cd72, type: 3}
   slownessFX: {fileID: 4171089747115450064}
-  speed: 2
+  speed: 1
   rotationSpeed: 3
   timeTillNextEnemySpawn: 1
   hpBarVisTime: 0
@@ -70,7 +71,7 @@ MonoBehaviour:
   isMama: 0
   shield: 0
   hasTotemEffect: 0
-  animations: {fileID: 0}
+  animations: {fileID: 1440345373278172307}
   hpBar: {fileID: 8888178928394469977}
 --- !u!82 &4128002895965215737
 AudioSource:
@@ -188,6 +189,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &8938390776107844860
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941853593503674782}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.76679456, y: 0.53977084, z: 0.71672153}
+  m_Center: {x: -0.016602695, y: 0.26988542, z: -0.04162979}
 --- !u!1001 &1549056486132693459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -286,6 +300,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4725199255702568156}
     m_Modifications:
+    - target: {fileID: 1847403356896535468, guid: 31b7867fd808aa344806556a99a1f037, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.022
+      objectReference: {fileID: 0}
     - target: {fileID: 2586580666045118559, guid: 31b7867fd808aa344806556a99a1f037, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -595,6 +613,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &3803832266465608178
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723760307172821616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77eefd5545c32b9438809d89c80becfa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8119036980166003804
 PrefabInstance:
   m_ObjectHideFlags: 0
