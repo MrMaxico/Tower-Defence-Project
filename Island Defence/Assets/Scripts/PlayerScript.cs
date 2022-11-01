@@ -26,6 +26,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject towerTips;
     public GameObject spyglass;
     public GameObject[] canvases;
+    public GameObject[] spawners;
 
     public Transform[] mineToChestRoute;
     public Transform[] springpadJump;
@@ -355,6 +356,16 @@ public class PlayerScript : MonoBehaviour
                 groundCheck.transform.gameObject.GetComponent<PathFollowingScript>().hpBarVisTime = 2f;
                 towerTips.SetActive(false);
                 DestroyPreview();
+            }
+            else if (groundCheck.transform.gameObject.tag == "CampLeader")
+            {
+                if (Input.GetButtonDown("Use"))
+                {
+                    foreach (GameObject spawner in spawners)
+                    {
+                        StartCoroutine(spawner.GetComponent<Spawner>().SpawnCycle());
+                    }
+                }
             }
             else if (groundCheck.transform.gameObject.tag != "Preview")
             {

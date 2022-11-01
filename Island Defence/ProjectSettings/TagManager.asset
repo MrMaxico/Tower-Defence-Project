@@ -15,6 +15,7 @@ TagManager:
   - Path
   - Trap
   - Springpad
+  - CampLeader
   layers:
   - Default
   - TransparentFX

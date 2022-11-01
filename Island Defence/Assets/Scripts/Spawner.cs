@@ -25,9 +25,11 @@ public class Spawner : MonoBehaviour
 
     public Slider mamaHpBar;
 
+    public bool firstWave;
+
     private void Start()
     {
-        StartCoroutine(SpawnCycle());
+        firstWave = true;
         for (int i = 0; i < path.Length - 1; i++)
         {
             Debug.DrawLine(path[i].position, path[i + 1].position, Color.white, 6000f, false);
@@ -40,8 +42,13 @@ public class Spawner : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
-    private IEnumerator SpawnCycle()
+    public IEnumerator SpawnCycle()
     {
+        if (firstWave)
+        {
+            yield return new WaitForSeconds(60 - waveDelay);
+        }
+
         if (waveProgress == 0)
         {
             waveIndicator.text = $"Preparing for wave {currentWave + 1}..";

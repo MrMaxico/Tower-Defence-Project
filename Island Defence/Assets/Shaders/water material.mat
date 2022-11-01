@@ -46,7 +46,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RippleDissolve: 4
-    - _RippleSize: 200
+    - _RippleSize: 600
     - _RippleSpeed: 2
     - _Smoothness: 1.06
     m_Colors:
