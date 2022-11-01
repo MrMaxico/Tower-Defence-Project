@@ -16507,7 +16507,7 @@ MonoBehaviour:
   player: {fileID: 398582217}
   mamaHpBarGameObject: {fileID: 1656513022}
   waves:
-  - {fileID: 841543834}
+  - {fileID: 1922700143}
   - {fileID: 347602271}
   - {fileID: 841543834}
   - {fileID: 21034613}
