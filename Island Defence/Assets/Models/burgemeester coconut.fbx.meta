@@ -4,6 +4,12 @@ ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
+      74: -1978303741906493279
+    second: Armature|idle
+  - first:
+      74: 1472749881304621239
+    second: Armature|idle.001
+  - first:
       74: 2815423412165391598
     second: Armature|walkin
   externalObjects: {}
