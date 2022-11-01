@@ -1,11 +1,17 @@
 fileFormatVersion: 2
-guid: 2b2e71685e15c0f418d64120cddf860d
+guid: 236ac591c9748f64990192c0169a52f7
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: -9185018650111657763
-    second: Armature|holding coin
+      74: -1978303741906493279
+    second: Armature|idle
+  - first:
+      74: 5969415431526220418
+    second: Armature|idle animatie
+  - first:
+      74: 2815423412165391598
+    second: Armature|walkin
   externalObjects: {}
   materials:
     materialImportMode: 2
