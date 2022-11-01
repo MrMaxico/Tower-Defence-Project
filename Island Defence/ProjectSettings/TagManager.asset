@@ -16,6 +16,7 @@ TagManager:
   - Trap
   - Springpad
   - CampLeader
+  - Mine
   layers:
   - Default
   - TransparentFX
