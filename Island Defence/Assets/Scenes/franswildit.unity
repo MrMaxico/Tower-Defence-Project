@@ -1504,6 +1504,14 @@ PrefabInstance:
       value: JumpPadBoing
       objectReference: {fileID: 0}
     - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
+      propertyPath: sounds.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a8bba7b9ae73bbf4fa9b845c3f7739b8, type: 3}
+    - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
+      propertyPath: sounds.Array.data[11].name
+      value: NextWaveHorn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
       propertyPath: sounds.Array.data[1].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -1576,6 +1584,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
+      propertyPath: sounds.Array.data[11].group
+      value: 
+      objectReference: {fileID: -1526846216156016292, guid: 0d7955aeada1cee43bbd499588b8c6a8, type: 2}
+    - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
+      propertyPath: sounds.Array.data[11].pitch
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
       propertyPath: sounds.Array.data[1].volume
       value: 1
       objectReference: {fileID: 0}
@@ -1610,6 +1626,10 @@ PrefabInstance:
     - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
       propertyPath: sounds.Array.data[10].volume
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
+      propertyPath: sounds.Array.data[11].volume
+      value: 0.802
       objectReference: {fileID: 0}
     - target: {fileID: 1206251673262965759, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
       propertyPath: OutputAudioMixerGroup

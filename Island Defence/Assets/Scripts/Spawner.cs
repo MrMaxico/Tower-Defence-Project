@@ -59,6 +59,7 @@ public class Spawner : MonoBehaviour
         if (waveProgress < waves[currentWave].GetComponent<Wave>().spawn.Length)
         {
             waveIndicator.text = $"WAVE: {currentWave + 1}";
+            FindObjectOfType<AudioManagerScript>().Play("NextWaveHorn");
             GameObject spawned = Instantiate(waves[currentWave].GetComponent<Wave>().spawn[waveProgress], transform.position, Quaternion.identity);
             spawned.GetComponent<PathFollowingScript>().chest = chest;
             spawned.GetComponent<PathFollowingScript>().path = path;
