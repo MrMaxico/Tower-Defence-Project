@@ -488,6 +488,7 @@ public class PlayerScript : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject targetTower = player.GetComponent<PlayerScript>().groundCheck.transform.gameObject;
         player.GetComponent<PlayerScript>().money += targetTower.GetComponent<TowerValues>().sellFor;
+        //GameObject coinsFX = Instantiate(sellParticles, transform.position, transform.rotation);
         Destroy(targetTower);
         Cursor.lockState = CursorLockMode.Locked;
         popup.SetActive(false);
