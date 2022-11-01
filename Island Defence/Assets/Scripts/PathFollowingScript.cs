@@ -214,6 +214,6 @@ public class PathFollowingScript : MonoBehaviour
         }
         Debug.Log(gameObject);
         Destroy(gameObject);
-        GameObject deathPoof = Instantiate(onDeathFX, transform.position, transform.rotation);
+        GameObject deathPoof = Instantiate(onDeathFX, transform.position, Quaternion.identity);
     }
 }

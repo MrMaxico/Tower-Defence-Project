@@ -59,14 +59,14 @@ MonoBehaviour:
   coin: {fileID: 6564972983594422771, guid: bb50e9eac45ab3e4fa0fbefafd8a0a40, type: 3}
   shieldBlub: {fileID: 8570636045762221576}
   deathSound: {fileID: 2464133802144913890}
-  onDeathFX: {fileID: 2305287984885383402, guid: 7e9701a2e1dffbc4b8566c2f4ec6cd72, type: 3}
+  onDeathFX: {fileID: 4714962586664817307, guid: 18730d241e1e276489a2edee5e1ce066, type: 3}
   slownessFX: {fileID: 4171089747115450064}
   speed: 1
   rotationSpeed: 3
   timeTillNextEnemySpawn: 1
   hpBarVisTime: 0
   pathProgress: 0
-  hp: 50
+  hp: 2
   dropAmount: 250
   isMama: 0
   shield: 0
