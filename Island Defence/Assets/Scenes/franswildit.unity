@@ -2237,6 +2237,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3757047834056461129, guid: 8c48de64fd5828d4b976ea65d80fa635, type: 3}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towers.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: upgradeCostDisplay
       value: 
       objectReference: {fileID: 561006906}
@@ -2260,6 +2264,10 @@ PrefabInstance:
       propertyPath: towers.Array.data[6]
       value: 
       objectReference: {fileID: 1929482790252691797, guid: 9aa51cfea793e434d920951aa00b3012, type: 3}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towers.Array.data[7]
+      value: 
+      objectReference: {fileID: 5869647309243439226, guid: 8bdec52b0283e27469661c4072cb6855, type: 3}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: canvases.Array.data[0]
       value: 
@@ -2290,7 +2298,7 @@ PrefabInstance:
       objectReference: {fileID: 1358493931}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: previewTowers.Array.size
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: springpadJump.Array.size
@@ -2327,7 +2335,7 @@ PrefabInstance:
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: previewTowers.Array.data[7]
       value: 
-      objectReference: {fileID: 5869647309243439226, guid: 8bdec52b0283e27469661c4072cb6855, type: 3}
+      objectReference: {fileID: 2845179494265806899, guid: 737b351234d09784da127319f96c791a, type: 3}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: springpadJump.Array.data[0]
       value: 
