@@ -361,11 +361,19 @@ public class PlayerScript : MonoBehaviour
             {
                 if (Input.GetButtonDown("Use"))
                 {
-                    Debug.Log("HEIL");
                     foreach (GameObject spawner in spawners)
                     {
                         StartCoroutine(spawner.GetComponent<Spawner>().SpawnCycle());
                     }
+                }
+            }
+            else if (groundCheck.transform.gameObject.tag == "Mine")
+            {
+                if (Input.GetButtonDown("Use"))
+                {
+                    GameObject spawnedMiner = Instantiate(towers[7], mineToChestRoute[0].position, Quaternion.identity);
+                    spawnedMiner.GetComponent<MineMinion>().player = gameObject;
+                    spawnedMiner.GetComponent<MineMinion>().mineToChestRoute = mineToChestRoute;
                 }
             }
             else if (groundCheck.transform.gameObject.tag != "Preview")
