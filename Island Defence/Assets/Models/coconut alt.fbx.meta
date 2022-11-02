@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-guid: 236ac591c9748f64990192c0169a52f7
+guid: bdefbe270b2118649bc7348c5b0f6415
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
-  - first:
-      74: -1978303741906493279
-    second: Armature|idle
   - first:
       74: 5969415431526220418
     second: Armature|idle animatie
