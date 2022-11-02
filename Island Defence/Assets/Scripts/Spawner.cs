@@ -70,7 +70,6 @@ public class Spawner : MonoBehaviour
             Debug.Log("SpawnCycle triggered");
             waveIndicator.text = $"Preparing for wave {currentWave + 1}..";
             FindObjectOfType<AudioManagerScript>().Play("NextWaveHorn");
-            FindObjectOfType<AudioManagerScript>().Play("WaveMusic1");
             FindObjectOfType<AudioManagerScript>().StopPlaying("DefenceSetupMusic");
             yield return new WaitForSeconds(waveDelay);
         }
