@@ -119,8 +119,10 @@ public class PlayerScript : MonoBehaviour
         }
 
         //spyglass
-        if (currentSlot == 1 && Input.GetButton("Fire2") && !gameOver)
+        if (Input.GetButton("Zoom") && !gameOver)
         {
+            currentSlot = 1;
+            DestroyPreview();
             spyglass.SetActive(true);
             foreach (GameObject canvas in canvases)
             {
@@ -393,15 +395,15 @@ public class PlayerScript : MonoBehaviour
                     {
                         previewTower.transform.Rotate(new Vector3(0, -90, 0));
                     }
-                    else
+                }
+                else
+                {
+                    previewTower = Instantiate(previewTowers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
+                    if (currentSlot != 3 && currentSlot != 4)
                     {
-                        previewTower = Instantiate(previewTowers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
-                        if (currentSlot != 3 && currentSlot != 4)
-                        {
-                            previewTower.transform.Rotate(new Vector3(0, -90, 0));
-                        }
-                        previewSpawned = true;
+                        previewTower.transform.Rotate(new Vector3(0, -90, 0));
                     }
+                    previewSpawned = true;
                 }
             }
             else if (groundCheck.transform.gameObject.tag == "Floor")
