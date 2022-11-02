@@ -178,11 +178,6 @@ public class PlayerScript : MonoBehaviour
                 {
                     money -= towerPrices[currentSlot];
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
-                    if (placed.tag == "MineMinion")
-                    {
-                        placed.GetComponent<MineMinion>().player = gameObject;
-                        placed.GetComponent<MineMinion>().mineToChestRoute = mineToChestRoute;
-                    }
                     if (currentSlot != 3)
                     {
                         placed.transform.Rotate(new Vector3(0, -90, 0));
@@ -380,6 +375,9 @@ public class PlayerScript : MonoBehaviour
             //talk to the mayor
             else if (groundCheck.transform.gameObject.tag == "CampLeader")
             {
+                towerTips.SetActive(true);
+                upgradeCostDisplay.text = "Start waves";
+                sellDisplay.text = $"-";
                 if (Input.GetButtonDown("Use"))
                 {
                     foreach (GameObject spawner in spawners)
@@ -391,6 +389,9 @@ public class PlayerScript : MonoBehaviour
             //buy mine minions
             else if (groundCheck.transform.gameObject.tag == "Mine")
             {
+                towerTips.SetActive(true);
+                upgradeCostDisplay.text = "Buy miner (25G)";
+                sellDisplay.text = $"-";
                 if (Input.GetButtonDown("Use") && money > 25)
                 {
                     GameObject spawnedMiner = Instantiate(towers[7], mineToChestRoute[0].position, Quaternion.identity);

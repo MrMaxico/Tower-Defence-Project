@@ -69,7 +69,7 @@ MonoBehaviour:
   level: 0
   maxLevel: 0
   upgradeCost: 
-  sellFor: 0
+  sellFor: 125
   damage: 
   meshHolder:
   - {fileID: 0}

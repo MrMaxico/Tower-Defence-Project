@@ -100,18 +100,12 @@ public class Spawner : MonoBehaviour
         {
             Debug.Log("All waves completed");
             waveIndicator.text = $"All waves completed";
-            StartCoroutine(GreatSucces());
+            foreach (GameObject _winConfetti in winConfetti)
+            {
+                _winConfetti.SetActive(true);
+            }
+            winScreen.SetBool("IsGameOver", true);
+            Cursor.lockState = CursorLockMode.None;
         }
-    }
-
-    IEnumerator GreatSucces()
-    {
-        foreach (GameObject _winConfetti in winConfetti)
-        {
-            _winConfetti.SetActive(true);
-        }
-        winScreen.SetBool("IsGameOver", true);
-        yield return new WaitForSeconds(7);
-        SceneManager.LoadScene("Main Menu");
     }
 }
