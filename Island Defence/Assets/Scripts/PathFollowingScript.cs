@@ -192,7 +192,15 @@ public class PathFollowingScript : MonoBehaviour
 
     IEnumerator DespawnOnDeath()
     {
-        yield return new WaitForSeconds(1.5f);
+        if (isMama)
+        {
+
+            yield return new WaitForSeconds(5f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(1.5f);
+        }
 
         player.GetComponent<PlayerScript>().money += dropAmount;
         if (gem.activeSelf)

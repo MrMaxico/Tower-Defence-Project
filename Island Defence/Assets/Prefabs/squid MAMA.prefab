@@ -915,7 +915,7 @@ MonoBehaviour:
   hpBarVisTime: 0
   pathProgress: 0
   hp: 1000
-  dropAmount: 100000
+  dropAmount: 250
   isMama: 1
   shield: 0
   hasTotemEffect: 0
@@ -1462,6 +1462,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 6076167296477702673}
     m_Modifications:
     - target: {fileID: 4104894852055344911, guid: 9bf489096f2f47a46aa90776581d4564, type: 3}
+      propertyPath: chest
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104894852055344911, guid: 9bf489096f2f47a46aa90776581d4564, type: 3}
       propertyPath: parent
       value: 
       objectReference: {fileID: 6852562570853118123}
@@ -1548,6 +1552,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6076167296477702673}
     m_Modifications:
+    - target: {fileID: -3064197075127188989, guid: bb50e9eac45ab3e4fa0fbefafd8a0a40, type: 3}
+      propertyPath: chest
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -3064197075127188989, guid: bb50e9eac45ab3e4fa0fbefafd8a0a40, type: 3}
       propertyPath: parent
       value: 
@@ -1698,6 +1706,10 @@ PrefabInstance:
     - target: {fileID: 7723770750744835451, guid: 7b28883297c2b88438c2f14b594bd1b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904387937974858317, guid: 7b28883297c2b88438c2f14b594bd1b1, type: 3}
+      propertyPath: chest
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8904387937974858317, guid: 7b28883297c2b88438c2f14b594bd1b1, type: 3}
       propertyPath: parent

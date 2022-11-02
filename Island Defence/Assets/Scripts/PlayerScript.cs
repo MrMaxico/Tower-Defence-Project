@@ -12,6 +12,8 @@ public class PlayerScript : MonoBehaviour
     public float launchSpeed;
     public float maxXRotation;
     float mouseVertical;
+    float defaultSensitivity;
+
     public GameObject chest;
     public GameObject cam;
     public GameObject upgradePopup;
@@ -64,12 +66,14 @@ public class PlayerScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         FindObjectOfType<AudioManagerScript>().Play("WaveMusic");
         canWalk = true;
+        defaultSensitivity = sensitivity;
     }
     private void Update()
     {
         //check the gems
         GameObject[] gems = GameObject.FindGameObjectsWithTag("Gem");
 
+        //game-over
         if (chest.GetComponent<Chest>().gemsLeft <= 0 && gems.Length == 0)
         {
             Debug.Log("Game over!");
@@ -82,14 +86,23 @@ public class PlayerScript : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
+        //game-over debug
         if (Input.GetKeyDown(KeyCode.N))
         {
             chest.GetComponent<Chest>().gemsLeft = 0;
         }
 
-        //insta-ultra-kill
+        //skip to next wave
         if (Input.GetKeyDown(KeyCode.K))
         {
+            foreach (GameObject spawner in spawners)
+            {
+                if (spawner.GetComponent<Spawner>().waves.Length - 1 > spawner.GetComponent<Spawner>().currentWave)
+                {
+                    spawner.GetComponent<Spawner>().currentWave++;
+                    spawner.GetComponent<Spawner>().waveProgress = 0;
+                }
+            }
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             for (int i = 0; i < enemies.Length; i++)
             {
@@ -118,10 +131,11 @@ public class PlayerScript : MonoBehaviour
             cam.transform.eulerAngles = camrotation;
         }
 
-        //spyglass
+        //zoom
         if (Input.GetButton("Zoom") && !gameOver)
         {
             currentSlot = 1;
+            sensitivity = defaultSensitivity / 2;
             DestroyPreview();
             spyglass.SetActive(true);
             foreach (GameObject canvas in canvases)
@@ -133,6 +147,7 @@ public class PlayerScript : MonoBehaviour
         else
         {
             spyglass.SetActive(false);
+            sensitivity = defaultSensitivity;
             foreach (GameObject canvas in canvases)
             {
                 canvas.SetActive(true);
@@ -140,14 +155,22 @@ public class PlayerScript : MonoBehaviour
             cam.GetComponent<Camera>().fieldOfView = 60;
         }
 
-        //place, upgrade and rotate towers
+        //main raycast
         if (Physics.Raycast(transform.position, cam.GetComponent<Transform>().forward, out groundCheck, 4))
         {
+            //place default towers
             if (groundCheck.transform.gameObject.tag == "Floor" && currentSlot != 4)
             {
                 if (previewSpawned)
                 {
-                    ChangePreviewMaterial(previewTower, previewMaterials[currentSlot]);
+                    if (towerPrices[currentSlot] <= money)
+                    {
+                        ChangePreviewMaterial(previewTower, previewMaterials[currentSlot]);
+                    }
+                    else
+                    {
+                        ChangePreviewMaterial(previewTower, cantPlacePreview);
+                    }
                 }
                 towerTips.SetActive(false);
                 if (previewIsRange)
@@ -197,11 +220,19 @@ public class PlayerScript : MonoBehaviour
                     }
                 }
             }
+            //place spear trap
             else if (groundCheck.transform.gameObject.tag == "Path" && currentSlot == 4)
             {
                 if (previewSpawned)
                 {
-                    ChangePreviewMaterial(previewTower, previewMaterials[currentSlot]);
+                    if (towerPrices[currentSlot] <= money)
+                    {
+                        ChangePreviewMaterial(previewTower, previewMaterials[currentSlot]);
+                    }
+                    else
+                    {
+                        ChangePreviewMaterial(previewTower, cantPlacePreview);
+                    }
                 }
 
                 towerTips.SetActive(false);
@@ -237,19 +268,13 @@ public class PlayerScript : MonoBehaviour
                     }
                 }
             }
+            //see totem info
             else if (groundCheck.transform.gameObject.tag == "Totem")
             {
                 towerTips.SetActive(true);
                 groundCheck.transform.gameObject.GetComponent<TowerValues>().starVisTime = 1f;
-                if (groundCheck.transform.gameObject.GetComponent<TowerValues>().level < groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel) 
-                {
-                    sellDisplay.text = $"Sell tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().sellFor}G)";
-                    upgradeCostDisplay.text = $"Upgrade tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().upgradeCost[groundCheck.transform.gameObject.GetComponent<TowerValues>().level]}G)";
-                }
-                else
-                {
-                    upgradeCostDisplay.text = "";
-                }
+                upgradeCostDisplay.text = "-";
+                sellDisplay.text = $"Sell tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().sellFor}G)";
                 if (!previewIsRange)
                 {
                     DestroyPreview();
@@ -262,19 +287,13 @@ public class PlayerScript : MonoBehaviour
                     previewTower = Instantiate(rangePreview, groundCheck.transform.position, transform.rotation);
                     rangePreview.transform.localScale = new Vector3(groundCheck.transform.gameObject.GetComponent<TowerValues>().range[groundCheck.transform.gameObject.GetComponent<TowerValues>().level] * 2, 0.05f, groundCheck.transform.gameObject.GetComponent<TowerValues>().range[groundCheck.transform.gameObject.GetComponent<TowerValues>().level] * 2);
                 }
-
-                if (Input.GetButtonDown("Use") && groundCheck.transform.gameObject.GetComponent<TowerValues>().maxLevel > groundCheck.transform.gameObject.GetComponent<TowerValues>().level)
-                {
-                    Upgrade(groundCheck.transform.gameObject);
-                    Cursor.lockState = CursorLockMode.None;
-                }
                 else if (Input.GetButtonDown("Sell"))
                 {
                     Sell(groundCheck.transform.gameObject);
                     DestroyPreview();
                 }
-                //DestroyPreview();
             }
+            //see tower info
             else if (groundCheck.transform.gameObject.tag == "Tower" && !upgradePopup.activeSelf)
             {
                 towerTips.SetActive(true);
@@ -286,7 +305,8 @@ public class PlayerScript : MonoBehaviour
                 }
                 else
                 {
-                    upgradeCostDisplay.text = "";
+                    upgradeCostDisplay.text = "-";
+                    sellDisplay.text = $"Sell tower ({groundCheck.transform.gameObject.GetComponent<TowerValues>().sellFor}G)";
                 }
                 if (!previewIsRange)
                 {
@@ -316,6 +336,7 @@ public class PlayerScript : MonoBehaviour
                     groundCheck.transform.rotation = Quaternion.Euler(0, groundCheck.transform.rotation.eulerAngles.y, 0);
                 }
             }
+            //see trap info
             else if (groundCheck.transform.gameObject.tag == "Trap")
             {
                 towerTips.SetActive(true);
@@ -351,13 +372,9 @@ public class PlayerScript : MonoBehaviour
                     Sell(groundCheck.transform.gameObject);
                     DestroyPreview();
                 }
-                else if (Input.GetButtonDown("Rotate"))
-                {
-                    groundCheck.transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, transform.position - new Vector3(0, -1, 0) - groundCheck.transform.position, 10000 * Time.deltaTime, 0.0f));
-                    groundCheck.transform.rotation = Quaternion.Euler(0, groundCheck.transform.rotation.eulerAngles.y, 0);
-                }
 
             }
+            //display enemy healthbar
             else if (groundCheck.transform.gameObject.tag == "Enemy")
             {
                 Debug.Log("Target in sight!");
@@ -365,6 +382,7 @@ public class PlayerScript : MonoBehaviour
                 towerTips.SetActive(false);
                 DestroyPreview();
             }
+            //talk to the mayor
             else if (groundCheck.transform.gameObject.tag == "CampLeader")
             {
                 if (Input.GetButtonDown("Use"))
@@ -375,6 +393,7 @@ public class PlayerScript : MonoBehaviour
                     }
                 }
             }
+            //buy mine minions
             else if (groundCheck.transform.gameObject.tag == "Mine")
             {
                 if (Input.GetButtonDown("Use") && money > 25)
@@ -384,6 +403,7 @@ public class PlayerScript : MonoBehaviour
                     spawnedMiner.GetComponent<MineMinion>().mineToChestRoute = mineToChestRoute;
                 }
             }
+            //unable to place previews
             else if (groundCheck.transform.gameObject.tag == "Path")
             {
                 if (previewSpawned)
@@ -440,7 +460,7 @@ public class PlayerScript : MonoBehaviour
             DestroyPreview();
         }
 
-        //select tower
+        //select towerslot
         if (Input.GetButtonDown("SlotOne"))
         {
             currentSlot = 1;
@@ -522,7 +542,6 @@ public class PlayerScript : MonoBehaviour
 
     private void DestroyPreview()
     {
-        // Debug.Log("Trying to kill previews"); // if you enable this the console will be spammed
         previewTags = GameObject.FindGameObjectsWithTag("Preview");
         if (previewTags.Length > 0)
         {
@@ -575,9 +594,9 @@ public class PlayerScript : MonoBehaviour
         popup.SetActive(false);
     }
 
+    //pickups and launchpad
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Ive got a feeling!");
         if (collision.gameObject.tag == "Gem")
         {
             Debug.Log("Ooh shiny!");
