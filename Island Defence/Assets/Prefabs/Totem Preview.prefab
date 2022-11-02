@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3186238464114834057}
+  - component: {fileID: 9198432722443697556}
   m_Layer: 0
   m_Name: Totem Preview
   m_TagString: Preview
@@ -33,6 +34,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9198432722443697556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2845179494265806899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6538e09472717ba4883a6725ad6bd383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshes:
+  - {fileID: 6305366227594978961}
 --- !u!1 &7541180288081588927
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +192,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 88adf16535fb16d4b9e205b73af448e9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ea16959f45b17549882237c6d6bd1c1, type: 3}
+--- !u!1 &6305366227594978961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6733177361254619370, guid: 7ea16959f45b17549882237c6d6bd1c1, type: 3}
+  m_PrefabInstance: {fileID: 8435202451367018887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8252110251642398316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ea16959f45b17549882237c6d6bd1c1, type: 3}

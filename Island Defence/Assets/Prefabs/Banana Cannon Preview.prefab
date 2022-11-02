@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1090526558109152202}
   - component: {fileID: 672987453987495867}
   - component: {fileID: 5079489904886454334}
+  - component: {fileID: 4198165155089045480}
   m_Layer: 0
   m_Name: Banana Cannon Preview
   m_TagString: Preview
@@ -84,12 +85,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1651777674924340646, guid: 17da9bdde2435bf4d8c2d008fa314076, type: 3}
   bulletSpawn: {fileID: 0}
+  anim: {fileID: 0}
   range: 8
   rotationSpeed: 10
   bulletSpeed: 0
   firerate: 0
+  recoilTime: 0
   damage: 0
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &4198165155089045480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165752393500276058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6538e09472717ba4883a6725ad6bd383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshes:
+  - {fileID: 6907782642981652658}
 --- !u!1 &1372545198502846077
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,5 +282,10 @@ PrefabInstance:
 --- !u!4 &3987411880146066838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3690537318199294407, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
+  m_PrefabInstance: {fileID: 315619046128100433}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6907782642981652658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6610178622438763747, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
   m_PrefabInstance: {fileID: 315619046128100433}
   m_PrefabAsset: {fileID: 0}

@@ -55,6 +55,9 @@ public class PlayerScript : MonoBehaviour
 
     RaycastHit groundCheck;
 
+    public Material[] previewMaterials;
+    public Material cantPlacePreview;
+
     private void Start()
     {
         playerRB = GetComponent<Rigidbody>();
@@ -140,6 +143,10 @@ public class PlayerScript : MonoBehaviour
         {
             if (groundCheck.transform.gameObject.tag == "Floor" && currentSlot != 4)
             {
+                if (previewSpawned)
+                {
+                    ChangePreviewMaterial(previewTower, previewMaterials[currentSlot]);
+                }
                 towerTips.SetActive(false);
                 if (previewIsRange)
                 {
@@ -190,6 +197,11 @@ public class PlayerScript : MonoBehaviour
             }
             else if (groundCheck.transform.gameObject.tag == "Path" && currentSlot == 4)
             {
+                if (previewSpawned)
+                {
+                    ChangePreviewMaterial(previewTower, previewMaterials[currentSlot]);
+                }
+
                 towerTips.SetActive(false);
                 if (previewIsRange)
                 {
@@ -370,6 +382,50 @@ public class PlayerScript : MonoBehaviour
                     spawnedMiner.GetComponent<MineMinion>().mineToChestRoute = mineToChestRoute;
                 }
             }
+            else if (groundCheck.transform.gameObject.tag == "Path")
+            {
+                if (previewSpawned)
+                {
+                    ChangePreviewMaterial(previewTower, cantPlacePreview);
+                    previewTower.transform.position = groundCheck.point + towerOffsets[currentSlot];
+                    previewTower.transform.rotation = transform.rotation;
+                    if (currentSlot != 3 && currentSlot != 4)
+                    {
+                        previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                    }
+                    else
+                    {
+                        previewTower = Instantiate(previewTowers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
+                        if (currentSlot != 3 && currentSlot != 4)
+                        {
+                            previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                        }
+                        previewSpawned = true;
+                    }
+                }
+            }
+            else if (groundCheck.transform.gameObject.tag == "Floor")
+            {
+                if (previewSpawned)
+                {
+                    ChangePreviewMaterial(previewTower, cantPlacePreview);
+                    previewTower.transform.position = groundCheck.point + towerOffsets[currentSlot];
+                    previewTower.transform.rotation = transform.rotation;
+                    if (currentSlot != 3 && currentSlot != 4)
+                    {
+                        previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                    }
+                }
+                else
+                {
+                    previewTower = Instantiate(previewTowers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
+                    if (currentSlot != 3 && currentSlot != 4)
+                    {
+                        previewTower.transform.Rotate(new Vector3(0, -90, 0));
+                    }
+                    previewSpawned = true;
+                }
+            }
             else if (groundCheck.transform.gameObject.tag != "Preview")
             {
                 towerTips.SetActive(false);
@@ -474,6 +530,21 @@ public class PlayerScript : MonoBehaviour
             }
         }
         previewSpawned = false;
+    }
+
+    private void ChangePreviewMaterial(GameObject preview, Material newMaterial)
+    {
+        foreach (GameObject mesh in preview.GetComponent<PreviewTowers>().meshes)
+        {
+            if (mesh.TryGetComponent<MeshRenderer>(out MeshRenderer meshRenderer))
+            {
+                meshRenderer.material = newMaterial;
+            }
+            else if (mesh.TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinnedMeshRenderer))
+            {
+                skinnedMeshRenderer.material = newMaterial;
+            }
+        }
     }
 
     public void Upgrade(GameObject _targetTower)
