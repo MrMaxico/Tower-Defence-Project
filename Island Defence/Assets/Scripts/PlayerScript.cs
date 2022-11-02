@@ -7,58 +7,53 @@ using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
+    [Header("Movement")]
     public float sensitivity;
     public float speed;
     public float launchSpeed;
     public float maxXRotation;
     float mouseVertical;
     float defaultSensitivity;
-
-    public GameObject chest;
     public GameObject cam;
-    public GameObject upgradePopup;
+    Vector3 rotation;
+    Vector3 camrotation;
+    Vector3 movement;
+    int jumpProgress;
+    bool canWalk;
+    Rigidbody playerRB;
+    public Transform[] springpadJump;
+    [Space(20)]
+    [Header("Towers")]
     public GameObject rangePreview;
     public GameObject[] previewTowers;
     public GameObject[] towers;
     GameObject[] previewTags;
     GameObject previewTower;
-    public GameObject rotatingTower;
-    public GameObject upradeParticles;
-    public GameObject towerTips;
-    public GameObject spyglass;
-    public GameObject[] canvases;
-    public GameObject[] spawners;
-
-    public Transform[] mineToChestRoute;
-    public Transform[] springpadJump;
-
     public Vector3[] towerOffsets;
-    Vector3 rotation;
-    Vector3 camrotation;
-    Vector3 movement;
-
     public int[] towerPrices;
-    public int currentSlot;
-    public int money;
-    int jumpProgress;
-
     bool previewSpawned;
     bool previewIsRange;
-    bool canWalk;
+    public Material[] previewMaterials;
+    public Material cantPlacePreview;
+    [Space(20)]
+    [Header("Game info")]
+    public GameObject chest;
+    public GameObject towerTips;
+    public GameObject[] spawners;
+    public int currentSlot;
+    public int money;
     bool gameOver;
-
+    RaycastHit groundCheck;
+    public Transform[] mineToChestRoute;
+    [Space(20)]
+    [Header("UX")]
+    public GameObject upradeParticles;
+    public GameObject spyglass;
+    public GameObject[] canvases;
     public TextMeshProUGUI moneyDisplay;
     public TextMeshProUGUI upgradeCostDisplay;
     public TextMeshProUGUI sellDisplay;
-
     public Animator deathScreen;
-
-    Rigidbody playerRB;
-
-    RaycastHit groundCheck;
-
-    public Material[] previewMaterials;
-    public Material cantPlacePreview;
 
     private void Start()
     {
@@ -110,7 +105,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
         //camera
-        if (!PauseMenuScript.gameIsPaused && !upgradePopup.activeSelf)
+        if (!PauseMenuScript.gameIsPaused)
         {
             rotation.y += Input.GetAxis("Mouse X") * sensitivity;
             transform.eulerAngles = rotation;
@@ -179,7 +174,7 @@ public class PlayerScript : MonoBehaviour
                     previewIsRange = false;
                 }
 
-                if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] <= money && !upgradePopup.activeSelf)
+                if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] <= money)
                 {
                     money -= towerPrices[currentSlot];
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
@@ -242,7 +237,7 @@ public class PlayerScript : MonoBehaviour
                     previewIsRange = false;
                 }
 
-                if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] <= money && !upgradePopup.activeSelf)
+                if (Input.GetButtonDown("Fire1") && !PauseMenuScript.gameIsPaused && towerPrices[currentSlot] <= money)
                 {
                     money -= towerPrices[currentSlot];
                     GameObject placed = Instantiate(towers[currentSlot], groundCheck.point + towerOffsets[currentSlot], transform.rotation);
@@ -294,7 +289,7 @@ public class PlayerScript : MonoBehaviour
                 }
             }
             //see tower info
-            else if (groundCheck.transform.gameObject.tag == "Tower" && !upgradePopup.activeSelf)
+            else if (groundCheck.transform.gameObject.tag == "Tower")
             {
                 towerTips.SetActive(true);
                 groundCheck.transform.gameObject.GetComponent<TowerValues>().starVisTime = 1f;

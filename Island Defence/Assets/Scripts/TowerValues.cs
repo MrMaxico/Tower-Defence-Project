@@ -42,6 +42,7 @@ public class TowerValues : MonoBehaviour
 
     private void Update()
     {
+        //display the right amount of stars
         if (starVisTime > 0)
         {
             starVisTime -= Time.deltaTime;

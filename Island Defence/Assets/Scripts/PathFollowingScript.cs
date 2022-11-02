@@ -8,8 +8,26 @@ using UnityEngine.UI;
 
 public class PathFollowingScript : MonoBehaviour
 {
+    [Header("Input values")]
+    public float speed;
+    public float rotationSpeed;
+    public float timeTillNextEnemySpawn;
+    public float hpBarVisTime;
+    float slowness;
+    float fullHealth;
+    public int hp;
+    public int dropAmount;
+    public int pathProgress;
+    bool onReturn;
+    bool hasDied;
+    public bool isMama;
+    public bool shield;
+    public bool hasTotemEffect;
+    Vector3 direction;
+    Vector3 targetDirection;
     public Transform[] path;
-
+    [Space(20)]
+    [Header("Game info")]
     public GameObject player;
     public GameObject chest;
     public GameObject gem;
@@ -18,34 +36,12 @@ public class PathFollowingScript : MonoBehaviour
     public GameObject shieldBlub;
     GameObject[] totems;
     GameObject closestTotem;
-
-    //UI-UX
+    [Space(20)]
+    [Header("UX")]
     public AudioSource deathSound;
     public GameObject onDeathFX;
     public GameObject slownessFX;
-
-    public float speed;
-    public float rotationSpeed;
-    public float timeTillNextEnemySpawn;
-    public float hpBarVisTime;
-    float slowness;
-    float fullHealth;
-
-    public int pathProgress;
-    public int hp;
-    public int dropAmount;
-
-    bool onReturn;
-    bool hasDied;
-    public bool isMama;
-    public bool shield;
-    public bool hasTotemEffect;
-
-    Vector3 direction;
-    Vector3 targetDirection;
-
     public Animator animations;
-
     public Slider hpBar;
 
     private void Start()
@@ -115,6 +111,7 @@ public class PathFollowingScript : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //die
         if (hp <= 0 && !hasDied)
         {
             hasDied = true;
@@ -194,7 +191,6 @@ public class PathFollowingScript : MonoBehaviour
     {
         if (isMama)
         {
-
             yield return new WaitForSeconds(5f);
         }
         else
@@ -205,23 +201,25 @@ public class PathFollowingScript : MonoBehaviour
         player.GetComponent<PlayerScript>().money += dropAmount;
         if (gem.activeSelf)
         {
-            GameObject droppedGem = Instantiate(gem, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-            droppedGem.GetComponent<PickUps>().dropped = true;
-            droppedGem.GetComponent<PickUps>().chest = chest;
+            Drop(gem);
         }
         else if (redGem.activeSelf)
         {
-            GameObject droppedGem = Instantiate(redGem, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-            droppedGem.GetComponent<PickUps>().dropped = true;
-            droppedGem.GetComponent<PickUps>().chest = chest;
+            Drop(redGem);
         }
         else if (coin.activeSelf)
         {
-            GameObject droppedCoin = Instantiate(coin, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-            droppedCoin.GetComponent<PickUps>().dropped = true;
+            Drop(coin);
         }
         Debug.Log(gameObject);
         Destroy(gameObject);
         GameObject deathPoof = Instantiate(onDeathFX, transform.position, Quaternion.identity);
+    }
+
+    void Drop(GameObject drop)
+    {
+        GameObject droppedGem = Instantiate(drop, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        droppedGem.GetComponent<PickUps>().dropped = true;
+        droppedGem.GetComponent<PickUps>().chest = chest;
     }
 }

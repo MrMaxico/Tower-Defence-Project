@@ -7,34 +7,37 @@ using TMPro;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject chest;
-    public GameObject player;
-    public GameObject mamaHpBarGameObject;
+    [Header("Input values")]
     public GameObject[] waves;
-    GameObject[] enemies;
-
     public Transform[] path;
-
     public float spawnDelay;
     public float waveDelay;
-
     public int currentWave;
     public int waveProgress;
-
-    public TextMeshProUGUI waveIndicator;
-
-    public Slider mamaHpBar;
-
     public bool firstWave;
     public bool firstScene;
+    [Space(20)]
+    [Header("Game info")]
+    public GameObject chest;
+    public GameObject player;
+    GameObject[] enemies;
+    [Space(20)]
+    [Header("UX")]
+    public GameObject mamaHpBarGameObject;
+    public GameObject[] winConfetti;
+    public TextMeshProUGUI waveIndicator;
+    public Slider mamaHpBar;
+    public Animator winScreen;
 
     private void Start()
     {
+        //auto-start wave in second level
         if (!firstScene)
         {
+            firstWave = true;
             StartCoroutine(SpawnCycle());
         }
-        firstWave = true;
+        //draw a debug line to display the path
         for (int i = 0; i < path.Length - 1; i++)
         {
             Debug.DrawLine(path[i].position, path[i + 1].position, Color.white, 6000f, false);
@@ -49,6 +52,11 @@ public class Spawner : MonoBehaviour
 
     public IEnumerator SpawnCycle()
     {
+        if (firstWave && !firstScene)
+        {
+            yield return new WaitForSeconds(45 - waveDelay);
+            firstWave = false;
+        }
         if (waveProgress == 0)
         {
             Debug.Log("SpawnCycle triggered");
@@ -98,7 +106,12 @@ public class Spawner : MonoBehaviour
 
     IEnumerator GreatSucces()
     {
-        yield return new WaitForSeconds(3);
+        foreach (GameObject _winConfetti in winConfetti)
+        {
+            _winConfetti.SetActive(true);
+        }
+        winScreen.SetBool("IsGameOver", true);
+        yield return new WaitForSeconds(7);
         SceneManager.LoadScene("Main Menu");
     }
 }

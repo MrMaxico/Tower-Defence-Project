@@ -73,9 +73,12 @@ MonoBehaviour:
   damage: 
   meshHolder:
   - {fileID: 0}
+  stars:
+  - {fileID: 4347194911915306626}
   levelMat: []
   range: []
   fireRate: []
+  starVisTime: 0
 --- !u!136 &1248588145364757901
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -325,9 +328,11 @@ MonoBehaviour:
   damage: 
   meshHolder:
   - {fileID: 0}
+  stars: []
   levelMat: []
   range: []
   fireRate: []
+  starVisTime: 0
 --- !u!4 &2255874797853152307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ea16959f45b17549882237c6d6bd1c1, type: 3}
@@ -469,6 +474,11 @@ PrefabInstance:
 --- !u!224 &1892962447225636664 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2865808486451528079, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
+  m_PrefabInstance: {fileID: 4431615646877845175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4347194911915306626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 131752614662465589, guid: a7b34812d15ef924eac2e5d0cb50712b, type: 3}
   m_PrefabInstance: {fileID: 4431615646877845175}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6612873241385269614
