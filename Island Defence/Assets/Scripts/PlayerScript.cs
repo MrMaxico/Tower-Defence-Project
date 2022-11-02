@@ -48,6 +48,8 @@ public class PlayerScript : MonoBehaviour
     [Space(20)]
     [Header("UX")]
     public GameObject upradeParticles;
+    public GameObject openMine;
+    public GameObject closedMine;
     public GameObject spyglass;
     public GameObject[] canvases;
     public TextMeshProUGUI moneyDisplay;
@@ -397,6 +399,8 @@ public class PlayerScript : MonoBehaviour
                     GameObject spawnedMiner = Instantiate(towers[7], mineToChestRoute[0].position, Quaternion.identity);
                     spawnedMiner.GetComponent<MineMinion>().player = gameObject;
                     spawnedMiner.GetComponent<MineMinion>().mineToChestRoute = mineToChestRoute;
+                    openMine.SetActive(true);
+                    closedMine.SetActive(false);
                 }
             }
             //unable to place previews
