@@ -389,19 +389,24 @@ public class PlayerScript : MonoBehaviour
                 }
             }
             //buy mine minions
-            else if (groundCheck.transform.gameObject.tag == "Mine")
+            else if (groundCheck.transform.gameObject.tag == "Mine" && !spawners[0].GetComponent<Spawner>().firstWave)
             {
                 towerTips.SetActive(true);
                 upgradeCostDisplay.text = "Buy miner (25G)";
                 sellDisplay.text = $"-";
-                if (Input.GetButtonDown("Use") && money > 25)
+                if (Input.GetButtonDown("Use") && money >= 25)
                 {
                     GameObject spawnedMiner = Instantiate(towers[7], mineToChestRoute[0].position, Quaternion.identity);
                     spawnedMiner.GetComponent<MineMinion>().player = gameObject;
                     spawnedMiner.GetComponent<MineMinion>().mineToChestRoute = mineToChestRoute;
-                    openMine.SetActive(true);
-                    closedMine.SetActive(false);
+                    money -= 25;
                 }
+            }
+            else if (groundCheck.transform.gameObject.tag == "Mine" && spawners[0].GetComponent<Spawner>().firstWave)
+            {
+                towerTips.SetActive(true);
+                upgradeCostDisplay.text = "Come back later!";
+                sellDisplay.text = $"-";
             }
             //unable to place previews
             else if (groundCheck.transform.gameObject.tag == "Path")

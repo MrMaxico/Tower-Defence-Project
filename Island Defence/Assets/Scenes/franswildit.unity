@@ -2204,6 +2204,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1712088513}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: openMine
+      value: 
+      objectReference: {fileID: 1169689593}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: spyglass
       value: 
       objectReference: {fileID: 912295386}
@@ -2211,6 +2215,10 @@ PrefabInstance:
       propertyPath: towerTips
       value: 
       objectReference: {fileID: 1431286625}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: closedMine
+      value: 
+      objectReference: {fileID: 1000394637}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: deathScreen
       value: 
@@ -2332,6 +2340,10 @@ PrefabInstance:
       value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: mineToChestRoute.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: previewMaterials.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -2386,11 +2398,11 @@ PrefabInstance:
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: mineToChestRoute.Array.data[0]
       value: 
-      objectReference: {fileID: 1898579827}
+      objectReference: {fileID: 688179578}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: mineToChestRoute.Array.data[1]
       value: 
-      objectReference: {fileID: 688179578}
+      objectReference: {fileID: 934364219}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: mineToChestRoute.Array.data[2]
       value: 
@@ -5115,6 +5127,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736c4ca43cdc22240b877b09ec2e6d74, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 736c4ca43cdc22240b877b09ec2e6d74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -5191,10 +5207,10 @@ BoxCollider:
   m_GameObject: {fileID: 1000394637}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 4.231523, y: 2.2435322, z: 5.3564515}
-  m_Center: {x: -1.294033, y: 0.08425957, z: 0.342164}
+  m_Size: {x: 0.04231523, y: 0.02243532, z: 0.05356452}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1004392798
 GameObject:
   m_ObjectHideFlags: 0
@@ -5324,9 +5340,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1024962918}
+  - component: {fileID: 1024962919}
   m_Layer: 0
   m_Name: Mineshaft
-  m_TagString: Untagged
+  m_TagString: Mine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5348,6 +5365,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1024962919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024962917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.231523, y: 2.2435322, z: 5.3564515}
+  m_Center: {x: -1.294033, y: 0.08425957, z: 0.342164}
 --- !u!1 &1028702446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e14590492b0d77541951168c103f1fd8, type: 3}
@@ -15125,7 +15155,7 @@ BoxCollider:
   m_GameObject: {fileID: 1169689593}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.231523, y: 2.2435322, z: 5.3564515}
   m_Center: {x: -1.294033, y: 0.08425957, z: 0.342164}

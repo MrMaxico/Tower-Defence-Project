@@ -31,10 +31,10 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        firstWave = true;
         //auto-start wave in second level
         if (!firstScene)
         {
-            firstWave = true;
             StartCoroutine(SpawnCycle());
         }
         //draw a debug line to display the path
@@ -56,6 +56,14 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(45 - waveDelay);
             firstWave = false;
+            player.GetComponent<PlayerScript>().openMine.SetActive(true);
+            player.GetComponent<PlayerScript>().closedMine.SetActive(false);
+        }
+        else if (firstWave)
+        {
+            firstWave = false;
+            player.GetComponent<PlayerScript>().openMine.SetActive(true);
+            player.GetComponent<PlayerScript>().closedMine.SetActive(false);
         }
         if (waveProgress == 0)
         {
