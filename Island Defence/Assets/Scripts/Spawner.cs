@@ -35,8 +35,6 @@ public class Spawner : MonoBehaviour
             StartCoroutine(SpawnCycle());
         }
         firstWave = true;
-        FindObjectOfType<AudioManagerScript>().StopPlaying("DefenceSetupMusic");
-        FindObjectOfType<AudioManagerScript>().Play("WaveMusic1");
         for (int i = 0; i < path.Length - 1; i++)
         {
             Debug.DrawLine(path[i].position, path[i + 1].position, Color.white, 6000f, false);
