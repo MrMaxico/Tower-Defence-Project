@@ -253,7 +253,10 @@ MonoBehaviour:
   goal: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   bulletSpeed: 0
+  splashRange: 4
   damage: 0
+  splashDamageValue: 0
+  splashDamage: 0
 --- !u!65 &4976115939050890550
 BoxCollider:
   m_ObjectHideFlags: 0

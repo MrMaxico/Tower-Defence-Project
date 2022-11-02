@@ -9,6 +9,7 @@ public class TowerValues : MonoBehaviour
     public int[] upgradeCost;
     public int sellFor;
     public int[] damage;
+    public int[] splashDamage;
 
     public GameObject[] meshHolder;
     public GameObject[] stars;

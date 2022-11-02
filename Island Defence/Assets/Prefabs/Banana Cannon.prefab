@@ -313,6 +313,7 @@ MonoBehaviour:
   recoilTime: 1
   damage: 3
   offset: {x: 0, y: 0.5, z: 0}
+  hasSplashDamage: 1
 --- !u!95 &2234490249917982442
 Animator:
   serializedVersion: 4
@@ -363,6 +364,7 @@ MonoBehaviour:
   upgradeCost: 640000005e010000e8030000
   sellFor: 60
   damage: 03000000050000000c0000001e000000
+  splashDamage: 0100000002000000050000000e000000
   meshHolder:
   - {fileID: 6610178622438763747}
   stars:

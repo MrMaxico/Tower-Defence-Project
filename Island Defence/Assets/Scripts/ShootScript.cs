@@ -26,6 +26,7 @@ public class ShootScript : MonoBehaviour
     Vector3 targetDirection;
     Vector3 direction;
 
+    public bool hasSplashDamage;
     bool shot;
     bool animationTriggered;
     bool foundGemThief;
@@ -87,6 +88,11 @@ public class ShootScript : MonoBehaviour
                 shotBullet.GetComponent<BulletScript>().bulletSpeed = bulletSpeed;
                 shotBullet.GetComponent<BulletScript>().damage = damage;
                 shotBullet.GetComponent<BulletScript>().offset = offset;
+                if (hasSplashDamage)
+                {
+                    shotBullet.GetComponent<BulletScript>().splashDamage = true;
+                    shotBullet.GetComponent<BulletScript>().splashDamageValue = GetComponent<TowerValues>().splashDamage[GetComponent<TowerValues>().level];
+                }
                 hitTimer = 0;
                 shot = false;
                 animationTriggered = false;

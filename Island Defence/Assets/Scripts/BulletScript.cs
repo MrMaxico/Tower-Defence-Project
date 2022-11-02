@@ -9,8 +9,14 @@ public class BulletScript : MonoBehaviour
     public Vector3 offset;
 
     public float bulletSpeed;
+    public float splashRange;
 
     public int damage;
+    public int splashDamageValue;
+
+    public bool splashDamage;
+
+    GameObject[] enemies;
 
     void Update()
     {
@@ -29,6 +35,14 @@ public class BulletScript : MonoBehaviour
                 else
                 {
                     goal.GetComponent<PathFollowingScript>().hp -= damage;
+                    enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                    foreach (GameObject enemy in enemies)
+                    {
+                        if (Vector3.Distance(enemy.transform.position, transform.position) <= splashRange && splashDamage)
+                        {
+                            enemy.GetComponent<PathFollowingScript>().hp -= splashDamageValue;
+                        }
+                    }
                 }
                 Destroy(gameObject);
             }
