@@ -38,6 +38,8 @@ public class BulletScript : MonoBehaviour
                 {
                     goal.GetComponent<PathFollowingScript>().hp -= damage;
                     enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                    GameObject deathPoof = Instantiate(hitEffect, transform.position, transform.rotation);
+                    deathPoof.transform.Rotate(new Vector3(-90, 0, 0));
                     foreach (GameObject enemy in enemies)
                     {
                         if (Vector3.Distance(enemy.transform.position, transform.position) <= splashRange && splashDamage)
@@ -51,7 +53,6 @@ public class BulletScript : MonoBehaviour
         }
         else
         {
-            GameObject deathPoof = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

@@ -43,6 +43,7 @@ public class PlayerScript : MonoBehaviour
     public int currentSlot;
     public int money;
     bool gameOver;
+    bool jingleStarted;
     RaycastHit groundCheck;
     public Transform[] mineToChestRoute;
     [Space(20)]
@@ -75,11 +76,15 @@ public class PlayerScript : MonoBehaviour
         {
             Debug.Log("Game over!");
             gameOver = true;
-            deathScreen.SetBool("IsGameOver", true);
             FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic1");
             FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic2");
             FindObjectOfType<AudioManagerScript>().StopPlaying("MamaSquidMusic");
-            FindObjectOfType<AudioManagerScript>().Play("GameOverJingle");
+            if (!jingleStarted)
+            {
+                jingleStarted = true;
+                FindObjectOfType<AudioManagerScript>().Play("GameOverJingle");
+            }
+            deathScreen.SetBool("IsGameOver", true);
         }
 
         if (gameOver)

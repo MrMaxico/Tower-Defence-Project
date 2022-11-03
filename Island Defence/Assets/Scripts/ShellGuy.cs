@@ -28,6 +28,7 @@ public class ShellGuy : MonoBehaviour
             GetComponent<PathFollowingScript>().speed = GetComponent<PathFollowingScript>().speed * speedMultiplier;
             opened = true;
             GameObject deathPoof = Instantiate(phase2Transform, transform.position, transform.rotation);
+            deathPoof.transform.Rotate(new Vector3(-90, 0, 0));
             //phase2Sound.Play();
             //phase2Sound.pitch = Random.Range(0.9f, 1.1f);
         }

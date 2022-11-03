@@ -112,6 +112,10 @@ public class Spawner : MonoBehaviour
                 _winConfetti.SetActive(true);
             }
             winScreen.SetBool("IsGameOver", true);
+            FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic1");
+            FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic2");
+            FindObjectOfType<AudioManagerScript>().StopPlaying("MamaSquidMusic");
+            FindObjectOfType<AudioManagerScript>().Play("GameWinJingle");
             Cursor.lockState = CursorLockMode.None;
         }
     }

@@ -258,7 +258,7 @@ MonoBehaviour:
   damage: 0
   splashDamageValue: 0
   splashDamage: 0
-  hitEffect: {fileID: 8777816899591098679, guid: a6ac1d898e9a4f54799935574b7c83fe, type: 3}
+  hitEffect: {fileID: 7577138282905302273, guid: bfd259747bc3d3b4d8757b97434c23c1, type: 3}
 --- !u!65 &4976115939050890550
 BoxCollider:
   m_ObjectHideFlags: 0

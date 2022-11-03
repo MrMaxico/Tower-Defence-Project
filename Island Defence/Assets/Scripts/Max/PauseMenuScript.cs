@@ -57,5 +57,6 @@ public class PauseMenuScript : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        FindObjectOfType<AudioManagerScript>().Play("DefenceSetupMusic");
     }
 }
