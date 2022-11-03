@@ -52,6 +52,10 @@ public class PauseMenuScript : MonoBehaviour
         Time.timeScale = 1f;
         gameIsPaused = false;
         SceneManager.LoadScene("Main Menu");
+        FindObjectOfType<AudioManagerScript>().StopPlaying("DefenceSetupMusic");
+        FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic1");
+        FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic2");
+        FindObjectOfType<AudioManagerScript>().StopPlaying("MamaSquidMusic");
     }
 
     public void RestartGame()
