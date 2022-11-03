@@ -76,6 +76,10 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Game over!");
             gameOver = true;
             deathScreen.SetBool("IsGameOver", true);
+            FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic1");
+            FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic2");
+            FindObjectOfType<AudioManagerScript>().StopPlaying("MamaSquidMusic");
+            FindObjectOfType<AudioManagerScript>().Play("GameOverJingle");
         }
 
         if (gameOver)
