@@ -121,6 +121,12 @@ public class SettingsMenu : MonoBehaviour
         settingsUI.SetActive(true);
     }
 
+    public void QuitGame()
+    {
+        buttonClick.Play();
+        Application.Quit();
+    }
+
     public void ReturnToMenu()
     {
         buttonClick.Play();

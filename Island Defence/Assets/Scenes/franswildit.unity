@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 60838c5a2dc39cc4791184ce83a58982, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -11282,7 +11282,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.72959185, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.8044617, b: 0.27735847, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -17442,6 +17442,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1712088517}
     m_Modifications:
+    - target: {fileID: 1639244417292687040, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639244417292687040, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 593146cfcc366b74f9f994c176df6f58, type: 3}
     - target: {fileID: 3132220242891981456, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
