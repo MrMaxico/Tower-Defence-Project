@@ -214,6 +214,7 @@ public class PathFollowingScript : MonoBehaviour
         Debug.Log(gameObject);
         Destroy(gameObject);
         GameObject deathPoof = Instantiate(onDeathFX, transform.position, Quaternion.identity);
+        deathPoof.transform.Rotate(new Vector3(-90, 0, 0));
     }
 
     void Drop(GameObject drop)

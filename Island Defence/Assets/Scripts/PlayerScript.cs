@@ -57,6 +57,7 @@ public class PlayerScript : MonoBehaviour
     public TextMeshProUGUI upgradeCostDisplay;
     public TextMeshProUGUI sellDisplay;
     public Animator deathScreen;
+    public GameObject sellParticles;
 
     private void Start()
     {
@@ -602,7 +603,9 @@ public class PlayerScript : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject targetTower = player.GetComponent<PlayerScript>().groundCheck.transform.gameObject;
         player.GetComponent<PlayerScript>().money += targetTower.GetComponent<TowerValues>().sellFor;
-        //GameObject coinsFX = Instantiate(sellParticles, transform.position, transform.rotation);
+        GameObject coinsFX = Instantiate(sellParticles, targetTower.transform.position, targetTower.transform.rotation);
+        coinsFX.transform.Rotate(new Vector3(-90, 0, 0));
+        FindObjectOfType<AudioManagerScript>().Play("TowerSellSound");
         Destroy(targetTower);
         Cursor.lockState = CursorLockMode.Locked;
         popup.SetActive(false);

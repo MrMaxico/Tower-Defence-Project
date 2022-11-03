@@ -1585,6 +1585,14 @@ PrefabInstance:
       value: GameWinJingle
       objectReference: {fileID: 0}
     - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
+      propertyPath: sounds.Array.data[14].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c01b1fc93cb413478921e53bf25e1ec, type: 3}
+    - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
+      propertyPath: sounds.Array.data[14].name
+      value: TowerSellSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
       propertyPath: sounds.Array.data[1].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -1681,6 +1689,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
+      propertyPath: sounds.Array.data[14].group
+      value: 
+      objectReference: {fileID: -1526846216156016292, guid: 0d7955aeada1cee43bbd499588b8c6a8, type: 2}
+    - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
+      propertyPath: sounds.Array.data[14].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
       propertyPath: sounds.Array.data[1].volume
       value: 1
       objectReference: {fileID: 0}
@@ -1726,6 +1742,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
       propertyPath: sounds.Array.data[13].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206251673262965758, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
+      propertyPath: sounds.Array.data[14].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1206251673262965759, guid: 5585a05c9e97bd94aa5ffb552c13088a, type: 3}
@@ -13404,6 +13424,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4997508780511571280, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605979044742892756, guid: 9236a529b1481524fa779873fd09999c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

@@ -133,10 +133,8 @@ MonoBehaviour:
   speed: 300
   launchSpeed: 0
   maxXRotation: 90
-  chest: {fileID: 0}
   cam: {fileID: 4860732454403405268}
-  tooPoorPopup: {fileID: 0}
-  upgradePopup: {fileID: 0}
+  springpadJump: []
   rangePreview: {fileID: 6984832048858012890, guid: 470c8fd7dbcd86f43810f0fd80190b70, type: 3}
   previewTowers:
   - {fileID: 5301223027251737293, guid: 4680d749a1f36274fa7461171ba12f13, type: 3}
@@ -154,16 +152,6 @@ MonoBehaviour:
   - {fileID: 8193156307660798991, guid: 92ddfa2190e988e4bbb118a704d6e28a, type: 3}
   - {fileID: 1929482790252691797, guid: 9aa51cfea793e434d920951aa00b3012, type: 3}
   - {fileID: 5725283674976804988, guid: 974345440fd676b4caefe95074075a66, type: 3}
-  rotatingTower: {fileID: 0}
-  upradeParticles: {fileID: 0}
-  towerTips: {fileID: 0}
-  spyglass: {fileID: 0}
-  canvases: []
-  mineToChestRoute:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  springpadJump: []
   towerOffsets:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -173,11 +161,27 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   towerPrices: e7ffffff00000000280000004b000000780000000a0000000a000000
+  previewMaterials: []
+  cantPlacePreview: {fileID: 0}
+  chest: {fileID: 0}
+  towerTips: {fileID: 0}
+  spawners: []
   currentSlot: 1
   money: 200
+  mineToChestRoute:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  upradeParticles: {fileID: 0}
+  openMine: {fileID: 0}
+  closedMine: {fileID: 0}
+  spyglass: {fileID: 0}
+  canvases: []
   moneyDisplay: {fileID: 0}
   upgradeCostDisplay: {fileID: 0}
+  sellDisplay: {fileID: 0}
   deathScreen: {fileID: 0}
+  sellParticles: {fileID: 4714962586664817307, guid: 18730d241e1e276489a2edee5e1ce066, type: 3}
 --- !u!1 &4860732454403405268
 GameObject:
   m_ObjectHideFlags: 0
