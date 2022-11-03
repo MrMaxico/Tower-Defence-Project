@@ -116,6 +116,7 @@ public class Spawner : MonoBehaviour
             FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic2");
             FindObjectOfType<AudioManagerScript>().StopPlaying("MamaSquidMusic");
             FindObjectOfType<AudioManagerScript>().Play("GameWinJingle");
+            player.GetComponent<PlayerScript>().won = true;
             Cursor.lockState = CursorLockMode.None;
         }
     }

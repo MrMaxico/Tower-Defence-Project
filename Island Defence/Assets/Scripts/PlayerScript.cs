@@ -42,6 +42,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject[] spawners;
     public int currentSlot;
     public int money;
+    public bool won;
+    public bool talking;
     bool gameOver;
     bool jingleStarted;
     RaycastHit groundCheck;
@@ -117,7 +119,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
         //camera
-        if (!PauseMenuScript.gameIsPaused)
+        if (!PauseMenuScript.gameIsPaused && !gameOver && !talking && !won)
         {
             rotation.y += Input.GetAxis("Mouse X") * sensitivity;
             transform.eulerAngles = rotation;
@@ -160,6 +162,13 @@ public class PlayerScript : MonoBehaviour
                 canvas.SetActive(true);
             }
             cam.GetComponent<Camera>().fieldOfView = 60;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            System.DateTime moment = System.DateTime.Now;
+            ScreenCapture.CaptureScreenshot($"screenshot-{moment.Year}-{moment.Month}-{moment.Day}-{moment.Hour}-{moment.Minute}-{moment.Second}-{moment.Millisecond}.png");
+            Debug.Log($"Screenshot saved as screenshot-{moment.Year}-{moment.Month}-{moment.Day}-{moment.Hour}-{moment.Minute}-{moment.Second}-{moment.Millisecond}.png");
         }
 
         //main raycast
@@ -388,9 +397,16 @@ public class PlayerScript : MonoBehaviour
             else if (groundCheck.transform.gameObject.tag == "CampLeader")
             {
                 towerTips.SetActive(true);
-                upgradeCostDisplay.text = "Start waves";
-                sellDisplay.text = $"-";
+                upgradeCostDisplay.text = "Talk with the mayor";
+                sellDisplay.text = $"Start waves";
                 if (Input.GetButtonDown("Use"))
+                {
+                    groundCheck.transform.gameObject.GetComponent<Richard>().talking = true;
+                    groundCheck.transform.gameObject.GetComponent<Richard>().player = gameObject;
+                    talking = true;
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                else if (Input.GetButtonDown("Sell"))
                 {
                     foreach (GameObject spawner in spawners)
                     {
