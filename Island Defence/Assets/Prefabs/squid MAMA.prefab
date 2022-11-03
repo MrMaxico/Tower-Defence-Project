@@ -899,6 +899,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2780c9f182b23347b3bb71f71716c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.4
+  rotationSpeed: 1
+  timeTillNextEnemySpawn: 0
+  hpBarVisTime: 0
+  hp: 1000
+  dropAmount: 250
+  pathProgress: 0
+  isMama: 1
+  shield: 0
+  hasTotemEffect: 0
   path: []
   player: {fileID: 0}
   chest: {fileID: 0}
@@ -909,16 +919,6 @@ MonoBehaviour:
   deathSound: {fileID: 2889997263543247155}
   onDeathFX: {fileID: 2305287984885383402, guid: 7e9701a2e1dffbc4b8566c2f4ec6cd72, type: 3}
   slownessFX: {fileID: 8179814874032488018}
-  speed: 0.4
-  rotationSpeed: 1
-  timeTillNextEnemySpawn: 0
-  hpBarVisTime: 0
-  pathProgress: 0
-  hp: 1000
-  dropAmount: 250
-  isMama: 1
-  shield: 0
-  hasTotemEffect: 0
   animations: {fileID: 170697352973219619}
   hpBar: {fileID: 0}
 --- !u!114 &6041676258047905253
@@ -981,7 +981,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1526846216156016292, guid: 0d7955aeada1cee43bbd499588b8c6a8, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 17d2d8838222d4d4699d56708536261f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ecb91b8cd9b58e94ca2eb46867168318, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 0.77
