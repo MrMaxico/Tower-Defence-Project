@@ -16,6 +16,8 @@ public class BulletScript : MonoBehaviour
 
     public bool splashDamage;
 
+    public GameObject hitEffect;
+
     GameObject[] enemies;
 
     void Update()
@@ -49,6 +51,7 @@ public class BulletScript : MonoBehaviour
         }
         else
         {
+            GameObject deathPoof = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

@@ -114,7 +114,11 @@ MonoBehaviour:
   goal: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   bulletSpeed: 0
+  splashRange: 0
   damage: 0
+  splashDamageValue: 0
+  splashDamage: 0
+  hitEffect: {fileID: 8777816899591098679, guid: a6ac1d898e9a4f54799935574b7c83fe, type: 3}
 --- !u!82 &-1060318169419384527
 AudioSource:
   m_ObjectHideFlags: 0
