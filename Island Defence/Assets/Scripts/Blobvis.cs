@@ -8,6 +8,7 @@ public class Blobvis : MonoBehaviour
     public float animationRecoil;
     public float range;
 
+    public AudioSource spellSound;
     public GameObject shieldSpellFX;
     GameObject[] enemies;
 
@@ -36,6 +37,9 @@ public class Blobvis : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(animationRecoil);
+        spellSound.Play();
+        GameObject shieldeffect = Instantiate(shieldSpellFX, transform.position, transform.rotation);
+        shieldeffect.transform.Rotate(new Vector3(-90, 0, 0));
         StartCoroutine(SpawnShieldCycle());
     }
 }

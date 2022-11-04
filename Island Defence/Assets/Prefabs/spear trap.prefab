@@ -90,7 +90,7 @@ MonoBehaviour:
   maxLevel: 3
   upgradeCost: 32000000c8000000ee020000
   sellFor: 40
-  damage: 0200000003000000050000000a000000
+  damage: 03000000050000000900000014000000
   splashDamage: 
   meshHolder:
   - {fileID: 987938347236264994}
