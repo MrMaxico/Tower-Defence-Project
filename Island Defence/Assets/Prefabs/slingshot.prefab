@@ -89,6 +89,7 @@ MonoBehaviour:
   upgradeCost: 64000000fa000000f4010000
   sellFor: 35
   damage: 050000000c000000140000001e000000
+  splashDamage: 
   meshHolder:
   - {fileID: 4187500543922118480}
   - {fileID: 236112067835577311}
@@ -97,6 +98,7 @@ MonoBehaviour:
   - {fileID: 9021360601014832163}
   - {fileID: 703941929802763725}
   - {fileID: 193689322683658443}
+  maxParticles: {fileID: 4376563419686504486}
   levelMat:
   - {fileID: 2100000, guid: ab783366735d0504c90f4088a86f23da, type: 2}
   - {fileID: 2100000, guid: 9fb71c1ec97ea2a4f97506f689c5e3db, type: 2}
@@ -386,6 +388,11 @@ PrefabInstance:
 --- !u!4 &4376563419686504485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 929687804451009483, guid: 1bc5c3559e6f5bf49bf8de66ddf69493, type: 3}
+  m_PrefabInstance: {fileID: 3484175447698357230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4376563419686504486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 929687804451009480, guid: 1bc5c3559e6f5bf49bf8de66ddf69493, type: 3}
   m_PrefabInstance: {fileID: 3484175447698357230}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4143435936078287934

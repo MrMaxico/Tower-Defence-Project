@@ -24,6 +24,7 @@ public class Spawner : MonoBehaviour
     [Space(20)]
     [Header("UX")]
     public GameObject mamaHpBarGameObject;
+    public GameObject arrow;
     public GameObject[] winConfetti;
     public TextMeshProUGUI waveIndicator;
     public Slider mamaHpBar;
@@ -77,6 +78,7 @@ public class Spawner : MonoBehaviour
         if (waveProgress < waves[currentWave].GetComponent<Wave>().spawn.Length)
         {
             waveIndicator.text = $"WAVE: {currentWave + 1}";
+            arrow.SetActive(false);
             GameObject spawned = Instantiate(waves[currentWave].GetComponent<Wave>().spawn[waveProgress], transform.position, Quaternion.identity);
             spawned.GetComponent<PathFollowingScript>().chest = chest;
             spawned.GetComponent<PathFollowingScript>().path = path;

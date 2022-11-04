@@ -13,6 +13,7 @@ public class TowerValues : MonoBehaviour
 
     public GameObject[] meshHolder;
     public GameObject[] stars;
+    public GameObject maxParticles;
 
     public Material[] levelMat;
 
@@ -38,6 +39,11 @@ public class TowerValues : MonoBehaviour
         {
             stars[i].SetActive(false);
             stars[level].SetActive(true);
+        }
+
+        if (level == maxLevel)
+        {
+            maxParticles.SetActive(true);
         }
     }
 
