@@ -60,7 +60,7 @@ MonoBehaviour:
   timeTillNextEnemySpawn: 4
   hpBarVisTime: 0
   hp: 30
-  dropAmount: 20
+  dropAmount: 10
   pathProgress: 0
   isMama: 0
   shield: 0
