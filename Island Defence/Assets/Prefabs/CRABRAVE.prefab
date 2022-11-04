@@ -54,6 +54,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2780c9f182b23347b3bb71f71716c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
+  rotationSpeed: 9
+  timeTillNextEnemySpawn: 0.7
+  hpBarVisTime: 0
+  hp: 3
+  dropAmount: 5
+  pathProgress: 0
+  isMama: 0
+  shield: 0
+  hasTotemEffect: 0
   path: []
   player: {fileID: 0}
   chest: {fileID: 0}
@@ -64,16 +74,6 @@ MonoBehaviour:
   deathSound: {fileID: 1800072420687615138}
   onDeathFX: {fileID: 2305287984885383402, guid: 7e9701a2e1dffbc4b8566c2f4ec6cd72, type: 3}
   slownessFX: {fileID: 4920770892762322557}
-  speed: 3
-  rotationSpeed: 9
-  timeTillNextEnemySpawn: 0.7
-  hpBarVisTime: 0
-  pathProgress: 0
-  hp: 3
-  dropAmount: 6
-  isMama: 0
-  shield: 0
-  hasTotemEffect: 0
   animations: {fileID: 8308748503439619152}
   hpBar: {fileID: 4440141087391033189}
 --- !u!95 &9115290873469917045

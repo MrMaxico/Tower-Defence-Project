@@ -152,6 +152,7 @@ public class PlayerScript : MonoBehaviour
                 canvas.SetActive(false);
             }
             cam.GetComponent<Camera>().fieldOfView = 10;
+            FindObjectOfType<AudioManagerScript>().Play("SpyGlassUse");
         }
         else
         {
@@ -426,6 +427,7 @@ public class PlayerScript : MonoBehaviour
                     spawnedMiner.GetComponent<MineMinion>().player = gameObject;
                     spawnedMiner.GetComponent<MineMinion>().mineToChestRoute = mineToChestRoute;
                     money -= 25;
+                    FindObjectOfType<AudioManagerScript>().Play("MinerBought");
                 }
             }
             else if (groundCheck.transform.gameObject.tag == "Mine" && spawners[0].GetComponent<Spawner>().firstWave)
