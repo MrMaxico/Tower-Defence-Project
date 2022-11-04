@@ -20,11 +20,11 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
     public TMPro.TMP_Dropdown resolutionsDropdown;
 
-    public Slider brightnessSlider;
-    public PostProcessProfile brightness;
-    public PostProcessLayer layer;
-
-    public AutoExposure exposure;
+    //post processing wat niet werkt
+    //public Slider brightnessSlider;
+    //public PostProcessProfile brightness;
+    //public PostProcessLayer layer;
+    //public AutoExposure exposure;
 
     void Start()
     {
@@ -186,16 +186,16 @@ public class SettingsMenu : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    public void AdjustBrightness(float value)
-    {
-        if(value != 0)
-        {
-            exposure.keyValue.value = value;
-        }
-        else
-        {
-            exposure.keyValue.value = 0.5f;
-        }
+   // public void AdjustBrightness(float value)
+ //   {
+        //if(value != 0)
+   //     {
+            //exposure.keyValue.value = value;
+     //   }
+       // else
+    //    {
+            //exposure.keyValue.value = 0.5f;
+     //   }
 
-    }
+    //}
 }
