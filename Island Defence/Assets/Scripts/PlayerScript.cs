@@ -499,36 +499,43 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetButtonDown("SlotOne"))
         {
             currentSlot = 1;
+            FindObjectOfType<AudioManagerScript>().Play("TowerCycle");
             DestroyPreview();
         }
         else if (Input.GetButtonDown("SlotTwo"))
         {
             currentSlot = 2;
+            FindObjectOfType<AudioManagerScript>().Play("TowerCycle");
             DestroyPreview();
         }
         else if (Input.GetButtonDown("SlotThree"))
         {
             currentSlot = 3;
+            FindObjectOfType<AudioManagerScript>().Play("TowerCycle");
             DestroyPreview();
         }
         else if (Input.GetButtonDown("SlotFour"))
         {
             currentSlot = 4;
+            FindObjectOfType<AudioManagerScript>().Play("TowerCycle");
             DestroyPreview();
         }
         else if (Input.GetButtonDown("SlotFive"))
         {
             currentSlot = 5;
+            FindObjectOfType<AudioManagerScript>().Play("TowerCycle");
             DestroyPreview();
         }
         else if (Input.GetButtonDown("SlotSix"))
         {
             currentSlot = 6;
+            FindObjectOfType<AudioManagerScript>().Play("TowerCycle");
             DestroyPreview();
         }
         else if (Input.GetButtonDown("SlotZero"))
         {
             currentSlot = 0;
+            FindObjectOfType<AudioManagerScript>().Play("TowerCycle");
             DestroyPreview();
         }
 
@@ -537,15 +544,18 @@ public class PlayerScript : MonoBehaviour
         if (currentSlot > towers.Length - 2)
         {
             currentSlot = 1;
+            FindObjectOfType<AudioManagerScript>().Play("TowerCycle");
             DestroyPreview();
         }
         else if (currentSlot < 0)
         {
             currentSlot = towers.Length - 2;
+            FindObjectOfType<AudioManagerScript>().Play("TowerCycle");
             DestroyPreview();
         }
         else if (lastFrameSlot != currentSlot)
         {
+            FindObjectOfType<AudioManagerScript>().Play("TowerCycle");
             DestroyPreview();
         }
 
