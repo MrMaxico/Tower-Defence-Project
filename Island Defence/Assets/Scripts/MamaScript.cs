@@ -14,6 +14,10 @@ public class MamaScript : MonoBehaviour
 
     public float babyDelay;
     float timer;
+    float startHp;
+    bool isDead;
+    public GameObject deathFX;
+    public AudioSource explosionSound;
 
     private void Start()
     {
@@ -22,6 +26,7 @@ public class MamaScript : MonoBehaviour
         FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic1");
         FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic2");
         FindObjectOfType<AudioManagerScript>().Play("MamaSquidMusic");
+        startHp = GetComponent<PathFollowingScript>().hp;
     }
 
     void Update()
@@ -39,6 +44,17 @@ public class MamaScript : MonoBehaviour
             StartCoroutine(MakeBabies());
             FindObjectOfType<AudioManagerScript>().Play("MamaSquidRoar");
             timer = 0;
+        }
+
+        if (!isDead && GetComponent<PathFollowingScript>().hp <= 0)
+        {
+            deathFX.SetActive(true);
+            explosionSound.Play();
+            isDead = true;
+            //GameObject deathPoof = Instantiate(phase2Transform, transform.position, transform.rotation);
+            //deathPoof.transform.Rotate(new Vector3(-90, 0, 0));
+            //phase2Sound.Play();
+            //phase2Sound.pitch = Random.Range(0.9f, 1.1f);
         }
     }
 
