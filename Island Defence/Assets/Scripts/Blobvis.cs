@@ -36,8 +36,7 @@ public class Blobvis : MonoBehaviour
                 enemy.GetComponent<PathFollowingScript>().shield = true;
             }
         }
-        yield return new WaitForSeconds(animationRecoil);
-        spellSound.Play();
+        yield return new WaitForSeconds(animationRecoil); spellSound.Play();
         GameObject shieldeffect = Instantiate(shieldSpellFX, transform.position, transform.rotation);
         shieldeffect.transform.Rotate(new Vector3(-90, 0, 0));
         StartCoroutine(SpawnShieldCycle());
