@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -18,8 +20,16 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
     public TMPro.TMP_Dropdown resolutionsDropdown;
 
+    public Slider brightnessSlider;
+    public PostProcessProfile brightness;
+    public PostProcessLayer layer;
+
+    public AutoExposure exposure;
+
     void Start()
     {
+        brightness.TryGetSettings(out exposure);
+
         resolutions = Screen.resolutions;
 
         resolutionsDropdown.ClearOptions();
@@ -174,5 +184,18 @@ public class SettingsMenu : MonoBehaviour
     {
         buttonClick.Play();
         QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void AdjustBrightness(float value)
+    {
+        if(value != 0)
+        {
+            exposure.keyValue.value = value;
+        }
+        else
+        {
+            exposure.keyValue.value = 0.5f;
+        }
+
     }
 }
