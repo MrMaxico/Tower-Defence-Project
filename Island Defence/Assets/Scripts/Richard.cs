@@ -9,6 +9,7 @@ public class Richard : MonoBehaviour
     public GameObject prev;
     public GameObject quit;
     public GameObject player;
+    public AudioSource buttonClick;
 
     public bool talking;
 
@@ -64,6 +65,7 @@ public class Richard : MonoBehaviour
 
     public void NextSlide(int skip)
     {
+        buttonClick.Play();
         currentSlide += skip;
     }
 
