@@ -534,14 +534,14 @@ public class PlayerScript : MonoBehaviour
 
         int lastFrameSlot = currentSlot;
         currentSlot -= Mathf.RoundToInt(Input.mouseScrollDelta.y);
-        if (currentSlot > towers.Length - 1)
+        if (currentSlot > towers.Length - 2)
         {
             currentSlot = 1;
             DestroyPreview();
         }
         else if (currentSlot < 0)
         {
-            currentSlot = towers.Length - 1;
+            currentSlot = towers.Length - 2;
             DestroyPreview();
         }
         else if (lastFrameSlot != currentSlot)
