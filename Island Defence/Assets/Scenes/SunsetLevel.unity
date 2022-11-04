@@ -2215,6 +2215,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4056253639720015433, guid: 4920fe6d26730274cb8c5ed098967ede, type: 3}
   m_PrefabInstance: {fileID: 919748848}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &329328847 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2309312916924960226, guid: 37643d43707291f45a5d602333210599, type: 3}
+  m_PrefabInstance: {fileID: 1339478292}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &333784263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2730,7 +2735,9 @@ MonoBehaviour:
   chest: {fileID: 1136160188}
   player: {fileID: 398582217}
   mamaHpBarGameObject: {fileID: 0}
-  winConfetti: []
+  winConfetti:
+  - {fileID: 1834161596}
+  - {fileID: 915526501}
   waveIndicator: {fileID: 848193530}
   mamaHpBar: {fileID: 0}
   winScreen: {fileID: 0}
@@ -3159,12 +3166,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 55e9a10cb9061af4aa32f28c13299ea5, type: 2}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towers.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: upgradeCostDisplay
       value: 
       objectReference: {fileID: 116291361}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: canvases.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: spawners.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: towers.Array.data[4]
@@ -3179,6 +3194,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1929482790252691797, guid: 9aa51cfea793e434d920951aa00b3012, type: 3}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towers.Array.data[7]
+      value: 
+      objectReference: {fileID: 5869647309243439226, guid: 8bdec52b0283e27469661c4072cb6855, type: 3}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: canvases.Array.data[0]
       value: 
       objectReference: {fileID: 445100068}
@@ -3186,6 +3205,22 @@ PrefabInstance:
       propertyPath: canvases.Array.data[1]
       value: 
       objectReference: {fileID: 152218214}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: spawners.Array.data[0]
+      value: 
+      objectReference: {fileID: 1974344860}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: spawners.Array.data[1]
+      value: 
+      objectReference: {fileID: 369001793}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: spawners.Array.data[2]
+      value: 
+      objectReference: {fileID: 1358493931}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towerPrices.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: springpadJump.Array.size
       value: 6
@@ -3201,6 +3236,14 @@ PrefabInstance:
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: towerPrices.Array.data[6]
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: towerPrices.Array.data[7]
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: mineToChestRoute.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: previewMaterials.Array.size
@@ -3253,11 +3296,11 @@ PrefabInstance:
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: mineToChestRoute.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 329328847}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: mineToChestRoute.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1483668003}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: mineToChestRoute.Array.data[2]
       value: 
@@ -3785,6 +3828,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4997508780511571280, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201588958684117699, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6764811603216052253, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605979044742892756, guid: 9236a529b1481524fa779873fd09999c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -6329,6 +6384,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &915526501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6201588958684117699, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+  m_PrefabInstance: {fileID: 501569810}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &919748848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14698,6 +14758,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.28, y: 1, z: 11.47}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1483668003 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2309312916618018979, guid: 37643d43707291f45a5d602333210599, type: 3}
+  m_PrefabInstance: {fileID: 1339478292}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1502781435
 GameObject:
   m_ObjectHideFlags: 0
@@ -17214,6 +17279,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &1834161596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6764811603216052253, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+  m_PrefabInstance: {fileID: 501569810}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1834622086
 GameObject:
   m_ObjectHideFlags: 0
@@ -18285,7 +18355,9 @@ MonoBehaviour:
   chest: {fileID: 1136160188}
   player: {fileID: 398582217}
   mamaHpBarGameObject: {fileID: 1585211246}
-  winConfetti: []
+  winConfetti:
+  - {fileID: 1834161596}
+  - {fileID: 915526501}
   waveIndicator: {fileID: 597855178}
   mamaHpBar: {fileID: 634712815}
   winScreen: {fileID: 1891489840}
