@@ -42,7 +42,7 @@ public class BulletScript : MonoBehaviour
                     deathPoof.transform.Rotate(new Vector3(-90, 0, 0));
                     foreach (GameObject enemy in enemies)
                     {
-                        if (Vector3.Distance(enemy.transform.position, transform.position) <= splashRange && splashDamage)
+                        if (Vector3.Distance(enemy.transform.position, transform.position) <= splashRange && splashDamage && !enemy.GetComponent<PathFollowingScript>().shield)
                         {
                             enemy.GetComponent<PathFollowingScript>().hp -= splashDamageValue;
                         }
