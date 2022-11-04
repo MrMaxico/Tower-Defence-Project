@@ -90,7 +90,7 @@ public class PlayerScript : MonoBehaviour
             deathScreen.SetBool("IsGameOver", true);
         }
 
-        if (gameOver)
+        if (gameOver || won)
         {
             Cursor.lockState = CursorLockMode.None;
         }
