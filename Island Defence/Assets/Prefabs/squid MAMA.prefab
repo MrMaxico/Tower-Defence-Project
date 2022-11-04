@@ -1001,7 +1001,7 @@ MonoBehaviour:
   rotationSpeed: 1
   timeTillNextEnemySpawn: 0
   hpBarVisTime: 0
-  hp: 50
+  hp: 2500
   dropAmount: 250
   pathProgress: 0
   isMama: 1
