@@ -9,6 +9,7 @@ public class SettingsMenu : MonoBehaviour
     public GameObject menuUI;
     public GameObject levelSelectUI;
     public GameObject settingsUI;
+    public GameObject creditsUI;
 
     public AudioSource buttonClick;
 
@@ -111,6 +112,7 @@ public class SettingsMenu : MonoBehaviour
         menuUI.SetActive(false);
         levelSelectUI.SetActive(true);
         settingsUI.SetActive(false);
+        creditsUI.SetActive(false);
     }
 
     public void GoToSettings()
@@ -119,6 +121,16 @@ public class SettingsMenu : MonoBehaviour
         menuUI.SetActive(false);
         levelSelectUI.SetActive(false);
         settingsUI.SetActive(true);
+        creditsUI.SetActive(false);
+    }
+
+    public void GoToCredits()
+    {
+        buttonClick.Play();
+        menuUI.SetActive(false);
+        levelSelectUI.SetActive(false);
+        settingsUI.SetActive(false);
+        creditsUI.SetActive(true);
     }
 
     public void QuitGame()
@@ -133,6 +145,7 @@ public class SettingsMenu : MonoBehaviour
         menuUI.SetActive(true);
         levelSelectUI.SetActive(false);
         settingsUI.SetActive(false);
+        creditsUI.SetActive(false);
     }
 
     public void LoadLevel1()
