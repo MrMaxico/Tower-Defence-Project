@@ -503,7 +503,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldDelay: 5
+  animationRecoil: 2.458
   range: 5
+  shieldSpellFX: {fileID: 294139570933752137, guid: e797f0f352b617f4bb8db648dd741284, type: 3}
+  anim: {fileID: 850159489338794398}
 --- !u!1 &7402433404978885986
 GameObject:
   m_ObjectHideFlags: 0
