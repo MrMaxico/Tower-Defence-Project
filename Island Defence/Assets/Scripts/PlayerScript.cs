@@ -54,6 +54,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject openMine;
     public GameObject closedMine;
     public GameObject spyglass;
+    public GameObject gameOverScreen;
     public GameObject[] canvases;
     public TextMeshProUGUI moneyDisplay;
     public TextMeshProUGUI upgradeCostDisplay;
@@ -78,6 +79,7 @@ public class PlayerScript : MonoBehaviour
         if (chest.GetComponent<Chest>().gemsLeft <= 0 && gems.Length == 0)
         {
             Debug.Log("Game over!");
+            gameOverScreen.SetActive(true);
             gameOver = true;
             FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic1");
             FindObjectOfType<AudioManagerScript>().StopPlaying("WaveMusic2");

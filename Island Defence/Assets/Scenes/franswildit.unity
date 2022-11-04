@@ -3114,6 +3114,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 1814508194}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: rangeIndicator
       value: 
       objectReference: {fileID: 6984832048858012890, guid: 470c8fd7dbcd86f43810f0fd80190b70, type: 3}
@@ -16560,11 +16564,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4997508780511571280, guid: 9236a529b1481524fa779873fd09999c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7605979044742892756, guid: 9236a529b1481524fa779873fd09999c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7606769702798633732, guid: 9236a529b1481524fa779873fd09999c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -16603,6 +16607,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1579757284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7605979044742892756, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+  m_PrefabInstance: {fileID: 1579757282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1582684681 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4444336748276995060, guid: 9236a529b1481524fa779873fd09999c, type: 3}
@@ -18063,6 +18072,11 @@ Transform:
   m_Father: {fileID: 733603669}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1814508194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4997508780511571280, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+  m_PrefabInstance: {fileID: 1579757282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1819177127 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3418572028833322491, guid: d75b2276e970f8c4ea1c38b579ba40f5, type: 3}
@@ -19257,6 +19271,7 @@ MonoBehaviour:
   mamaHpBarGameObject: {fileID: 1656513022}
   arrow: {fileID: 496477731}
   winConfetti:
+  - {fileID: 1579757284}
   - {fileID: 1277792522}
   - {fileID: 141381932}
   waveIndicator: {fileID: 848193530}

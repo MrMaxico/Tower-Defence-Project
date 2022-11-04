@@ -3166,6 +3166,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1045465989}
     - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 501569813}
+    - target: {fileID: 4860732453201422502, guid: 236394349bbd0d745bb6d8e02b04d9df, type: 3}
       propertyPath: rangeIndicator
       value: 
       objectReference: {fileID: 6984832048858012890, guid: 470c8fd7dbcd86f43810f0fd80190b70, type: 3}
@@ -3908,7 +3912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4997508780511571280, guid: 9236a529b1481524fa779873fd09999c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6201588958684117699, guid: 9236a529b1481524fa779873fd09999c, type: 3}
       propertyPath: m_IsActive
@@ -3920,7 +3924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605979044742892756, guid: 9236a529b1481524fa779873fd09999c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7606769702798633732, guid: 9236a529b1481524fa779873fd09999c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3951,6 +3955,16 @@ PrefabInstance:
 --- !u!1 &501569811 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2210926291130482672, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+  m_PrefabInstance: {fileID: 501569810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &501569812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7605979044742892756, guid: 9236a529b1481524fa779873fd09999c, type: 3}
+  m_PrefabInstance: {fileID: 501569810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &501569813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4997508780511571280, guid: 9236a529b1481524fa779873fd09999c, type: 3}
   m_PrefabInstance: {fileID: 501569810}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &504797877 stripped
@@ -18381,6 +18395,7 @@ MonoBehaviour:
   mamaHpBarGameObject: {fileID: 1585211246}
   arrow: {fileID: 491792747}
   winConfetti:
+  - {fileID: 501569812}
   - {fileID: 1834161596}
   - {fileID: 915526501}
   waveIndicator: {fileID: 597855178}

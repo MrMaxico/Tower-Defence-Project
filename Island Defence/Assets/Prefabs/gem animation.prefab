@@ -55,7 +55,7 @@ MonoBehaviour:
   gem: {fileID: 0}
   gemDespawnTimer: {fileID: 8243058645104861999}
   gemDespawnFill: {fileID: 8064746597533534074}
-  despawnRate: 30
+  despawnRate: 10
 --- !u!65 &8077184498947191006
 BoxCollider:
   m_ObjectHideFlags: 0
